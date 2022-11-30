@@ -51,4 +51,5 @@ Sections:
      -This will be a list of stocks that is labeled as your portfolio. You can also enter into the system how many shares you own as to know your total gains and         losses. It will be modifiable but will also keep track of what you have traded in the past. Each trade will have space to put your price target and to also         alert you when the price hits those points. It will also have a space to type text where you can put down your main reasons why your are doing the trade. Each       Column with different holdings will have room for daily changes in price, 52 week change, loss/gain per certain stock, % held in that stock, etc.   
 - News
      - Will include feed from cnbc, bloomberg, etc. Will also include reddit feeds for stock investing.
-- View chart for any stock/commodity: including historical (100+ year) data.
+- View chart for any stock/commodity: including historical (100+ year) data.'
+     - Companies will include key metrics (P/E, moving average, etc.) but will also include a link to their investor relations page to view a 10k.
