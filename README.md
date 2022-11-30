@@ -3,7 +3,7 @@ This application is used to view stock market data, including stock and commodit
 
 The first part of the project is the main page. This page includes a price chart with the major indices(DJI, S&P, NDQ) depending on the time of day. At night and on off days, it will display the futures market charts for a one day span(or up to two for weekends/closures), while when the market is in session (9:30-4:00) on an open day, it will display the regular price quotes from the indices. It will also include a stream of news from important financial news providers. It will also include economic releases and events that are scheduled to happen in the week ahead, with a more in depth calendar available on a separate page. The main page will also include futures prices on for a list of commodities, foreign exchange rates, bond market performance, sector peformance, and a place to put your watchlist. It will also include a small summary of the percent change of a portfolio. All of these widgets will have to ability to be clicked on and bring you to a bigger page with a more in depth summary of each thing, where you can also customize what information you are viewing. 
 
-The main page includes all aspects of the bigger parts but in a simplified form... 
+The main page includes all aspects of the bigger parts but in a simplified form. Each page includes the ticker tape going across the top of the screen.
 
 Sections:
 - Commodities
@@ -53,3 +53,4 @@ Sections:
      - Will include feed from cnbc, bloomberg, etc. Will also include reddit feeds for stock investing.
 - View chart for any stock/commodity: including historical (100+ year) data.'
      - Companies will include key metrics (P/E, moving average, etc.) but will also include a link to their investor relations page to view a 10k.
+
