@@ -52,5 +52,8 @@ Sections:
 - News
      - Will include feed from cnbc, bloomberg, etc. Will also include reddit feeds for stock investing.
 - View chart for any stock/commodity: including historical (100+ year) data.'
+     - The charts will include a grid-like arrow with x and y axis to show any point on the graph. An option on the side will give the option to glue the center of         it to the line
+     - A screenshot option will also be available for the entire chart
      - Companies will include key metrics (P/E, moving average, etc.) but will also include a link to their investor relations page to view a 10k.
+     - 
 
