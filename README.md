@@ -58,4 +58,5 @@ Sections:
      - Companies will include key metrics (P/E, moving average, etc.) but will also include a link to their investor relations page to view a 10k.
      - Will also include historical stock exchange indicies from historical countries (i.e. Soviet Union, UK, Germany, France, etc.)
           - These will include all past and current data available combined (1880-1917 dataset combined with 1991-present for Russia, all 300 years of markets for UK)
+          - Historical econ data will also be accessible
 
