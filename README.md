@@ -5,6 +5,8 @@ The first part of the project is the main page. This page includes a price chart
 
 The main page includes all aspects of the bigger parts but in a simplified form. Each page includes the ticker tape going across the top of the screen.
 
+All pages include a search bar for any stock/commodity along with an orange market open/closed indicator
+
 Sections:
 - Commodities
   - Metals
