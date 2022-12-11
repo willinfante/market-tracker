@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html> 
 <head>
-<style>
-body {
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<style>	
+body, html {
   background-color: #555555; 
   color: #FFFFFF;
   margin: 0px;
-
-  overflow: hidden;
+  padding: 0px;
+#overflow: hidden;
 }
 
 .ticker-tape {
-  width: screen-width;
+  
   height: 30px;
   background-color: #FFFFFF;
   color: #000000;
-  text-indent: 20px;
-  margin: .5%;
-
   text-align:center;
-  
+  border: 3px solid #555555;
+
 }
 
 .search {
  
-  width: 97%;
+  width: 100%;
   height: 5px;
   background-color: #000000;
   color: gray;
   text-indent: 30px;
-  padding: 1%;
-  font-size: 90%;
-  margin-left: .5%;
-  margin-right: .5%;
-  border: 0px solid #000000;
+  font-size: 90%;  
+  padding: 2rem;
+  border: 3px solid #555555;
 
 }
-
 
 .news {
   width: 30%;
@@ -45,7 +43,8 @@ body {
   color: #FFFFFF;
   padding: 1%;
   text-align: center;
-  margin: .5%;
+  border: 3px solid #555555;
+
 }
 
 .econ {
@@ -56,7 +55,8 @@ body {
   color: #FFFFFF;
   padding: 1%;
   text-align: center;
-  margin: .5%;
+  border: 3px solid #555555;
+
 
 }
 
@@ -64,13 +64,22 @@ body {
 .com {
 
   width: 30%;
-  height: 180px;
+  height: 360px;
   background-color: #000000;
   color: #FFFFFF;
   padding: 1%;
   text-align: center;
-  margin: .5%;
+  border: 3px solid #555555;
 
+}
+
+.chart {
+  position: wrap;
+  width:60%
+  height: 250px;
+  background-color: #000000;
+  color: #FFFFFF;  
+  border: 3px solid #555555;
 }
 </style>
 </head> 
@@ -82,7 +91,7 @@ body {
 
   </div>
 
-  <input type="text" class="search" placeholder="Search a stock or commodity…."></input>
+  <input type="text" class="search" autocomplete="off" id="search" onkeydown="esckeyPressed(event, this);" placeholder="Search a stock or commodity…."></input>
 
   <div class="news">  
     <p>NEWS</p>
@@ -102,5 +111,18 @@ body {
     <p>Gold         1,053.32</p>
   </div>
 
+  <div class="chart">
+    <p>chart box</p>
+  </div>
 </body>
+
+<script>
+  function esckeyPressed(event, input) { 
+     var code = event.charCode || event.keyCode; //Read key input
+     if(code == 27) {                          //If esc key is pressed
+        input.value = '';  //clear the search box
+     } 
+
+  }
+</script>
 </html>
