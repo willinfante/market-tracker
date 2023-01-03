@@ -13,6 +13,9 @@ body, html {
 #overflow: hidden;
 }
 
+.flex-container {
+  display: flex;
+}
 .ticker-tape {
   
   height: 30px;
@@ -35,7 +38,7 @@ body, html {
   border: 3px solid #555555;
 
 }
-
+/* First column */
 .news {
   width: 30%;
   height: 300px;
@@ -47,6 +50,26 @@ body, html {
 
 }
 
+.chart {
+  position: wrap;
+  width:40%;
+  height: 300px;
+  background-color: #000000;
+  color: #FFFFFF;  
+  border: 3px solid #555555;
+}
+
+.forex {
+  width: 30%;
+  height: 150px;
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 1%;
+  text-align: center;
+  border: 3px solid #555555;
+}
+
+/*     end  */
 .econ {
 
   width: 30%;
@@ -73,14 +96,7 @@ body, html {
 
 }
 
-.chart {
-  position: wrap;
-  width:60%
-  height: 250px;
-  background-color: #000000;
-  color: #FFFFFF;  
-  border: 3px solid #555555;
-}
+
 </style>
 </head> 
 
@@ -91,29 +107,27 @@ body, html {
 
   </div>
 
-  <input type="text" class="search" autocomplete="off" id="search" onkeydown="esckeyPressed(event, this);" placeholder="Search a stock or commodity…."></input>
-
+  <input type="text" class="search" autocomplete="off" id="search" onkeydown="esckeyPressed(event, this);" placeholder="Search a stock or commodity..."></input>
+   
+<div class="flex-container">
   <div class="news">  
     <p>NEWS</p>
    
     <p>JP Morgan announces new stock offering</p>
   </div>
 
-  <div class="econ">  
-    <p>NEWS</p>
-   
-    <p>THURSDAY: UNEMPLOYMENT NUMBERS</p>
+  <div class="chart">  
+    <p>DJI CHART</p>
   </div>
 
-  <div class="com">  
-    <p>NEWS</p>
+  <div class="forex">  
+    <p>FOREX RATES</p>
    
     <p>Gold         1,053.32</p>
   </div>
 
-  <div class="chart">
-    <p>chart box</p>
-  </div>
+
+</div>
 </body>
 
 <script>
