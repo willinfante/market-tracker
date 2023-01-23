@@ -50,6 +50,7 @@ body, html {
 
 }
 
+
 .chart {
   position: wrap;
   width:40%;
@@ -60,41 +61,96 @@ body, html {
 }
 
 .forex {
-  width: 30%;
+  width: 370%;
   height: 150px;
   background-color: #000000;
   color: #FFFFFF;
   padding: 1%;
   text-align: center;
   border: 3px solid #555555;
+  position: relative;
 }
+
+.bond {
+  width: 370%;
+  height: 150px;
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 1%;
+  text-align: center;
+  border: 3px solid #555555;
+  position: relative;
+}
+
+.rightbox {
+  position: relative;
+}
+
+.bottombox {
+ 
+  position: relative;
+
+}
+
 
 /*     end  */
 .econ {
-
-  width: 30%;
-  height: 200px;
+  width:385px;
+  height: 267px;
   background-color: #000000;
   color: #FFFFFF;
   padding: 1%;
   text-align: center;
   border: 3px solid #555555;
-
-
+  position: relative;
 }
 
+.port {
+  width:512px;
+  height: 267px;
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 1%;
+  text-align: center;
+  border: 3px solid #555555;
+  position: relative;
+}
 
 .com {
+  width:385px;
+  height: 267px;
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 1%;
+  text-align: center;
+  border: 3px solid #555555;
+  position: relative;
+}
 
-  width: 30%;
-  height: 360px;
+.sectors {
+  width: 512px;
+  height: 267px;
   background-color: #000000;
   color: #FFFFFF;
   padding: 1%;
   text-align: center;
   border: 3px solid #555555;
 
+  position: relative;
+  display: wrap;
 }
+.countries {
+  width: 30%;
+  height: 534px;
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 1%;
+  text-align: center;
+  border: 3px solid #555555;
+}
+
+
+
 
 
 </style>
@@ -148,16 +204,57 @@ body, html {
       <!-- TradingView Widget END -->
   </div>
 
+<div class ="rightbox">
   <div class="forex">  
     <p>FOREX RATES</p>
    
     <p>Gold         1,053.32</p>
   </div>
 
-
+  <div class="bond">  
+    <p>BOND RATES</p>
+   
+    <p>Gold         1,053.32</p>
+  </div>
+</div>
 </div>
 </body>
+<body>
+<div class="flex-container">
+ 
+  <div class="bottombox">
+    <div class="econ">  
+        <p>ECONOMIC RELEASES</p>
+   
+        <p>Existing Home sales Thurs 10:00</p>
+     </div>
+     <div class="com">  
+        <p>Commodities</p>
+   
+        <p>Crude Oil</p>
+     </div>
+  </div>
+ <div class="bottombox">
 
+   <div class="port">  
+       <p>PORTFOLIO</p>
+   
+       <p>11111114456</p>
+     </div>
+
+     <div class="sectors">  
+       <p>USA SECTORS</p>
+   
+       <p>ROTH 10k</p>
+     </div>
+  </div>
+  <div class="countries">  
+    <p>Countries</p>
+   
+    <p>USA   ---------------------------   2.0%</p>
+  </div>
+</div>
+</body>
 <script>
   function esckeyPressed(event, input) { 
      var code = event.charCode || event.keyCode; //Read key input
