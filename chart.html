@@ -1,123 +1,134 @@
 <!DOCTYPE html>
-<html> 
+<html>
+
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<style>	
-  body, html {
-    background-color: #000000;
-    color: #FFFFFF;
-    margin: 0px;
-    padding: 0px;
-   #overflow: hidden;
-  }
+  <style>
+    body,
+    html {
+      background-color: #000000;
+      color: #FFFFFF;
+      margin: 0px;
+      padding: 0px;
+      #overflow: hidden;
+    }
 
-  a:link, a:visited {
-    background-color: black;
-    color: white;
-  }
+    a:link,
+    a:visited {
+      background-color: black;
+      color: white;
+    }
 
-  a:hover, a:active {
-    background-color: white;
-    color: black;
-  }
-  
-  .flex-container {
-    display: flex;
-    background-color: #000000;
-  }
-  .ticker-tape {
-    height: 30px;
-    background-color: #FFFFFF;
-    color: #000000;
-    text-align:center;
-    border: 3px solid #555555;
-  }
+    a:hover,
+    a:active {
+      background-color: white;
+      color: black;
+    }
 
-  .search {
-    width: 100%;
-    height: 5px;
-    background-color: #000000;
-    color: gray;
-    text-indent: 30px;
-    font-size: 90%;  
-    padding: 2rem;
-    border: 3px solid #555555;
-  }
+    .flex-container {
+      display: flex;
+      background-color: #000000;
+    }
 
-  /* First column */
-  .met {
-    width: 30%;
-    height: 400px;
-    background-color: #000000;
-    color: #FFFFFF;
-    padding: 1%;
-    text-align: center;
-    border: 1px solid #FFFFFF;
-  }
-  
-  .chart {
-    position: wrap;
-    width:40%;
-    height: 600px;
-    background-color: #000000;
-    color: #FFFFFF;  
-    border: 3px solid #000000;
-  }
+    .ticker-tape {
+      height: 30px;
+      background-color: #FFFFFF;
+      color: #000000;
+      text-align: center;
+      border: 3px solid #555555;
+    }
 
-  .fin {
-    width: 280%;
-    height: 400px;
-    background-color: #000000;
-    color: #FFFFFF;
-    padding: 1%;
-    text-align: center;
-    border: 1px solid #FFFFFF;
-    position: relative;
-  }
-  
-  .rightbox {
-    position: relative;
-  }
-</style>
-</head> 
+    .search {
+      width: 100%;
+      height: 5px;
+      background-color: #000000;
+      color: gray;
+      text-indent: 30px;
+      font-size: 90%;
+      padding: 2rem;
+      border: 3px solid #555555;
+    }
+
+    /* First column */
+    .met {
+      width: 30%;
+      height: 400px;
+      background-color: #000000;
+      color: #FFFFFF;
+      padding: 1%;
+      text-align: center;
+      border: 1px solid #FFFFFF;
+    }
+
+    .chart {
+      position: wrap;
+      width: 40%;
+      height: 600px;
+      background-color: #000000;
+      color: #FFFFFF;
+      border: 3px solid #000000;
+    }
+
+    .fin {
+      width: 280%;
+      height: 400px;
+      background-color: #000000;
+      color: #FFFFFF;
+      padding: 1%;
+      text-align: center;
+      border: 1px solid #FFFFFF;
+      position: relative;
+    }
+
+    .rightbox {
+      position: relative;
+    }
+  </style>
+</head>
 
 <body>
   <div class="ticker-tape">
     <p>UNP 154.2</p>
   </div>
 
-  <input type="text" class="search" autocomplete="off" id="search" onkeydown="esckeyPressed(event, this);" placeholder="Search a stock or commodity..."></input>
-   
+  <input type="text" class="search" autocomplete="off" id="search" onkeydown="esckeyPressed(event, this);"
+    placeholder="Search a stock or commodity..."></input>
+
   <div class="flex-container">
 
-    <div class="chart">  
+    <div class="chart">
 
     </div>
 
   </div>
 </body>
-<script src=”https://d3js.org/d3.v5.min.js"></script>
 <script>
-  function esckeyPressed(event, input) { 
-     var code = event.charCode || event.keyCode; //Read key input
-     if(code == 27) {                          //If esc key is pressed
-        input.value = '';  //clear the search box
-     } 
+  function esckeyPressed(event, input) {
+    var code = event.charCode || event.keyCode; //Read key input
+    if (code == 27) {                          //If esc key is pressed
+      input.value = '';  //clear the search box
+    }
   }
-  console.log(d3.csv('http://localhost:3000/static/public/RUS_STOCKS.csv/'));
-  var options = {
-          series: [{
-          name: 'XYZ MOTORS',
-          data: dates
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+    var url = 'http://localhost:3000/public/rus.json';
+    $.getJSON(url, function (response) {
+      console.log(response);
+      console.log(response.month);
+
+      var options = {
+        series: [{
+          name: 'Russian Index',
+          data: response
         }],
-          chart: {
+        chart: {
           type: 'area',
           stacked: false,
-          height: 350,
+          height: 600,
           zoom: {
             type: 'x',
             enabled: true,
@@ -168,10 +179,16 @@
             }
           }
         }
-        };
+      };
+      var chart = new ApexCharts(document.querySelector("#chart"), options);
+      chart.render();
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
-      
+    });
+  });
+
+
+
+
 </script>
+
 </html>
