@@ -2,93 +2,86 @@
 <html> 
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <style>	
-body, html {
-  background-color: #000000;
-  color: #FFFFFF;
-  margin: 0px;
-  padding: 0px;
-#overflow: hidden;
-}
+  body, html {
+    background-color: #000000;
+    color: #FFFFFF;
+    margin: 0px;
+    padding: 0px;
+   #overflow: hidden;
+  }
 
-a:link, a:visited {
-  background-color: black;
-  color: white;
-}
+  a:link, a:visited {
+    background-color: black;
+    color: white;
+  }
 
-a:hover, a:active {
-  background-color: white;
-  color: black;
-}
-.flex-container {
-  display: flex;
-  background-color: #000000;
-}
-.ticker-tape {
-  height: 30px;
-  background-color: #FFFFFF;
-  color: #000000;
-  text-align:center;
-  border: 3px solid #555555;
-}
-
-.search {
-  width: 100%;
-  height: 5px;
-  background-color: #000000;
-  color: gray;
-  text-indent: 30px;
-  font-size: 90%;  
-  padding: 2rem;
-  border: 3px solid #555555;
-}
-
-/* First column */
-.met {
-  width: 30%;
-  height: 400px;
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 1%;
-  text-align: center;
-  border: 1px solid #FFFFFF;
+  a:hover, a:active {
+    background-color: white;
+    color: black;
+  }
   
-}
+  .flex-container {
+    display: flex;
+    background-color: #000000;
+  }
+  .ticker-tape {
+    height: 30px;
+    background-color: #FFFFFF;
+    color: #000000;
+    text-align:center;
+    border: 3px solid #555555;
+  }
 
+  .search {
+    width: 100%;
+    height: 5px;
+    background-color: #000000;
+    color: gray;
+    text-indent: 30px;
+    font-size: 90%;  
+    padding: 2rem;
+    border: 3px solid #555555;
+  }
 
-.chart {
-  position: wrap;
-  width:40%;
-  height: 600px;
-  background-color: #000000;
-  color: #FFFFFF;  
-  border: 3px solid #000000;
-}
+  /* First column */
+  .met {
+    width: 30%;
+    height: 400px;
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 1%;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+  }
+  
+  .chart {
+    position: wrap;
+    width:40%;
+    height: 600px;
+    background-color: #000000;
+    color: #FFFFFF;  
+    border: 3px solid #000000;
+  }
 
-.fin {
-  width: 280%;
-  height: 400px;
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 1%;
-  text-align: center;
-  border: 1px solid #FFFFFF;
-  position: relative;
-}
-
-
-.rightbox {
-  position: relative;
-}
-
-
-
-
-
-
+  .fin {
+    width: 280%;
+    height: 400px;
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 1%;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+    position: relative;
+  }
+  
+  .rightbox {
+    position: relative;
+  }
 </style>
 </head> 
 
