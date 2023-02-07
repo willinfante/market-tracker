@@ -96,7 +96,7 @@
   </div>
 
   <input type="text" class="search" autocomplete="off" id="search" onkeydown="esckeyPressed(event, this);"
-    placeholder="Search a stock or commodity..."></input>
+    placeholder="Search a stock or commodity..." value="HISTCHART:"></input>
 
   <div class="flex-container">
 
@@ -113,11 +113,21 @@
   }
 
   window.addEventListener('DOMContentLoaded', (event) => {
-    var url = 'http://localhost:3000/public/rus.json';
+    let cont = window.location.hash.slice(1);
+    console.log(cont);
+    var url = 'http://localhost:3000/public/' + cont + '.json';
+
+    if(cont == "NYSE") {
+      var titl = 'New York Stock Exchange Composite (1865-2023)';
+    } else if (cont == "SPSE"){
+      var titl = 'Saint Petersburg Stock Exchange Index (1865-2023)';
+    } else {
+      console.log("no data specified");
+    }
     $.getJSON(url, function (response) {
+      
       for (const item of response) {
-        item.SPSE = parseFloat(item.SPSE);
-        item.NYSE = parseFloat(item.NYSE);
+        item[cont] = parseFloat(item[cont]);
         let x = item.month.split("-");
         month = parseInt(x[1]);
         if (month < 65) {
@@ -126,12 +136,13 @@
           month += 1800;
         }
         item.month = x[0] + "-" + month;
+        
       }
-
+      console.log(response);
       var options = {
         series: [{
-          name: 'Russian Index',
-          data: response.map(item => [item.month, item.SPSE])
+          name: 'Stock Index',
+          data: response.map(item => [item.month, item[cont]])
         }],
         chart: {
           type: 'area',
@@ -156,7 +167,7 @@
           size: 0,
         },
         title: {
-          text: 'Russian Stock Market Index (1865-2023)',
+          text: titl,
           align: 'left'
         },
         fill: {

@@ -1,0 +1,2390 @@
+[
+    {
+        "month": "Jan-65",
+        "NYSE": "100.00"
+    },
+    {
+        "month": "Feb-65",
+        "NYSE": "100.43"
+    },
+    {
+        "month": "Mar-65",
+        "NYSE": "89.25"
+    },
+    {
+        "month": "Apr-65",
+        "NYSE": "99.69"
+    },
+    {
+        "month": "May-65",
+        "NYSE": "91.66"
+    },
+    {
+        "month": "Jun-65",
+        "NYSE": "94.88"
+    },
+    {
+        "month": "Jul-65",
+        "NYSE": "95.89"
+    },
+    {
+        "month": "Aug-65",
+        "NYSE": "96.76"
+    },
+    {
+        "month": "Sep-65",
+        "NYSE": "99.53"
+    },
+    {
+        "month": "Oct-65",
+        "NYSE": "104.26"
+    },
+    {
+        "month": "Nov-65",
+        "NYSE": "104.81"
+    },
+    {
+        "month": "Dec-65",
+        "NYSE": "104.50"
+    },
+    {
+        "month": "Jan-66",
+        "NYSE": "102.72"
+    },
+    {
+        "month": "Feb-66",
+        "NYSE": "100.96"
+    },
+    {
+        "month": "Mar-66",
+        "NYSE": "99.23"
+    },
+    {
+        "month": "Apr-66",
+        "NYSE": "102.12"
+    },
+    {
+        "month": "May-66",
+        "NYSE": "104.01"
+    },
+    {
+        "month": "Jun-66",
+        "NYSE": "102.62"
+    },
+    {
+        "month": "Jul-66",
+        "NYSE": "105.82"
+    },
+    {
+        "month": "Aug-66",
+        "NYSE": "108.39"
+    },
+    {
+        "month": "Sep-66",
+        "NYSE": "111.00"
+    },
+    {
+        "month": "Oct-66",
+        "NYSE": "113.82"
+    },
+    {
+        "month": "Nov-66",
+        "NYSE": "106.30"
+    },
+    {
+        "month": "Dec-66",
+        "NYSE": "104.99"
+    },
+    {
+        "month": "Jan-67",
+        "NYSE": "104.76"
+    },
+    {
+        "month": "Feb-67",
+        "NYSE": "104.52"
+    },
+    {
+        "month": "Mar-67",
+        "NYSE": "104.29"
+    },
+    {
+        "month": "Apr-67",
+        "NYSE": "104.06"
+    },
+    {
+        "month": "May-67",
+        "NYSE": "103.84"
+    },
+    {
+        "month": "Jun-67",
+        "NYSE": "103.61"
+    },
+    {
+        "month": "Jul-67",
+        "NYSE": "103.38"
+    },
+    {
+        "month": "Aug-67",
+        "NYSE": "103.15"
+    },
+    {
+        "month": "Sep-67",
+        "NYSE": "102.92"
+    },
+    {
+        "month": "Oct-67",
+        "NYSE": "102.70"
+    },
+    {
+        "month": "Nov-67",
+        "NYSE": "102.47"
+    },
+    {
+        "month": "Dec-67",
+        "NYSE": "102.24"
+    },
+    {
+        "month": "Jan-68",
+        "NYSE": "102.02"
+    },
+    {
+        "month": "Feb-68",
+        "NYSE": "103.61"
+    },
+    {
+        "month": "Mar-68",
+        "NYSE": "103.08"
+    },
+    {
+        "month": "Apr-68",
+        "NYSE": "101.32"
+    },
+    {
+        "month": "May-68",
+        "NYSE": "104.00"
+    },
+    {
+        "month": "Jun-68",
+        "NYSE": "102.75"
+    },
+    {
+        "month": "Jul-68",
+        "NYSE": "103.38"
+    },
+    {
+        "month": "Aug-68",
+        "NYSE": "101.99"
+    },
+    {
+        "month": "Sep-68",
+        "NYSE": "104.39"
+    },
+    {
+        "month": "Oct-68",
+        "NYSE": "106.33"
+    },
+    {
+        "month": "Nov-68",
+        "NYSE": "102.28"
+    },
+    {
+        "month": "Dec-68",
+        "NYSE": "103.80"
+    },
+    {
+        "month": "Jan-69",
+        "NYSE": "106.83"
+    },
+    {
+        "month": "Feb-69",
+        "NYSE": "108.29"
+    },
+    {
+        "month": "Mar-69",
+        "NYSE": "107.49"
+    },
+    {
+        "month": "Apr-69",
+        "NYSE": "111.21"
+    },
+    {
+        "month": "May-69",
+        "NYSE": "113.35"
+    },
+    {
+        "month": "Jun-69",
+        "NYSE": "111.50"
+    },
+    {
+        "month": "Jul-69",
+        "NYSE": "112.07"
+    },
+    {
+        "month": "Aug-69",
+        "NYSE": "111.31"
+    },
+    {
+        "month": "Sep-69",
+        "NYSE": "103.38"
+    },
+    {
+        "month": "Oct-69",
+        "NYSE": "105.47"
+    },
+    {
+        "month": "Nov-69",
+        "NYSE": "101.65"
+    },
+    {
+        "month": "Dec-69",
+        "NYSE": "100.84"
+    },
+    {
+        "month": "Jan-70",
+        "NYSE": "102.28"
+    },
+    {
+        "month": "Feb-70",
+        "NYSE": "101.92"
+    },
+    {
+        "month": "Mar-70",
+        "NYSE": "102.11"
+    },
+    {
+        "month": "Apr-70",
+        "NYSE": "104.78"
+    },
+    {
+        "month": "May-70",
+        "NYSE": "105.98"
+    },
+    {
+        "month": "Jun-70",
+        "NYSE": "104.93"
+    },
+    {
+        "month": "Jul-70",
+        "NYSE": "100.59"
+    },
+    {
+        "month": "Aug-70",
+        "NYSE": "99.11"
+    },
+    {
+        "month": "Sep-70",
+        "NYSE": "100.68"
+    },
+    {
+        "month": "Oct-70",
+        "NYSE": "100.59"
+    },
+    {
+        "month": "Nov-70",
+        "NYSE": "101.41"
+    },
+    {
+        "month": "Dec-70",
+        "NYSE": "99.39"
+    },
+    {
+        "month": "Jan-71",
+        "NYSE": "100.20"
+    },
+    {
+        "month": "Feb-71",
+        "NYSE": "101.92"
+    },
+    {
+        "month": "Mar-71",
+        "NYSE": "104.89"
+    },
+    {
+        "month": "Apr-71",
+        "NYSE": "106.83"
+    },
+    {
+        "month": "May-71",
+        "NYSE": "108.76"
+    },
+    {
+        "month": "Jun-71",
+        "NYSE": "106.28"
+    },
+    {
+        "month": "Jul-71",
+        "NYSE": "104.85"
+    },
+    {
+        "month": "Aug-71",
+        "NYSE": "106.89"
+    },
+    {
+        "month": "Sep-71",
+        "NYSE": "106.19"
+    },
+    {
+        "month": "Oct-71",
+        "NYSE": "100.63"
+    },
+    {
+        "month": "Nov-71",
+        "NYSE": "102.49"
+    },
+    {
+        "month": "Dec-71",
+        "NYSE": "102.71"
+    },
+    {
+        "month": "Jan-72",
+        "NYSE": "99.86"
+    },
+    {
+        "month": "Feb-72",
+        "NYSE": "97.81"
+    },
+    {
+        "month": "Mar-72",
+        "NYSE": "106.97"
+    },
+    {
+        "month": "Apr-72",
+        "NYSE": "106.89"
+    },
+    {
+        "month": "May-72",
+        "NYSE": "102.41"
+    },
+    {
+        "month": "Jun-72",
+        "NYSE": "101.13"
+    },
+    {
+        "month": "Jul-72",
+        "NYSE": "101.50"
+    },
+    {
+        "month": "Aug-72",
+        "NYSE": "99.51"
+    },
+    {
+        "month": "Sep-72",
+        "NYSE": "96.57"
+    },
+    {
+        "month": "Oct-72",
+        "NYSE": "100.48"
+    },
+    {
+        "month": "Nov-72",
+        "NYSE": "101.22"
+    },
+    {
+        "month": "Dec-72",
+        "NYSE": "103.23"
+    },
+    {
+        "month": "Jan-73",
+        "NYSE": "104.91"
+    },
+    {
+        "month": "Feb-73",
+        "NYSE": "103.75"
+    },
+    {
+        "month": "Mar-73",
+        "NYSE": "101.22"
+    },
+    {
+        "month": "Apr-73",
+        "NYSE": "99.86"
+    },
+    {
+        "month": "May-73",
+        "NYSE": "98.33"
+    },
+    {
+        "month": "Jun-73",
+        "NYSE": "96.51"
+    },
+    {
+        "month": "Jul-73",
+        "NYSE": "99.98"
+    },
+    {
+        "month": "Aug-73",
+        "NYSE": "97.93"
+    },
+    {
+        "month": "Sep-73",
+        "NYSE": "78.18"
+    },
+    {
+        "month": "Oct-73",
+        "NYSE": "64.24"
+    },
+    {
+        "month": "Nov-73",
+        "NYSE": "78.76"
+    },
+    {
+        "month": "Dec-73",
+        "NYSE": "84.96"
+    },
+    {
+        "month": "Jan-74",
+        "NYSE": "89.71"
+    },
+    {
+        "month": "Feb-74",
+        "NYSE": "89.47"
+    },
+    {
+        "month": "Mar-74",
+        "NYSE": "88.79"
+    },
+    {
+        "month": "Apr-74",
+        "NYSE": "82.11"
+    },
+    {
+        "month": "May-74",
+        "NYSE": "79.40"
+    },
+    {
+        "month": "Jun-74",
+        "NYSE": "81.24"
+    },
+    {
+        "month": "Jul-74",
+        "NYSE": "78.53"
+    },
+    {
+        "month": "Aug-74",
+        "NYSE": "79.05"
+    },
+    {
+        "month": "Sep-74",
+        "NYSE": "82.34"
+    },
+    {
+        "month": "Oct-74",
+        "NYSE": "78.62"
+    },
+    {
+        "month": "Nov-74",
+        "NYSE": "82.16"
+    },
+    {
+        "month": "Dec-74",
+        "NYSE": "80.06"
+    },
+    {
+        "month": "Jan-75",
+        "NYSE": "77.35"
+    },
+    {
+        "month": "Feb-75",
+        "NYSE": "76.13"
+    },
+    {
+        "month": "Mar-75",
+        "NYSE": "80.15"
+    },
+    {
+        "month": "Apr-75",
+        "NYSE": "82.33"
+    },
+    {
+        "month": "May-75",
+        "NYSE": "75.15"
+    },
+    {
+        "month": "Jun-75",
+        "NYSE": "76.12"
+    },
+    {
+        "month": "Jul-75",
+        "NYSE": "76.30"
+    },
+    {
+        "month": "Aug-75",
+        "NYSE": "75.53"
+    },
+    {
+        "month": "Sep-75",
+        "NYSE": "75.04"
+    },
+    {
+        "month": "Oct-75",
+        "NYSE": "74.56"
+    },
+    {
+        "month": "Nov-75",
+        "NYSE": "76.45"
+    },
+    {
+        "month": "Dec-75",
+        "NYSE": "76.28"
+    },
+    {
+        "month": "Jan-76",
+        "NYSE": "79.69"
+    },
+    {
+        "month": "Feb-76",
+        "NYSE": "79.36"
+    },
+    {
+        "month": "Mar-76",
+        "NYSE": "77.00"
+    },
+    {
+        "month": "Apr-76",
+        "NYSE": "73.86"
+    },
+    {
+        "month": "May-76",
+        "NYSE": "73.19"
+    },
+    {
+        "month": "Jun-76",
+        "NYSE": "74.94"
+    },
+    {
+        "month": "Jul-76",
+        "NYSE": "71.93"
+    },
+    {
+        "month": "Aug-76",
+        "NYSE": "68.14"
+    },
+    {
+        "month": "Sep-76",
+        "NYSE": "65.28"
+    },
+    {
+        "month": "Oct-76",
+        "NYSE": "67.99"
+    },
+    {
+        "month": "Nov-76",
+        "NYSE": "66.11"
+    },
+    {
+        "month": "Dec-76",
+        "NYSE": "66.13"
+    },
+    {
+        "month": "Jan-77",
+        "NYSE": "65.96"
+    },
+    {
+        "month": "Feb-77",
+        "NYSE": "62.88"
+    },
+    {
+        "month": "Mar-77",
+        "NYSE": "59.93"
+    },
+    {
+        "month": "Apr-77",
+        "NYSE": "58.52"
+    },
+    {
+        "month": "May-77",
+        "NYSE": "56.99"
+    },
+    {
+        "month": "Jun-77",
+        "NYSE": "55.95"
+    },
+    {
+        "month": "Jul-77",
+        "NYSE": "59.44"
+    },
+    {
+        "month": "Aug-77",
+        "NYSE": "65.60"
+    },
+    {
+        "month": "Sep-77",
+        "NYSE": "66.66"
+    },
+    {
+        "month": "Oct-77",
+        "NYSE": "66.60"
+    },
+    {
+        "month": "Nov-77",
+        "NYSE": "67.51"
+    },
+    {
+        "month": "Dec-77",
+        "NYSE": "67.28"
+    },
+    {
+        "month": "Jan-78",
+        "NYSE": "66.45"
+    },
+    {
+        "month": "Feb-78",
+        "NYSE": "65.56"
+    },
+    {
+        "month": "Mar-78",
+        "NYSE": "69.13"
+    },
+    {
+        "month": "Apr-78",
+        "NYSE": "69.37"
+    },
+    {
+        "month": "May-78",
+        "NYSE": "72.02"
+    },
+    {
+        "month": "Jun-78",
+        "NYSE": "71.98"
+    },
+    {
+        "month": "Jul-78",
+        "NYSE": "71.53"
+    },
+    {
+        "month": "Aug-78",
+        "NYSE": "70.85"
+    },
+    {
+        "month": "Sep-78",
+        "NYSE": "73.71"
+    },
+    {
+        "month": "Oct-78",
+        "NYSE": "73.12"
+    },
+    {
+        "month": "Nov-78",
+        "NYSE": "73.31"
+    },
+    {
+        "month": "Dec-78",
+        "NYSE": "74.34"
+    },
+    {
+        "month": "Jan-79",
+        "NYSE": "80.77"
+    },
+    {
+        "month": "Feb-79",
+        "NYSE": "81.11"
+    },
+    {
+        "month": "Mar-79",
+        "NYSE": "80.77"
+    },
+    {
+        "month": "Apr-79",
+        "NYSE": "84.81"
+    },
+    {
+        "month": "May-79",
+        "NYSE": "90.02"
+    },
+    {
+        "month": "Jun-79",
+        "NYSE": "88.85"
+    },
+    {
+        "month": "Jul-79",
+        "NYSE": "91.33"
+    },
+    {
+        "month": "Aug-79",
+        "NYSE": "89.32"
+    },
+    {
+        "month": "Sep-79",
+        "NYSE": "97.68"
+    },
+    {
+        "month": "Oct-79",
+        "NYSE": "112.28"
+    },
+    {
+        "month": "Nov-79",
+        "NYSE": "114.04"
+    },
+    {
+        "month": "Dec-79",
+        "NYSE": "112.48"
+    },
+    {
+        "month": "Jan-80",
+        "NYSE": "117.70"
+    },
+    {
+        "month": "Feb-80",
+        "NYSE": "120.47"
+    },
+    {
+        "month": "Mar-80",
+        "NYSE": "122.87"
+    },
+    {
+        "month": "Apr-80",
+        "NYSE": "116.05"
+    },
+    {
+        "month": "May-80",
+        "NYSE": "99.36"
+    },
+    {
+        "month": "Jun-80",
+        "NYSE": "106.86"
+    },
+    {
+        "month": "Jul-80",
+        "NYSE": "112.42"
+    },
+    {
+        "month": "Aug-80",
+        "NYSE": "113.69"
+    },
+    {
+        "month": "Sep-80",
+        "NYSE": "113.25"
+    },
+    {
+        "month": "Oct-80",
+        "NYSE": "122.93"
+    },
+    {
+        "month": "Nov-80",
+        "NYSE": "126.21"
+    },
+    {
+        "month": "Dec-80",
+        "NYSE": "134.79"
+    },
+    {
+        "month": "Jan-81",
+        "NYSE": "141.36"
+    },
+    {
+        "month": "Feb-81",
+        "NYSE": "136.88"
+    },
+    {
+        "month": "Mar-81",
+        "NYSE": "143.21"
+    },
+    {
+        "month": "Apr-81",
+        "NYSE": "144.43"
+    },
+    {
+        "month": "May-81",
+        "NYSE": "155.74"
+    },
+    {
+        "month": "Jun-81",
+        "NYSE": "151.47"
+    },
+    {
+        "month": "Jul-81",
+        "NYSE": "147.07"
+    },
+    {
+        "month": "Aug-81",
+        "NYSE": "141.93"
+    },
+    {
+        "month": "Sep-81",
+        "NYSE": "147.15"
+    },
+    {
+        "month": "Oct-81",
+        "NYSE": "141.76"
+    },
+    {
+        "month": "Nov-81",
+        "NYSE": "143.89"
+    },
+    {
+        "month": "Dec-81",
+        "NYSE": "137.32"
+    },
+    {
+        "month": "Jan-82",
+        "NYSE": "135.29"
+    },
+    {
+        "month": "Feb-82",
+        "NYSE": "128.58"
+    },
+    {
+        "month": "Mar-82",
+        "NYSE": "131.66"
+    },
+    {
+        "month": "Apr-82",
+        "NYSE": "130.48"
+    },
+    {
+        "month": "May-82",
+        "NYSE": "124.11"
+    },
+    {
+        "month": "Jun-82",
+        "NYSE": "126.26"
+    },
+    {
+        "month": "Jul-82",
+        "NYSE": "136.74"
+    },
+    {
+        "month": "Aug-82",
+        "NYSE": "137.43"
+    },
+    {
+        "month": "Sep-82",
+        "NYSE": "131.65"
+    },
+    {
+        "month": "Oct-82",
+        "NYSE": "129.56"
+    },
+    {
+        "month": "Nov-82",
+        "NYSE": "124.55"
+    },
+    {
+        "month": "Dec-82",
+        "NYSE": "124.22"
+    },
+    {
+        "month": "Jan-83",
+        "NYSE": "125.43"
+    },
+    {
+        "month": "Feb-83",
+        "NYSE": "120.76"
+    },
+    {
+        "month": "Mar-83",
+        "NYSE": "122.13"
+    },
+    {
+        "month": "Apr-83",
+        "NYSE": "124.51"
+    },
+    {
+        "month": "May-83",
+        "NYSE": "121.49"
+    },
+    {
+        "month": "Jun-83",
+        "NYSE": "123.20"
+    },
+    {
+        "month": "Jul-83",
+        "NYSE": "118.92"
+    },
+    {
+        "month": "Aug-83",
+        "NYSE": "112.01"
+    },
+    {
+        "month": "Sep-83",
+        "NYSE": "111.97"
+    },
+    {
+        "month": "Oct-83",
+        "NYSE": "109.44"
+    },
+    {
+        "month": "Nov-83",
+        "NYSE": "112.33"
+    },
+    {
+        "month": "Dec-83",
+        "NYSE": "105.53"
+    },
+    {
+        "month": "Jan-84",
+        "NYSE": "104.50"
+    },
+    {
+        "month": "Feb-84",
+        "NYSE": "106.25"
+    },
+    {
+        "month": "Mar-84",
+        "NYSE": "104.49"
+    },
+    {
+        "month": "Apr-84",
+        "NYSE": "99.15"
+    },
+    {
+        "month": "May-84",
+        "NYSE": "90.83"
+    },
+    {
+        "month": "Jun-84",
+        "NYSE": "81.27"
+    },
+    {
+        "month": "Jul-84",
+        "NYSE": "92.68"
+    },
+    {
+        "month": "Aug-84",
+        "NYSE": "93.18"
+    },
+    {
+        "month": "Sep-84",
+        "NYSE": "90.11"
+    },
+    {
+        "month": "Oct-84",
+        "NYSE": "85.09"
+    },
+    {
+        "month": "Nov-84",
+        "NYSE": "87.55"
+    },
+    {
+        "month": "Dec-84",
+        "NYSE": "79.91"
+    },
+    {
+        "month": "Jan-85",
+        "NYSE": "80.63"
+    },
+    {
+        "month": "Feb-85",
+        "NYSE": "85.54"
+    },
+    {
+        "month": "Mar-85",
+        "NYSE": "84.21"
+    },
+    {
+        "month": "Apr-85",
+        "NYSE": "85.11"
+    },
+    {
+        "month": "May-85",
+        "NYSE": "83.89"
+    },
+    {
+        "month": "Jun-85",
+        "NYSE": "85.69"
+    },
+    {
+        "month": "Jul-85",
+        "NYSE": "93.30"
+    },
+    {
+        "month": "Aug-85",
+        "NYSE": "96.34"
+    },
+    {
+        "month": "Sep-85",
+        "NYSE": "97.06"
+    },
+    {
+        "month": "Oct-85",
+        "NYSE": "109.36"
+    },
+    {
+        "month": "Nov-85",
+        "NYSE": "116.08"
+    },
+    {
+        "month": "Dec-85",
+        "NYSE": "116.13"
+    },
+    {
+        "month": "Jan-86",
+        "NYSE": "112.93"
+    },
+    {
+        "month": "Feb-86",
+        "NYSE": "114.86"
+    },
+    {
+        "month": "Mar-86",
+        "NYSE": "113.11"
+    },
+    {
+        "month": "Apr-86",
+        "NYSE": "110.57"
+    },
+    {
+        "month": "May-86",
+        "NYSE": "113.00"
+    },
+    {
+        "month": "Jun-86",
+        "NYSE": "117.48"
+    },
+    {
+        "month": "Jul-86",
+        "NYSE": "121.19"
+    },
+    {
+        "month": "Aug-86",
+        "NYSE": "114.69"
+    },
+    {
+        "month": "Sep-86",
+        "NYSE": "128.02"
+    },
+    {
+        "month": "Oct-86",
+        "NYSE": "132.25"
+    },
+    {
+        "month": "Nov-86",
+        "NYSE": "135.85"
+    },
+    {
+        "month": "Dec-86",
+        "NYSE": "130.60"
+    },
+    {
+        "month": "Jan-87",
+        "NYSE": "124.40"
+    },
+    {
+        "month": "Feb-87",
+        "NYSE": "126.74"
+    },
+    {
+        "month": "Mar-87",
+        "NYSE": "132.58"
+    },
+    {
+        "month": "Apr-87",
+        "NYSE": "132.40"
+    },
+    {
+        "month": "May-87",
+        "NYSE": "138.02"
+    },
+    {
+        "month": "Jun-87",
+        "NYSE": "129.52"
+    },
+    {
+        "month": "Jul-87",
+        "NYSE": "119.41"
+    },
+    {
+        "month": "Aug-87",
+        "NYSE": "116.63"
+    },
+    {
+        "month": "Sep-87",
+        "NYSE": "117.24"
+    },
+    {
+        "month": "Oct-87",
+        "NYSE": "111.41"
+    },
+    {
+        "month": "Nov-87",
+        "NYSE": "114.88"
+    },
+    {
+        "month": "Dec-87",
+        "NYSE": "114.76"
+    },
+    {
+        "month": "Jan-88",
+        "NYSE": "115.09"
+    },
+    {
+        "month": "Feb-88",
+        "NYSE": "113.80"
+    },
+    {
+        "month": "Mar-88",
+        "NYSE": "103.65"
+    },
+    {
+        "month": "Apr-88",
+        "NYSE": "114.08"
+    },
+    {
+        "month": "May-88",
+        "NYSE": "109.34"
+    },
+    {
+        "month": "Jun-88",
+        "NYSE": "109.74"
+    },
+    {
+        "month": "Jul-88",
+        "NYSE": "116.76"
+    },
+    {
+        "month": "Aug-88",
+        "NYSE": "116.98"
+    },
+    {
+        "month": "Sep-88",
+        "NYSE": "120.76"
+    },
+    {
+        "month": "Oct-88",
+        "NYSE": "118.12"
+    },
+    {
+        "month": "Nov-88",
+        "NYSE": "115.38"
+    },
+    {
+        "month": "Dec-88",
+        "NYSE": "117.15"
+    },
+    {
+        "month": "Jan-89",
+        "NYSE": "118.07"
+    },
+    {
+        "month": "Feb-89",
+        "NYSE": "121.25"
+    },
+    {
+        "month": "Mar-89",
+        "NYSE": "117.26"
+    },
+    {
+        "month": "Apr-89",
+        "NYSE": "120.48"
+    },
+    {
+        "month": "May-89",
+        "NYSE": "123.67"
+    },
+    {
+        "month": "Jun-89",
+        "NYSE": "122.49"
+    },
+    {
+        "month": "Jul-89",
+        "NYSE": "121.13"
+    },
+    {
+        "month": "Aug-89",
+        "NYSE": "124.83"
+    },
+    {
+        "month": "Sep-89",
+        "NYSE": "127.11"
+    },
+    {
+        "month": "Oct-89",
+        "NYSE": "125.68"
+    },
+    {
+        "month": "Nov-89",
+        "NYSE": "122.19"
+    },
+    {
+        "month": "Dec-89",
+        "NYSE": "122.42"
+    },
+    {
+        "month": "Jan-90",
+        "NYSE": "125.80"
+    },
+    {
+        "month": "Feb-90",
+        "NYSE": "122.72"
+    },
+    {
+        "month": "Mar-90",
+        "NYSE": "123.18"
+    },
+    {
+        "month": "Apr-90",
+        "NYSE": "128.60"
+    },
+    {
+        "month": "May-90",
+        "NYSE": "131.96"
+    },
+    {
+        "month": "Jun-90",
+        "NYSE": "129.37"
+    },
+    {
+        "month": "Jul-90",
+        "NYSE": "127.91"
+    },
+    {
+        "month": "Aug-90",
+        "NYSE": "127.64"
+    },
+    {
+        "month": "Sep-90",
+        "NYSE": "124.04"
+    },
+    {
+        "month": "Oct-90",
+        "NYSE": "119.12"
+    },
+    {
+        "month": "Nov-90",
+        "NYSE": "111.73"
+    },
+    {
+        "month": "Dec-90",
+        "NYSE": "109.29"
+    },
+    {
+        "month": "Jan-91",
+        "NYSE": "125.09"
+    },
+    {
+        "month": "Feb-91",
+        "NYSE": "120.13"
+    },
+    {
+        "month": "Mar-91",
+        "NYSE": "121.31"
+    },
+    {
+        "month": "Apr-91",
+        "NYSE": "122.28"
+    },
+    {
+        "month": "May-91",
+        "NYSE": "121.36"
+    },
+    {
+        "month": "Jun-91",
+        "NYSE": "109.19"
+    },
+    {
+        "month": "Jul-91",
+        "NYSE": "112.42"
+    },
+    {
+        "month": "Aug-91",
+        "NYSE": "115.32"
+    },
+    {
+        "month": "Sep-91",
+        "NYSE": "118.26"
+    },
+    {
+        "month": "Oct-91",
+        "NYSE": "113.88"
+    },
+    {
+        "month": "Nov-91",
+        "NYSE": "113.52"
+    },
+    {
+        "month": "Dec-91",
+        "NYSE": "112.51"
+    },
+    {
+        "month": "Jan-92",
+        "NYSE": "123.74"
+    },
+    {
+        "month": "Feb-92",
+        "NYSE": "126.15"
+    },
+    {
+        "month": "Mar-92",
+        "NYSE": "125.03"
+    },
+    {
+        "month": "Apr-92",
+        "NYSE": "125.58"
+    },
+    {
+        "month": "May-92",
+        "NYSE": "126.70"
+    },
+    {
+        "month": "Jun-92",
+        "NYSE": "125.21"
+    },
+    {
+        "month": "Jul-92",
+        "NYSE": "127.01"
+    },
+    {
+        "month": "Aug-92",
+        "NYSE": "125.42"
+    },
+    {
+        "month": "Sep-92",
+        "NYSE": "124.49"
+    },
+    {
+        "month": "Oct-92",
+        "NYSE": "125.93"
+    },
+    {
+        "month": "Nov-92",
+        "NYSE": "122.36"
+    },
+    {
+        "month": "Dec-92",
+        "NYSE": "124.16"
+    },
+    {
+        "month": "Jan-93",
+        "NYSE": "127.16"
+    },
+    {
+        "month": "Feb-93",
+        "NYSE": "122.85"
+    },
+    {
+        "month": "Mar-93",
+        "NYSE": "122.27"
+    },
+    {
+        "month": "Apr-93",
+        "NYSE": "119.95"
+    },
+    {
+        "month": "May-93",
+        "NYSE": "110.91"
+    },
+    {
+        "month": "Jun-93",
+        "NYSE": "106.16"
+    },
+    {
+        "month": "Jul-93",
+        "NYSE": "91.93"
+    },
+    {
+        "month": "Aug-93",
+        "NYSE": "99.22"
+    },
+    {
+        "month": "Sep-93",
+        "NYSE": "103.25"
+    },
+    {
+        "month": "Oct-93",
+        "NYSE": "107.90"
+    },
+    {
+        "month": "Nov-93",
+        "NYSE": "101.18"
+    },
+    {
+        "month": "Dec-93",
+        "NYSE": "103.22"
+    },
+    {
+        "month": "Jan-94",
+        "NYSE": "105.31"
+    },
+    {
+        "month": "Feb-94",
+        "NYSE": "104.22"
+    },
+    {
+        "month": "Mar-94",
+        "NYSE": "107.77"
+    },
+    {
+        "month": "Apr-94",
+        "NYSE": "106.02"
+    },
+    {
+        "month": "May-94",
+        "NYSE": "103.09"
+    },
+    {
+        "month": "Jun-94",
+        "NYSE": "101.57"
+    },
+    {
+        "month": "Jul-94",
+        "NYSE": "100.85"
+    },
+    {
+        "month": "Aug-94",
+        "NYSE": "106.28"
+    },
+    {
+        "month": "Sep-94",
+        "NYSE": "104.38"
+    },
+    {
+        "month": "Oct-94",
+        "NYSE": "100.86"
+    },
+    {
+        "month": "Nov-94",
+        "NYSE": "99.79"
+    },
+    {
+        "month": "Dec-94",
+        "NYSE": "100.31"
+    },
+    {
+        "month": "Jan-95",
+        "NYSE": "107.74"
+    },
+    {
+        "month": "Feb-95",
+        "NYSE": "97.13"
+    },
+    {
+        "month": "Mar-95",
+        "NYSE": "100.68"
+    },
+    {
+        "month": "Apr-95",
+        "NYSE": "103.77"
+    },
+    {
+        "month": "May-95",
+        "NYSE": "108.04"
+    },
+    {
+        "month": "Jun-95",
+        "NYSE": "108.12"
+    },
+    {
+        "month": "Jul-95",
+        "NYSE": "110.61"
+    },
+    {
+        "month": "Aug-95",
+        "NYSE": "112.69"
+    },
+    {
+        "month": "Sep-95",
+        "NYSE": "111.47"
+    },
+    {
+        "month": "Oct-95",
+        "NYSE": "108.99"
+    },
+    {
+        "month": "Nov-95",
+        "NYSE": "107.87"
+    },
+    {
+        "month": "Dec-95",
+        "NYSE": "102.46"
+    },
+    {
+        "month": "Jan-96",
+        "NYSE": "104.36"
+    },
+    {
+        "month": "Feb-96",
+        "NYSE": "105.23"
+    },
+    {
+        "month": "Mar-96",
+        "NYSE": "104.17"
+    },
+    {
+        "month": "Apr-96",
+        "NYSE": "106.00"
+    },
+    {
+        "month": "May-96",
+        "NYSE": "104.77"
+    },
+    {
+        "month": "Jun-96",
+        "NYSE": "105.79"
+    },
+    {
+        "month": "Jul-96",
+        "NYSE": "98.18"
+    },
+    {
+        "month": "Aug-96",
+        "NYSE": "95.90"
+    },
+    {
+        "month": "Sep-96",
+        "NYSE": "100.92"
+    },
+    {
+        "month": "Oct-96",
+        "NYSE": "104.38"
+    },
+    {
+        "month": "Nov-96",
+        "NYSE": "104.84"
+    },
+    {
+        "month": "Dec-96",
+        "NYSE": "103.17"
+    },
+    {
+        "month": "Jan-97",
+        "NYSE": "104.98"
+    },
+    {
+        "month": "Feb-97",
+        "NYSE": "104.45"
+    },
+    {
+        "month": "Mar-97",
+        "NYSE": "102.67"
+    },
+    {
+        "month": "Apr-97",
+        "NYSE": "102.60"
+    },
+    {
+        "month": "May-97",
+        "NYSE": "103.29"
+    },
+    {
+        "month": "Jun-97",
+        "NYSE": "106.78"
+    },
+    {
+        "month": "Jul-97",
+        "NYSE": "110.73"
+    },
+    {
+        "month": "Aug-97",
+        "NYSE": "116.63"
+    },
+    {
+        "month": "Sep-97",
+        "NYSE": "114.95"
+    },
+    {
+        "month": "Oct-97",
+        "NYSE": "113.97"
+    },
+    {
+        "month": "Nov-97",
+        "NYSE": "115.43"
+    },
+    {
+        "month": "Dec-97",
+        "NYSE": "117.77"
+    },
+    {
+        "month": "Jan-98",
+        "NYSE": "120.15"
+    },
+    {
+        "month": "Feb-98",
+        "NYSE": "116.27"
+    },
+    {
+        "month": "Mar-98",
+        "NYSE": "112.70"
+    },
+    {
+        "month": "Apr-98",
+        "NYSE": "110.49"
+    },
+    {
+        "month": "May-98",
+        "NYSE": "118.88"
+    },
+    {
+        "month": "Jun-98",
+        "NYSE": "119.13"
+    },
+    {
+        "month": "Jul-98",
+        "NYSE": "122.06"
+    },
+    {
+        "month": "Aug-98",
+        "NYSE": "124.83"
+    },
+    {
+        "month": "Sep-98",
+        "NYSE": "122.46"
+    },
+    {
+        "month": "Oct-98",
+        "NYSE": "123.01"
+    },
+    {
+        "month": "Nov-98",
+        "NYSE": "125.76"
+    },
+    {
+        "month": "Dec-98",
+        "NYSE": "132.10"
+    },
+    {
+        "month": "Jan-99",
+        "NYSE": "137.63"
+    },
+    {
+        "month": "Feb-99",
+        "NYSE": "138.35"
+    },
+    {
+        "month": "Mar-99",
+        "NYSE": "141.81"
+    },
+    {
+        "month": "Apr-99",
+        "NYSE": "135.90"
+    },
+    {
+        "month": "May-99",
+        "NYSE": "139.95"
+    },
+    {
+        "month": "Jun-99",
+        "NYSE": "141.37"
+    },
+    {
+        "month": "Jul-99",
+        "NYSE": "144.16"
+    },
+    {
+        "month": "Aug-99",
+        "NYSE": "142.14"
+    },
+    {
+        "month": "Sep-99",
+        "NYSE": "144.09"
+    },
+    {
+        "month": "Oct-99",
+        "NYSE": "143.57"
+    },
+    {
+        "month": "Nov-99",
+        "NYSE": "144.07"
+    },
+    {
+        "month": "Dec-99",
+        "NYSE": "137.61"
+    },
+    {
+        "month": "Jan-00",
+        "NYSE": "138.82"
+    },
+    {
+        "month": "Feb-00",
+        "NYSE": "139.30"
+    },
+    {
+        "month": "Mar-00",
+        "NYSE": "143.64"
+    },
+    {
+        "month": "Apr-00",
+        "NYSE": "142.07"
+    },
+    {
+        "month": "May-00",
+        "NYSE": "141.14"
+    },
+    {
+        "month": "Jun-00",
+        "NYSE": "135.68"
+    },
+    {
+        "month": "Jul-00",
+        "NYSE": "137.48"
+    },
+    {
+        "month": "Aug-00",
+        "NYSE": "137.74"
+    },
+    {
+        "month": "Sep-00",
+        "NYSE": "135.09"
+    },
+    {
+        "month": "Oct-00",
+        "NYSE": "141.18"
+    },
+    {
+        "month": "Nov-00",
+        "NYSE": "150.70"
+    },
+    {
+        "month": "Dec-00",
+        "NYSE": "162.36"
+    },
+    {
+        "month": "Jan-01",
+        "NYSE": "164.50"
+    },
+    {
+        "month": "Feb-01",
+        "NYSE": "167.47"
+    },
+    {
+        "month": "Mar-01",
+        "NYSE": "181.62"
+    },
+    {
+        "month": "Apr-01",
+        "NYSE": "189.99"
+    },
+    {
+        "month": "May-01",
+        "NYSE": "188.79"
+    },
+    {
+        "month": "Jun-01",
+        "NYSE": "193.73"
+    },
+    {
+        "month": "Jul-01",
+        "NYSE": "186.39"
+    },
+    {
+        "month": "Aug-01",
+        "NYSE": "194.09"
+    },
+    {
+        "month": "Sep-01",
+        "NYSE": "192.06"
+    },
+    {
+        "month": "Oct-01",
+        "NYSE": "193.82"
+    },
+    {
+        "month": "Nov-01",
+        "NYSE": "201.42"
+    },
+    {
+        "month": "Dec-01",
+        "NYSE": "202.30"
+    },
+    {
+        "month": "Jan-02",
+        "NYSE": "202.33"
+    },
+    {
+        "month": "Feb-02",
+        "NYSE": "204.75"
+    },
+    {
+        "month": "Mar-02",
+        "NYSE": "206.33"
+    },
+    {
+        "month": "Apr-02",
+        "NYSE": "217.07"
+    },
+    {
+        "month": "May-02",
+        "NYSE": "213.47"
+    },
+    {
+        "month": "Jun-02",
+        "NYSE": "213.96"
+    },
+    {
+        "month": "Jul-02",
+        "NYSE": "219.22"
+    },
+    {
+        "month": "Aug-02",
+        "NYSE": "226.86"
+    },
+    {
+        "month": "Sep-02",
+        "NYSE": "221.14"
+    },
+    {
+        "month": "Oct-02",
+        "NYSE": "217.27"
+    },
+    {
+        "month": "Nov-02",
+        "NYSE": "210.26"
+    },
+    {
+        "month": "Dec-02",
+        "NYSE": "213.00"
+    },
+    {
+        "month": "Jan-03",
+        "NYSE": "212.96"
+    },
+    {
+        "month": "Feb-03",
+        "NYSE": "211.77"
+    },
+    {
+        "month": "Mar-03",
+        "NYSE": "203.79"
+    },
+    {
+        "month": "Apr-03",
+        "NYSE": "201.20"
+    },
+    {
+        "month": "May-03",
+        "NYSE": "191.79"
+    },
+    {
+        "month": "Jun-03",
+        "NYSE": "191.50"
+    },
+    {
+        "month": "Jul-03",
+        "NYSE": "180.61"
+    },
+    {
+        "month": "Aug-03",
+        "NYSE": "184.22"
+    },
+    {
+        "month": "Sep-03",
+        "NYSE": "174.14"
+    },
+    {
+        "month": "Oct-03",
+        "NYSE": "177.44"
+    },
+    {
+        "month": "Nov-03",
+        "NYSE": "178.62"
+    },
+    {
+        "month": "Dec-03",
+        "NYSE": "185.57"
+    },
+    {
+        "month": "Jan-04",
+        "NYSE": "187.69"
+    },
+    {
+        "month": "Feb-04",
+        "NYSE": "181.19"
+    },
+    {
+        "month": "Mar-04",
+        "NYSE": "183.91"
+    },
+    {
+        "month": "Apr-04",
+        "NYSE": "182.60"
+    },
+    {
+        "month": "May-04",
+        "NYSE": "180.99"
+    },
+    {
+        "month": "Jun-04",
+        "NYSE": "182.38"
+    },
+    {
+        "month": "Jul-04",
+        "NYSE": "186.24"
+    },
+    {
+        "month": "Aug-04",
+        "NYSE": "194.11"
+    },
+    {
+        "month": "Sep-04",
+        "NYSE": "199.78"
+    },
+    {
+        "month": "Oct-04",
+        "NYSE": "204.66"
+    },
+    {
+        "month": "Nov-04",
+        "NYSE": "215.89"
+    },
+    {
+        "month": "Dec-04",
+        "NYSE": "213.30"
+    },
+    {
+        "month": "Jan-05",
+        "NYSE": "217.42"
+    },
+    {
+        "month": "Feb-05",
+        "NYSE": "222.13"
+    },
+    {
+        "month": "Mar-05",
+        "NYSE": "221.71"
+    },
+    {
+        "month": "Apr-05",
+        "NYSE": "214.82"
+    },
+    {
+        "month": "May-05",
+        "NYSE": "213.74"
+    },
+    {
+        "month": "Jun-05",
+        "NYSE": "215.73"
+    },
+    {
+        "month": "Jul-05",
+        "NYSE": "217.79"
+    },
+    {
+        "month": "Aug-05",
+        "NYSE": "223.54"
+    },
+    {
+        "month": "Sep-05",
+        "NYSE": "225.22"
+    },
+    {
+        "month": "Oct-05",
+        "NYSE": "225.14"
+    },
+    {
+        "month": "Nov-05",
+        "NYSE": "225.78"
+    },
+    {
+        "month": "Dec-05",
+        "NYSE": "227.53"
+    },
+    {
+        "month": "Jan-06",
+        "NYSE": "231.15"
+    },
+    {
+        "month": "Feb-06",
+        "NYSE": "223.63"
+    },
+    {
+        "month": "Mar-06",
+        "NYSE": "225.55"
+    },
+    {
+        "month": "Apr-06",
+        "NYSE": "217.98"
+    },
+    {
+        "month": "May-06",
+        "NYSE": "225.42"
+    },
+    {
+        "month": "Jun-06",
+        "NYSE": "220.84"
+    },
+    {
+        "month": "Jul-06",
+        "NYSE": "227.77"
+    },
+    {
+        "month": "Aug-06",
+        "NYSE": "229.75"
+    },
+    {
+        "month": "Sep-06",
+        "NYSE": "231.75"
+    },
+    {
+        "month": "Oct-06",
+        "NYSE": "233.00"
+    },
+    {
+        "month": "Nov-06",
+        "NYSE": "231.86"
+    },
+    {
+        "month": "Dec-06",
+        "NYSE": "225.04"
+    },
+    {
+        "month": "Jan-07",
+        "NYSE": "215.86"
+    },
+    {
+        "month": "Feb-07",
+        "NYSE": "214.57"
+    },
+    {
+        "month": "Mar-07",
+        "NYSE": "194.48"
+    },
+    {
+        "month": "Apr-07",
+        "NYSE": "200.39"
+    },
+    {
+        "month": "May-07",
+        "NYSE": "192.36"
+    },
+    {
+        "month": "Jun-07",
+        "NYSE": "195.26"
+    },
+    {
+        "month": "Jul-07",
+        "NYSE": "192.74"
+    },
+    {
+        "month": "Aug-07",
+        "NYSE": "182.70"
+    },
+    {
+        "month": "Sep-07",
+        "NYSE": "182.14"
+    },
+    {
+        "month": "Oct-07",
+        "NYSE": "163.70"
+    },
+    {
+        "month": "Nov-07",
+        "NYSE": "168.52"
+    },
+    {
+        "month": "Dec-07",
+        "NYSE": "165.94"
+    },
+    {
+        "month": "Jan-08",
+        "NYSE": "173.50"
+    },
+    {
+        "month": "Feb-08",
+        "NYSE": "165.38"
+    },
+    {
+        "month": "Mar-08",
+        "NYSE": "173.53"
+    },
+    {
+        "month": "Apr-08",
+        "NYSE": "178.86"
+    },
+    {
+        "month": "May-08",
+        "NYSE": "183.89"
+    },
+    {
+        "month": "Jun-08",
+        "NYSE": "183.29"
+    },
+    {
+        "month": "Jul-08",
+        "NYSE": "190.28"
+    },
+    {
+        "month": "Aug-08",
+        "NYSE": "192.29"
+    },
+    {
+        "month": "Sep-08",
+        "NYSE": "191.29"
+    },
+    {
+        "month": "Oct-08",
+        "NYSE": "195.82"
+    },
+    {
+        "month": "Nov-08",
+        "NYSE": "208.23"
+    },
+    {
+        "month": "Dec-08",
+        "NYSE": "213.18"
+    },
+    {
+        "month": "Jan-09",
+        "NYSE": "209.84"
+    },
+    {
+        "month": "Feb-09",
+        "NYSE": "210.07"
+    },
+    {
+        "month": "Mar-09",
+        "NYSE": "215.50"
+    },
+    {
+        "month": "Apr-09",
+        "NYSE": "224.78"
+    },
+    {
+        "month": "May-09",
+        "NYSE": "231.88"
+    },
+    {
+        "month": "Jun-09",
+        "NYSE": "230.96"
+    },
+    {
+        "month": "Jul-09",
+        "NYSE": "233.20"
+    },
+    {
+        "month": "Aug-09",
+        "NYSE": "233.30"
+    },
+    {
+        "month": "Sep-09",
+        "NYSE": "235.01"
+    },
+    {
+        "month": "Oct-09",
+        "NYSE": "237.47"
+    },
+    {
+        "month": "Nov-09",
+        "NYSE": "242.00"
+    },
+    {
+        "month": "Dec-09",
+        "NYSE": "251.81"
+    },
+    {
+        "month": "Jan-10",
+        "NYSE": "225.91"
+    },
+    {
+        "month": "Feb-10",
+        "NYSE": "227.08"
+    },
+    {
+        "month": "Mar-10",
+        "NYSE": "224.56"
+    },
+    {
+        "month": "Apr-10",
+        "NYSE": "218.67"
+    },
+    {
+        "month": "May-10",
+        "NYSE": "220.67"
+    },
+    {
+        "month": "Jun-10",
+        "NYSE": "209.00"
+    },
+    {
+        "month": "Jul-10",
+        "NYSE": "202.21"
+    },
+    {
+        "month": "Aug-10",
+        "NYSE": "206.66"
+    },
+    {
+        "month": "Sep-10",
+        "NYSE": "211.20"
+    },
+    {
+        "month": "Oct-10",
+        "NYSE": "215.42"
+    },
+    {
+        "month": "Nov-10",
+        "NYSE": "210.00"
+    },
+    {
+        "month": "Dec-10",
+        "NYSE": "212.77"
+    },
+    {
+        "month": "Jan-11",
+        "NYSE": "219.03"
+    },
+    {
+        "month": "Feb-11",
+        "NYSE": "218.99"
+    },
+    {
+        "month": "Mar-11",
+        "NYSE": "218.00"
+    },
+    {
+        "month": "Apr-11",
+        "NYSE": "218.03"
+    },
+    {
+        "month": "May-11",
+        "NYSE": "221.94"
+    },
+    {
+        "month": "Jun-11",
+        "NYSE": "221.54"
+    },
+    {
+        "month": "Jul-11",
+        "NYSE": "221.68"
+    },
+    {
+        "month": "Aug-11",
+        "NYSE": "207.76"
+    },
+    {
+        "month": "Sep-11",
+        "NYSE": "204.05"
+    },
+    {
+        "month": "Oct-11",
+        "NYSE": "206.81"
+    },
+    {
+        "month": "Nov-11",
+        "NYSE": "214.07"
+    },
+    {
+        "month": "Dec-11",
+        "NYSE": "217.40"
+    },
+    {
+        "month": "Jan-12",
+        "NYSE": "219.79"
+    },
+    {
+        "month": "Feb-12",
+        "NYSE": "219.34"
+    },
+    {
+        "month": "Mar-12",
+        "NYSE": "225.45"
+    },
+    {
+        "month": "Apr-12",
+        "NYSE": "228.15"
+    },
+    {
+        "month": "May-12",
+        "NYSE": "223.39"
+    },
+    {
+        "month": "Jun-12",
+        "NYSE": "226.87"
+    },
+    {
+        "month": "Jul-12",
+        "NYSE": "225.09"
+    },
+    {
+        "month": "Aug-12",
+        "NYSE": "226.86"
+    },
+    {
+        "month": "Sep-12",
+        "NYSE": "228.16"
+    },
+    {
+        "month": "Oct-12",
+        "NYSE": "222.74"
+    },
+    {
+        "month": "Nov-12",
+        "NYSE": "221.85"
+    },
+    {
+        "month": "Dec-12",
+        "NYSE": "217.46"
+    },
+    {
+        "month": "Jan-13",
+        "NYSE": "210.47"
+    },
+    {
+        "month": "Feb-13",
+        "NYSE": "203.03"
+    },
+    {
+        "month": "Mar-13",
+        "NYSE": "201.91"
+    },
+    {
+        "month": "Apr-13",
+        "NYSE": "195.33"
+    },
+    {
+        "month": "May-13",
+        "NYSE": "191.00"
+    },
+    {
+        "month": "Jun-13",
+        "NYSE": "185.55"
+    },
+    {
+        "month": "Jul-13",
+        "NYSE": "186.82"
+    },
+    {
+        "month": "Aug-13",
+        "NYSE": "190.61"
+    },
+    {
+        "month": "Sep-13",
+        "NYSE": "189.88"
+    },
+    {
+        "month": "Oct-13",
+        "NYSE": "181.72"
+    },
+    {
+        "month": "Nov-13",
+        "NYSE": "182.50"
+    },
+    {
+        "month": "Dec-13",
+        "NYSE": "186.06"
+    },
+    {
+        "month": "Jan-14",
+        "NYSE": "189.69"
+    },
+    {
+        "month": "Feb-14",
+        "NYSE": "186.88"
+    },
+    {
+        "month": "Mar-14",
+        "NYSE": "185.84"
+    },
+    {
+        "month": "Apr-14",
+        "NYSE": "180.02"
+    },
+    {
+        "month": "May-14",
+        "NYSE": "181.05"
+    },
+    {
+        "month": "Jun-14",
+        "NYSE": "165.26"
+    },
+    {
+        "month": "Jul-14",
+        "NYSE": "166.09"
+    },
+    {
+        "month": "Jan-17",
+        "NYSE": "197.68"
+    },
+    {
+        "month": "Feb-17",
+        "NYSE": "187.56"
+    }
+]
