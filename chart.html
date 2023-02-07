@@ -100,9 +100,7 @@
 
   <div class="flex-container">
 
-    <div class="chart">
-
-    </div>
+    <div id="chart"></div>
 
   </div>
 </body>
@@ -117,18 +115,31 @@
   window.addEventListener('DOMContentLoaded', (event) => {
     var url = 'http://localhost:3000/public/rus.json';
     $.getJSON(url, function (response) {
-      console.log(response);
-      console.log(response.month);
+      for (const item of response) {
+        item.SPSE = parseFloat(item.SPSE);
+        item.NYSE = parseFloat(item.NYSE);
+        let x = item.month.split("-");
+        month = parseInt(x[1]);
+        if (month < 65) {
+          month += 1900;
+        } else {
+          month += 1800;
+        }
+        item.month = x[0] + "-" + month;
+      }
 
       var options = {
         series: [{
           name: 'Russian Index',
-          data: response
+          data: response.map(item => [item.month, item.SPSE])
         }],
         chart: {
           type: 'area',
+          foreColor: "#FFFFFF",
+       
           stacked: false,
-          height: 600,
+          height: 650,
+          width: 1590,
           zoom: {
             type: 'x',
             enabled: true,
@@ -139,13 +150,13 @@
           }
         },
         dataLabels: {
-          enabled: false
+          enabled: false,
         },
         markers: {
           size: 0,
         },
         title: {
-          text: 'Stock Price Movement',
+          text: 'Russian Stock Market Index (1865-2023)',
           align: 'left'
         },
         fill: {
@@ -161,7 +172,7 @@
         yaxis: {
           labels: {
             formatter: function (val) {
-              return (val / 1000000).toFixed(0);
+              return val
             },
           },
           title: {
@@ -173,9 +184,11 @@
         },
         tooltip: {
           shared: false,
+          theme: 'dark',
+          fillSeriesColor: true,
           y: {
             formatter: function (val) {
-              return (val / 1000000).toFixed(0)
+              return val
             }
           }
         }
