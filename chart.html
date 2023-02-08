@@ -119,20 +119,21 @@
 
     if(cont == "NYSE") {
       var titl = 'New York Stock Exchange Composite (1865-2023)';
-      var url = 'http://localhost:3000/public/us/' + cont + '.json';
+      var url = 'http://localhost:3000/public/usa/' + cont + '.json';
     } else if (cont == "SPSE"){
       var titl = 'Saint Petersburg Stock Exchange Index (1865-2023)';
       var url = 'http://localhost:3000/public/russia/' + cont + '.json';
     } else {
       console.log("no data specified");
     }
-    
+
     $.getJSON(url, function (response) {
       
       for (const item of response) {
         item[cont] = parseFloat(item[cont]);
         let x = item.month.split("-");
         month = parseInt(x[1]);
+        
         if (month < 65) {
           month += 1900;
         } else {
