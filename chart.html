@@ -115,12 +115,14 @@
   window.addEventListener('DOMContentLoaded', (event) => {
     let cont = window.location.hash.slice(1);
     console.log(cont);
-    var url = 'http://localhost:3000/public/' + cont + '.json';
+   
 
     if(cont == "NYSE") {
       var titl = 'New York Stock Exchange Composite (1865-2023)';
+      var url = 'http://localhost:3000/public/us/' + cont + '.json';
     } else if (cont == "SPSE"){
       var titl = 'Saint Petersburg Stock Exchange Index (1865-2023)';
+      var url = 'http://localhost:3000/public/russia/' + cont + '.json';
     } else {
       console.log("no data specified");
     }
