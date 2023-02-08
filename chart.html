@@ -115,43 +115,56 @@
   window.addEventListener('DOMContentLoaded', (event) => {
     let cont = window.location.hash.slice(1);
     console.log(cont);
-   
 
-    if(cont == "NYSE") {
+    var title;
+    if (cont == "NYSE") {
       var titl = 'New York Stock Exchange Composite (1865-2023)';
       var url = 'http://localhost:3000/public/usa/' + cont + '.json';
-    } else if (cont == "SPSE"){
+      title = 'Stock Index';
+
+    } else if (cont == "SPSE") {
       var titl = 'Saint Petersburg Stock Exchange Index (1865-2023)';
       var url = 'http://localhost:3000/public/russia/' + cont + '.json';
+      title = 'Stock Index';
+    } else if (cont == "RUS_INDPRO") {
+      var titl = 'Russia Industrial Production Index (1860-2023)';
+      var url = 'http://localhost:3000/public/russia/' + cont + '.json';
+      title = 'Industrial Production';
+
     } else {
       console.log("no data specified");
     }
-
     $.getJSON(url, function (response) {
-      
-      for (const item of response) {
-        item[cont] = parseFloat(item[cont]);
-        let x = item.month.split("-");
-        month = parseInt(x[1]);
-        
-        if (month < 65) {
-          month += 1900;
-        } else {
-          month += 1800;
-        }
-        item.month = x[0] + "-" + month;
-        
-      }
+
       console.log(response);
       var options = {
         series: [{
-          name: 'Stock Index',
-          data: response.map(item => [item.month, item[cont]])
+          name: [title],
+          data: response.map(item => {
+
+            var first;
+            var second;
+            if (cont == "NYSE") {
+              first = item.month;
+              second = item[cont];
+            } else if (cont == "SPSE") {
+              first = item.month;
+              second = item[cont];
+            } else if (cont == "RUS_INDPRO") {
+              first = item.year;
+              second = item.index;
+
+            } else {
+              console.log("no data specified");
+            }
+
+            return [first, second]
+          })
         }],
         chart: {
           type: 'area',
           foreColor: "#FFFFFF",
-       
+
           stacked: false,
           height: 650,
           width: 1590,

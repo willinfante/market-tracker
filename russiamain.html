@@ -57,8 +57,8 @@
 
     .chart {
       position: wrap;
-      width: 300px;
-      height: 200px;
+      width: 290px;
+      height: 190px;
       background-color: #000000;
       color: #FFFFFF;
       border: 3px solid #FFFFFF;
@@ -69,16 +69,19 @@
     .title {
       width: 30%;
     }
- 
+
     .top-box {
       position: relative;
+      margin-left: 14%;
     }
 
     .middle-box {
       position: relative;
+
     }
+
     img {
-      width: 90% ;
+      width: 90%;
     }
   </style>
 </head>
@@ -92,48 +95,47 @@
     placeholder="Search a stock or commodity..."></input>
 
   <div class="flex-container">
-
     <div class="top-box">
-         <b class="title" >&nbsp</b>
-         <a href="http://localhost:3000/main.html"> <- BACK </a>
-         <div class="chart">	
+      <b class="title">&nbsp</b>
+      <a href="http://localhost:3000/"> <- BACK </a>
+          <div class="chart">
             <p>COMPOSITE HISTORICAL STOCK DATA</p>
-            <img src="chart.png" class="img" draggable="false"></src>
-   	    <a href="http://localhost:3000/chart.html#SPSE">MORE...</a>
-         </div>
-         <div class="chart">
+            <img src="http://localhost:3000/public/chart.png" class="img" draggable="false"></src>
+            <a href="http://localhost:3000/chart#SPSE">MORE...</a>
+          </div>
+          <div class="chart">
             <p>INDUSTRIAL PRODUCTION</p>
-	    <img src="chart.png" class="img" draggable="false"></src>
-   	    <a href="http://localhost:3000/chart.html#RUS_INDPRO">MORE...</a>
-         </div>
-  	 <div class="chart">
-	    <img src="chart.png" class="img"  draggable="false"></src>
-         </div>
-     </div>
+            <img src="http://localhost:3000/public/chart.png" class="img" draggable="false"></src>
+            <a href="http://localhost:3000/chart#RUS_INDPRO">MORE...</a>
+          </div>
+          <div class="chart">
+            <img src="http://localhost:3000/public/chart.png" class="img" draggable="false"></src>
+          </div>
+    </div>
     <div class="middle-box">
-    <b class="title">Russia Economic Data</b>
-         <div class="chart">	
-            <img src="chart.png" class="img"  draggable="false"></src>
-         </div>
-         <div class="chart">
-	    <img src="chart.png" class="img" draggable="false"></src>
-         </div>
-  	 <div class="chart">
-	    <img src="chart.png" class="img" draggable="false"></src>
-         </div>
-     </div>
+      <b class="title">Russia Economic Data</b>
+      <div class="chart">
+        <img src="http://localhost:3000/public/chart.png" class="img" draggable="false"></src>
+      </div>
+      <div class="chart">
+        <img src="http://localhost:3000/public/chart.png" class="img" draggable="false"></src>
+      </div>
+      <div class="chart">
+        <img src="http://localhost:3000/public/chart.png" class="img" draggable="false"></src>
+      </div>
+    </div>
     <div class="middle-box">
-        <b class="title">&nbsp</b>
-          <div class="chart">	
-            <img src="chart.png" class="img"  draggable="false"></src>
-         </div>
-         <div class="chart">
-	    <img src="chart.png" class="img" draggable="false"></src>
-         </div>
-  	 <div class="chart">
-	    <img src="chart.png" class="img" draggable="false"></src>
-         </div>
-     </div>
+      <b class="title">&nbsp</b>
+      <div class="chart">
+        <img src="http://localhost:3000/public/chart.png" class="img" draggable="false"></src>
+      </div>
+      <div class="chart">
+        <img src="http://localhost:3000/public/chart.png" class="img" draggable="false"></src>
+      </div>
+      <div class="chart">
+        <img src="http://localhost:3000/public/chart.png" class="img" draggable="false"></src>
+      </div>
+    </div>
   </div>
 </body>
 <script>
