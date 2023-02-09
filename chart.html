@@ -130,7 +130,10 @@
       var titl = 'Russia Industrial Production Index (1860-2023)';
       var url = 'http://localhost:3000/public/russia/' + cont + '.json';
       title = 'Industrial Production';
-
+    } else if (cont == "RUS_GDP") {
+      var titl = 'Russia National Income (1885-2021)';
+      var url = 'http://localhost:3000/public/russia/' + cont + '.json';
+      title = 'GDP';
     } else {
       console.log("no data specified");
     }
@@ -150,7 +153,7 @@
             } else if (cont == "SPSE") {
               first = item.month;
               second = item[cont];
-            } else if (cont == "RUS_INDPRO") {
+            } else if (cont == "RUS_INDPRO" || cont == "RUS_GDP") {
               first = item.year;
               second = item.index;
 
