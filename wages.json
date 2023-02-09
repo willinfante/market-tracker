@@ -1,0 +1,205 @@
+[
+    {
+        "Year": "1928,",
+        "basicindgoods": "100",
+        "undefined": "100",
+        "avgannualwage": "100",
+        "pricestatecoopstores,": "100"
+    },
+    {
+        "Year": "1929",
+        "basicindgoods": "98",
+        "undefined": "114",
+        "avgannualwage": "-",
+        "pricestatecoopstores,": "-"
+    },
+    {
+        "Year": "1930",
+        "basicindgoods": "96",
+        "undefined": "133",
+        "avgannualwage": "-",
+        "pricestatecoopstores,": "-"
+    },
+    {
+        "Year": "1931",
+        "basicindgoods": "96",
+        "undefined": "160",
+        "avgannualwage": "-",
+        "pricestatecoopstores,": "630"
+    },
+    {
+        "Year": "1932",
+        "basicindgoods": "97",
+        "undefined": "214.5",
+        "avgannualwage": "230",
+        "pricestatecoopstores,": "769"
+    },
+    {
+        "Year": "1933",
+        "basicindgoods": "100",
+        "undefined": "223",
+        "avgannualwage": "400",
+        "pricestatecoopstores,": "1,500-2,000"
+    },
+    {
+        "Year": "1934",
+        "basicindgoods": "101",
+        "undefined": "264",
+        "avgannualwage": "-",
+        "pricestatecoopstores,": "1,200-1,680"
+    },
+    {
+        "Year": "1935",
+        "basicindgoods": "103",
+        "undefined": "323",
+        "avgannualwage": "-",
+        "pricestatecoopstores,": "900-1,470"
+    },
+    {
+        "Year": "1936",
+        "basicindgoods": "157",
+        "undefined": "406",
+        "avgannualwage": "700",
+        "pricestatecoopstores,": "700+"
+    },
+    {
+        "Year": "1937",
+        "basicindgoods": "175",
+        "undefined": "432",
+        "avgannualwage": "700",
+        "pricestatecoopstores,": "700+"
+    },
+    {
+        "Year": "1938",
+        "basicindgoods": "180",
+        "undefined": "493",
+        "avgannualwage": "-",
+        "pricestatecoopstores,": "-"
+    },
+    {
+        "Year": "1939",
+        "basicindgoods": "201",
+        "undefined": "-",
+        "avgannualwage": "840",
+        "pricestatecoopstores,": "-"
+    },
+    {
+        "Year": "1940",
+        "basicindgoods": "231",
+        "undefined": "579",
+        "avgannualwage": "1000",
+        "pricestatecoopstores,": "1,780"
+    },
+    {
+        "Year": "1941",
+        "basicindgoods": "240",
+        "undefined": "-",
+        "avgannualwage": "-",
+        "pricestatecoopstores,": "2,220"
+    },
+    {
+        "Year": "1942",
+        "basicindgoods": "244",
+        "undefined": "-",
+        "avgannualwage": "-",
+        "pricestatecoopstores,": "13,850"
+    },
+    {
+        "Year": "1943",
+        "basicindgoods": "246",
+        "undefined": "-",
+        "avgannualwage": "-",
+        "pricestatecoopstores,": "31,220"
+    },
+    {
+        "Year": "1944",
+        "basicindgoods": "249",
+        "undefined": "822",
+        "avgannualwage": "-",
+        "pricestatecoopstores,": "26,335"
+    },
+    {
+        "Year": "1945",
+        "basicindgoods": "249",
+        "undefined": "-",
+        "avgannualwage": "2,545",
+        "pricestatecoopstores,": "13,575"
+    },
+    {
+        "Year": "1946",
+        "basicindgoods": "249",
+        "undefined": "-",
+        "avgannualwage": "3,180",
+        "pricestatecoopstores,": "-"
+    },
+    {
+        "Year": "1947",
+        "basicindgoods": "249",
+        "undefined": "992",
+        "avgannualwage": "3,895",
+        "pricestatecoopstores,": "11,530"
+    },
+    {
+        "Year": "1948",
+        "basicindgoods": "249",
+        "undefined": "-",
+        "avgannualwage": "3,235",
+        "pricestatecoopstores,": "4,175"
+    },
+    {
+        "Year": "1949",
+        "basicindgoods": "669",
+        "undefined": "-",
+        "avgannualwage": "2,770",
+        "pricestatecoopstores,": "2,880"
+    },
+    {
+        "Year": "1950",
+        "basicindgoods": "556",
+        "undefined": "-",
+        "avgannualwage": "2,215",
+        "pricestatecoopstores,": "2,770"
+    },
+    {
+        "Year": "1951",
+        "basicindgoods": "551",
+        "undefined": "1,128",
+        "avgannualwage": "2,035",
+        "pricestatecoopstores,": "2,810"
+    },
+    {
+        "Year": "1952",
+        "basicindgoods": "523",
+        "undefined": "1,140",
+        "avgannualwage": "1,925",
+        "pricestatecoopstores,": "3,100"
+    },
+    {
+        "Year": "1953",
+        "basicindgoods": "523",
+        "undefined": "1,164",
+        "avgannualwage": "1,740",
+        "pricestatecoopstores,": "2,595"
+    },
+    {
+        "Year": "1954",
+        "basicindgoods": "523",
+        "undefined": "1,190",
+        "avgannualwage": "1,640",
+        "pricestatecoopstores,": "2,855"
+    },
+    {
+        "Year": "1955",
+        "basicindgoods": "510",
+        "undefined": "1,204",
+        "avgannualwage": "1,640",
+        "pricestatecoopstores,": "2,855"
+    },
+    {
+        "Year": "1956",
+        "basicindgoods": "497",
+        "undefined": "1,240",
+        "avgannualwage": "1,640",
+        "pricestatecoopstores,": "2,610"
+    }
+]
