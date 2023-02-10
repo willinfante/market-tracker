@@ -134,7 +134,15 @@
       var titl = 'Russia National Income (1885-2021)';
       var url = 'http://localhost:3000/public/russia/' + cont + '.json';
       title = 'GDP';
-    } else {
+    } else if (cont == "RUS_GRAIN") {
+      var titl = 'Russia Grain Production (1860-2015)';
+      var url = 'http://localhost:3000/public/russia/' + cont + '.json';
+      title = 'MIL TONS';
+    } else if (cont == "RUS_PRICEINDEX") {
+      var titl = 'Russia Consumer Price Index (1886-2021)';
+      var url = 'http://localhost:3000/public/russia/' + cont + '.json';
+      title = 'Price Index';
+    }else {
       console.log("no data specified");
     }
     $.getJSON(url, function (response) {
@@ -153,7 +161,7 @@
             } else if (cont == "SPSE") {
               first = item.month;
               second = item[cont];
-            } else if (cont == "RUS_INDPRO" || cont == "RUS_GDP") {
+            } else if (cont == "RUS_INDPRO" || cont == "RUS_GDP" || cont == "RUS_GRAIN" || cont == "RUS_PRICEINDEX") {
               first = item.year;
               second = item.index;
 
@@ -206,6 +214,7 @@
               return val
             },
           },
+          logarithmic: false,
           title: {
             text: 'Price'
           },
