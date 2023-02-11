@@ -146,29 +146,32 @@
       console.log("no data specified");
     }
     $.getJSON(url, function (response) {
-
+      var loga;
       console.log(response);
       var options = {
         series: [{
           name: [title],
           data: response.map(item => {
-
+            
             var first;
             var second;
             if (cont == "NYSE") {
               first = item.month;
               second = item[cont];
+              loga = false;
             } else if (cont == "SPSE") {
               first = item.month;
               second = item[cont];
+              loga = false;
             } else if (cont == "RUS_INDPRO" || cont == "RUS_GDP" || cont == "RUS_GRAIN" || cont == "RUS_PRICEINDEX") {
               first = item.year;
               second = item.index;
-
+              loga = false;
             } else {
               console.log("no data specified");
             }
 
+            //949656946504 = 1923 price index
             return [first, second]
           })
         }],
@@ -211,10 +214,16 @@
         yaxis: {
           labels: {
             formatter: function (val) {
-              return val
+              if (cont == "SPSE") {
+                return val;
+              } else {
+                return val.toExponential();
+              }
+
+
             },
           },
-          logarithmic: false,
+          logarithmic: loga,
           title: {
             text: 'Price'
           },
