@@ -142,7 +142,11 @@
       var titl = 'Russia Consumer Price Index (1886-2021)';
       var url = 'http://localhost:3000/public/russia/' + cont + '.json';
       title = 'Price Index';
-    }else {
+    } else if (cont == "RUS_GOLD") {
+      var titl = 'Russia Gold Price (1761-1920)';
+      var url = 'http://localhost:3000/public/russia/' + cont + '.json';
+      title = '1913=100';
+    } else {
       console.log("no data specified");
     }
     $.getJSON(url, function (response) {
@@ -152,7 +156,7 @@
         series: [{
           name: [title],
           data: response.map(item => {
-            
+
             var first;
             var second;
             if (cont == "NYSE") {
@@ -167,6 +171,11 @@
               first = item.year;
               second = item.index;
               loga = false;
+            } else if (cont == "RUS_GOLD") {
+              first = item.year;
+              second = item.index;
+              loga = true;
+
             } else {
               console.log("no data specified");
             }
@@ -214,13 +223,7 @@
         yaxis: {
           labels: {
             formatter: function (val) {
-              if (cont == "SPSE") {
                 return val;
-              } else {
-                return val.toExponential();
-              }
-
-
             },
           },
           logarithmic: loga,
