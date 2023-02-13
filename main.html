@@ -294,7 +294,11 @@
   function getdata(url) {
     fetch(url).then(function (response) {
       // The API call was successful!
-      return response.json();
+      then((response) => response.text())
+        .then((text) => {
+          //document.getElementById('rus').innerHTML = text;
+          return text
+        });
 
     }).then(function (data) {
       // This is the JSON from our response
