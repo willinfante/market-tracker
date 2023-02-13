@@ -1,289 +1,310 @@
 <!DOCTYPE html>
-<html> 
+<html>
+
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="initPicks.js"></script>
 
-<style>	
-body, html {
-  background-color: #555555; 
-  color: #FFFFFF;
-  margin: 0px;
-  padding: 0px;
+  <style>
+    body,
+    html {
+      background-color: #555555;
+      color: #FFFFFF;
+      overflow: hidden;
+    }
 
-}
+    .container {
+      width: 100vw;
+      height: 20vh;
+    }
 
-a:link, a:visited {
-  background-color: black;
-  color: white;
-}
+    a:link,
+    a:visited {
+      background-color: black;
+      color: white;
+    }
 
-a:hover, a:active {
-  background-color: white;
-  color: black;
-}
-.flex-container {
-  display: flex;
-}
-.ticker-tape {
-  
-  height: 30px;
-  background-color: #FFFFFF;
-  color: #000000;
-  text-align:center;
-  border: 3px solid #555555;
+    a:hover,
+    a:active {
+      background-color: white;
+      color: black;
+    }
 
-}
+    .ticker-tape {
+      height: 12%;
+      width: 100vw;
+      background-color: #FFFFFF;
+      color: #000000;
+      text-align: center;
+      border: 1px solid #555555;
+    }
 
-.search {
- 
-  width: 100%;
-  height: 5px;
-  background-color: #000000;
-  color: gray;
-  text-indent: 30px;
-  font-size: 90%;  
-  padding: 2rem;
-  border: 3px solid #555555;
+    .search {
 
-}
-/* First column */
-.news {
-  width: 30%;
-  height: 300px;
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 1%;
-  text-align: center;
-  border: 3px solid #555555;
+      width: 100%;
+      height: 2%;
+      background-color: #000000;
+      color: gray;
+      text-indent: 30px;
+      font-size: 90%;
+      padding: 2rem;
+      border: 1px solid #555555;
 
-}
+    }
 
+    /* First column */
+    .news {
+      width: 30vw;
+      height: 30vh;
+      background-color: #000000;
+      color: #FFFFFF;
+      padding: 1%;
+      text-align: center;
+      border: 1px solid #555555;
+    }
 
-.chart {
-  position: wrap;
-  width:40%;
-  height: 300px;
-  background-color: #000000;
-  color: #FFFFFF;  
-  border: 3px solid #555555;
-}
+    .chart {
+      width: 40vw;
+      height: 30vh;
+      background-color: #000000;
+      padding: 1%;
+      color: #FFFFFF;
+      border: 1px solid #555555;
+      flex-wrap: inherit;
+    }
 
-.forex {
-  width: 370%;
-  height: 150px;
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 1%;
-  text-align: center;
-  border: 3px solid #555555;
-  position: relative;
-}
+    .forex {
+      width: 30vw;
+      height: 30vh;
+      background-color: #000000;
+      color: #FFFFFF;
+      padding: 1%;
+      text-align: center;
+      border: 1px solid #555555;
+    }
 
-.bond {
-  width: 370%;
-  height: 150px;
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 1%;
-  text-align: center;
-  border: 3px solid #555555;
-  position: relative;
-}
+    .econ {
+      width: 33.33%;
+      height: 30%;
+      background-color: #000000;
+      color: #FFFFFF;
+      padding: 1%;
+      text-align: center;
+      border: 1px solid #555555;
 
-.rightbox {
-  position: relative;
-}
+    }
 
-.bottombox {
- 
-  position: relative;
+    .com {
+      width: 33.33%;
+      height: 30%;
+      background-color: #000000;
+      color: #FFFFFF;
+      padding: 1%;
+      text-align: center;
+      border: 1px solid #555555;
 
-}
+    }
 
+    .sectors {
+      width: 33.33%;
+      height: 30%;
+      background-color: #000000;
+      color: #FFFFFF;
+      padding: 1%;
+      text-align: center;
+      border: 1px solid #555555;
 
-/*     end  */
-.econ {
-  width:385px;
-  height: 267px;
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 1%;
-  text-align: center;
-  border: 3px solid #555555;
-  position: relative;
-}
+    }
 
-.port {
-  width:512px;
-  height: 267px;
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 1%;
-  text-align: center;
-  border: 3px solid #555555;
-  position: relative;
-}
+    .countries {
+      width: 50%;
+      height: 30%;
+      background-color: #000000;
+      color: #FFFFFF;
+      padding: 1%;
+      text-align: center;
+      border: 1px solid #555555;
 
-.com {
-  width:385px;
-  height: 267px;
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 1%;
-  text-align: center;
-  border: 3px solid #555555;
-  position: relative;
-}
+    }
 
-.sectors {
-  width: 512px;
-  height: 267px;
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 1%;
-  text-align: center;
-  border: 3px solid #555555;
+    .port {
+      width: 50%;
+      height: 30%;
+      background-color: #000000;
+      color: #FFFFFF;
+      padding: 1%;
+      text-align: center;
+      border: 1px solid #555555;
 
-  position: relative;
-  display: wrap;
-}
-.countries {
-  width: 30%;
-  height: 534px;
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 1%;
-  text-align: center;
-  border: 3px solid #555555;
-}
-
-
-
-
-
-</style>
-</head> 
+    }
+  </style>
+</head>
 
 <body>
   <div class="ticker-tape">
     <p>UNP 154.2</p>
-
-
   </div>
 
-  <input type="text" class="search" autocomplete="off" id="search" onkeydown="esckeyPressed(event, this);" placeholder="Search a stock or commodity..."></input>
-   
-<div class="flex-container">
-  <div class="news">  
-    <p>NEWS</p>
-   
-    <p>JP Morgan announces new stock offering</p>
-  </div>
+  <input type="text" class="search" autocomplete="off" id="search" onkeydown="esckeyPressed(event, this);"
+    placeholder="Search a stock or commodity..."></input>
 
-  <div class="chart">  
-      <!-- TradingView Widget BEGIN -->
-      <div class="tradingview-widget-container">
-        <div id="tradingview_888b5"></div>
-        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/AMEX-SPY/" rel="noopener" target="_blank"><span class="blue-text">SPY chart</span></a> by TradingView</div>
-        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-        <script type="text/javascript">
-        new TradingView.widget(
-        {
-        "autosize": false,
-        "width": 500,
-        "height": 290,
-        "symbol": "AMEX:SPY",
-        "interval": "1",
-        "timezone": "exchange",
-        "theme": "dark",
-        "style": "1",
-        "locale": "en",
-        "toolbar_bg": "#f1f3f6",
-        "enable_publishing": false,
-        "hide_top_toolbar": true,
-        "hide_legend": true,
-        "details": true,
-        "save_image": false,
-        "container_id": "tradingview_888b5"
-      }
-        );
-        </script>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 news">
+        <p>NEWS</p>
+        <p>JP Morgan announces new stock offering</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
       </div>
-      <!-- TradingView Widget END -->
-  </div>
+      <div class="col-lg-4 chart">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_888b5"></div>
+          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/AMEX-SPY/"
+              rel="noopener" target="_blank"><span class="blue-text">SPY chart</span></a> by TradingView</div>
+          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+          <script type="text/javascript">
+            new TradingView.widget(
+              {
+                "autosize": true,
+                "symbol": "AMEX:SPY",
+                "interval": "1",
+                "timezone": "exchange",
+                "theme": "dark",
+                "style": "1",
+                "locale": "en",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false,
+                "hide_top_toolbar": true,
+                "hide_legend": true,
+                "details": true,
+                "save_image": false,
+                "container_id": "tradingview_888b5"
+              }
+            );
+          </script>
 
-<div class ="rightbox">
-  <div class="forex">  
-    <p>FOREX RATES</p>
-   
-    <p>Gold         1,053.32</p>
-  </div>
+        </div>
+      </div>
+      <div class="col-lg-4 forex">
 
-  <div class="bond">  
-    <p>BOND RATES</p>
-   
-    <p>Gold         1,053.32</p>
-  </div>
-</div>
-</div>
-</body>
-<body>
-<div class="flex-container">
- 
-  <div class="bottombox">
-    <div class="econ">  
+        <p>FOREX RATES</p>
+
+        <p>Gold 1,053.32</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 econ">
         <p>ECONOMIC RELEASES</p>
-   
         <p>Existing Home sales Thurs 10:00</p>
-     </div>
-     <div class="com">  
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+
+      </div>
+
+      <div class="col-lg-4 com">
         <p>Commodities</p>
-   
         <p>Crude Oil</p>
-     </div>
-  </div>
- <div class="bottombox">
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
 
-   <div class="port">  
-       <p>PORTFOLIO</p>
-   
-       <a href="https://www.google.com">ROTH IRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp $10,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp +50(1.56%)</a> <br>
-       <a href="https://www.google.com">401K &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp $1,500,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp +100(.2%)</a>
-     </div>
+      </div>
+      <div class="col-lg-4 sectors">
+        <p>SECTORS</p>
+        <p>Financials +.3(4.5%)</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
 
-     <div class="sectors">  
-       <p>USA SECTORS</p>
-   
-       <p>ROTH 10k</p>
-     </div>
-  </div>
-  <div class="countries">  
-    <p>Countries</p>
-   
-    <p>USA   ---------------------------   2.0%</p>
-    <a href="http://localhost:3000/russia">RUSSIA</a>
-  </div>
-</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-5 port">
+        <p>PORTFOLIO</p>
+
+        <a href="https://www.google.com">ROTH
+          IRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp $10,000
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+          +50(1.56%)</a> <br>
+        <a href="https://www.google.com">401K
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp $1,500,000
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+          +100(.2%)</a>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+      </div>
+      <div class="col-lg-5 countries">
+        <p>COUNTRIES</p>
+        <p>USA --------------------------- 2.0%</p>
+        <div id="rus"><a href="http://localhost:3000/russia"></a></div>
+
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+
+      </div>
+
+    </div>
 </body>
+
 <script>
-  function esckeyPressed(event, input) { 
-     var code = event.charCode || event.keyCode; //Read key input
-     if(code == 27) {                          //If esc key is pressed
-        input.value = '';  //clear the search box
-     } 
+
+  var rus = '';
+  function esckeyPressed(event, input) {
+    var code = event.charCode || event.keyCode; //Read key input
+    if (code == 27) {                          //If esc key is pressed
+      input.value = '';  //clear the search box
+    }
 
   }
+  $(document).ready(function () {
+    $('#container').width($(window).width());
+  });
+  function getdata(url) {
+    fetch(url).then(function (response) {
+      // The API call was successful!
+      return response.json();
 
-
-
- jQuery.getFeed({
-   url : "http://feeds.marketwatch.com/marketwatch/topstories/",
-   success : function(output){
-     alert(output);
-   }
-
- });
+    }).then(function (data) {
+      // This is the JSON from our response
+      console.log(data);
+    }).catch(function (err) {
+      // There was an error
+      console.warn('Something went wrong.', err);
+    });
+  }
+  document.getElementById('rus').innerHTML = getdata('http://localhost:3000/rus-stock-index-data-320588309485');
 </script>
+
 </html>
