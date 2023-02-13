@@ -100,7 +100,7 @@ app.get('/rus-stock-index-data-320588309485', (req, res) =>{
     } else {
       dir = '';
     }
-    res.send('RUSSIA STOCK INDEX ' + dir + Math.round(10*chg)/10 + ' (' + Math.round(10*pct)/10 + '%' + ')');
+    res.send('"' + 'RUSSIA STOCK INDEX ' + dir + Math.round(10*chg)/10 + ' (' + Math.round(10*pct)/10 + '%' + ')' + '"');
 
   });
 });
