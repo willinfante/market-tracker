@@ -137,25 +137,63 @@ app.get('/commodities', (req, res) => {
         } else {
           dir[2] = '';
         }
-        console.log(chag[0]);
-        let crude = prices[2] + " " + dir[2] + Math.round(10 * chag[2]) / 10 + ' (' + Math.round(10 * perc[2]) / 10 + '%' + ')';
-        let gold = prices[1] + " " + dir[1] + Math.round(10 * chag[1]) / 10 + ' (' + Math.round(10 * perc[1]) / 10 + '%' + ')';
-        let silver = prices[0] + " " + dir[0] + Math.round(10 * chag[0]) / 10 + ' (' + Math.round(10 * perc[0]) / 10 + '%' + ')';
-        var result = [];
+        getData(0, 'ZW=F', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+          let currentPrice = price;
+          let previousPrice = prevClose;
+          chag[3] = String(currentPrice - previousPrice);
+          perc[3] = String(((price - prevClose) / prevClose) * 100);
+          prices[3] = currentPrice;
+          if (Math.sign(chg) > 0) {
+            dir[3] = '+';
+          } else {
+            dir[3] = '';
+          }
+          getData(0, 'KC=F', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+            let currentPrice = price;
+            let previousPrice = prevClose;
+            chag[4] = String(currentPrice - previousPrice);
+            perc[4] = String(((price - prevClose) / prevClose) * 100);
+            prices[4] = currentPrice;
+            if (Math.sign(chg) > 0) {
+              dir[4] = '+';
+            } else {
+              dir[4] = '';
+            }
+            getData(0, 'HO=F', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+              let currentPrice = price;
+              let previousPrice = prevClose;
+              chag[5] = String(currentPrice - previousPrice);
+              perc[5] = String(((price - prevClose) / prevClose) * 100);
+              prices[5] = currentPrice;
+              if (Math.sign(chg) > 0) {
+                dir[5] = '+';
+              } else {
+                dir[5] = '';
+              }
+              let heatingoil = prices[5] + " " + dir[5] + Math.round(10 * chag[5]) / 10 + ' (' + Math.round(10 * perc[3]) / 10 + '%' + ')';
 
-         
-        result.push({"crude": crude });
-        result.push({ "Silver": silver });
-        result.push({ "Gold": gold });
+              let coffee = prices[4] + " " + dir[4] + Math.round(10 * chag[4]) / 10 + ' (' + Math.round(10 * perc[3]) / 10 + '%' + ')';
+              let wheat = prices[3] + " " + dir[3] + Math.round(10 * chag[2]) / 10 + ' (' + Math.round(10 * perc[3]) / 10 + '%' + ')';
+              let crude = prices[2] + " " + dir[2] + Math.round(10 * chag[2]) / 10 + ' (' + Math.round(10 * perc[2]) / 10 + '%' + ')';
+              let gold = prices[1] + " " + dir[1] + Math.round(10 * chag[1]) / 10 + ' (' + Math.round(10 * perc[1]) / 10 + '%' + ')';
+              let silver = prices[0] + " " + dir[0] + Math.round(10 * chag[0]) / 10 + ' (' + Math.round(10 * perc[0]) / 10 + '%' + ')';
+              var result = [];
 
-    
-        res.contentType('application/json');
-        res.send(JSON.stringify(result));
+              result.push({ "crude": crude });
+              result.push({ "Silver": silver });
+              result.push({ "Gold": gold });
+              result.push({ "Wheat": wheat });
+              result.push({ "coffee": coffee });
+              result.push({ "heat": heatingoil });
+
+
+              res.contentType('application/json');
+              res.send(JSON.stringify(result));
+            });
+          });
+        });
       });
-
     });
-
-    //res.send('Gold ' + dir + Math.round(10*chg)/10 + ' (' + Math.round(10*pct)/10 + '%' + ')');
   });
 });
 app.get('/rus-stock-index-data-320588309485', (req, res) => {

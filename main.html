@@ -221,10 +221,14 @@
 
       <div class="col-lg-4 com">
         <p style="font-size:large">COMMODITIES</p>
-        
-        <p>Crude Oil   &nbsp;&nbsp;&nbsp;<span id='cl'></span></p>
-        <p>Gold &nbsp;&nbsp;&nbsp;  <span id='gc'></span></p>
-        <p>Silver &nbsp;&nbsp;&nbsp;<span id='sl'></span></p>
+
+        <a href="https://www.tradingview.com/chart/?symbol=TVC%3AUSOIL">Crude Oil &nbsp;&nbsp;&nbsp;&nbsp;<span id='cl'></span></a><br>
+        <a href="https://www.wsj.com/market-data/quotes/futures/US/HEATING%20OIL">Heating Oil &nbsp;&nbsp;&nbsp;&nbsp;<span id='ho'></span></a><br>
+        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=TVC%3AGOLD">Gold &nbsp;&nbsp;&nbsp;&nbsp;<span id='gc'></span></a><br>
+        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=TVC%3ASILVER">Silver &nbsp;&nbsp;&nbsp;&nbsp;<span id='sl'></span></a><br>
+        <a href="https://www.tradingview.com/chart/?symbol=CBOT%3AZW1%21"> Wheat &nbsp;&nbsp;&nbsp;&nbsp;<span id='wt'></span></a><br>
+        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=ICEUS%3AKC1%21">Coffee &nbsp;&nbsp;&nbsp;&nbsp;<span id='cof'></span></a><br>
+
       </div>
 
       <div class="col-lg-4 sectors">
@@ -296,7 +300,10 @@
         response.json().then((data) => {
           let ccol = '';
           let scol = '';
+          let wcol = '';
           let gcol = '';
+          let cofcol = '';
+          let hcol = '';
           if(data[0]['crude'].includes('-')){
             ccol = 'red';
           } else {
@@ -312,11 +319,28 @@
           } else {
             gcol = 'green';
           }
+          if(data[3]['Wheat'].includes('-')){
+            wcol = 'red';
+          } else {
+            wcol = 'green';
+          }
+          if(data[4]['coffee'].includes('-')){
+            cofcol = 'red';
+          } else {
+            cofcol = 'green';
+          }
+          if(data[5]['heat'].includes('-')){
+            hcol = 'red';
+          } else {
+            hcol = 'green';
+          }
 
           document.getElementById('cl').innerHTML = '<span style="color:'+ccol+'">'+ data[0]['crude'] + '</span>';
           document.getElementById('sl').innerHTML = '<span style="color:'+scol+'">'+ data[1]['Silver'] + '</span>';
           document.getElementById('gc').innerHTML = '<span style="color:'+gcol+'">'+ data[2]['Gold'] + '</span>';
-
+          document.getElementById('wt').innerHTML = '<span style="color:'+wcol+'">'+ data[3]['Wheat'] + '</span>';
+          document.getElementById('cof').innerHTML = '<span style="color:'+cofcol+'">'+ data[4]['coffee'] + '</span>';
+          document.getElementById('ho').innerHTML = '<span style="color:'+hcol+'">'+ data[5]['heat'] + '</span>';
         })
       }
       return response.text();
