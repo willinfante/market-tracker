@@ -85,7 +85,80 @@ app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
 
-app.get('/rus-stock-index-data-320588309485', (req, res) =>{
+
+app.get('/commodities', (req, res) => {
+  var dir = [];
+  var chag = [];
+  var perc = [];
+  var prices = [];
+  var packet = [];
+  getData(0, 'SI=F', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+    let currentPrice = price;
+    let previousPrice = prevClose;
+    let chg = currentPrice - previousPrice;
+    let pct = ((price - prevClose) / prevClose) * 100;
+    console.log('CHANGE: ' + chg);
+    console.log('PERCENT: ' + pct);
+
+    chag[0] = String(chg);
+    perc[0] = String(pct);
+    prices[0] = currentPrice;
+    console.log(price[0]);
+    console.log(chag);
+    //console.log(chg);
+    // console.log(currentPrice);
+    // console.log(previousPrice);
+    if (Math.sign(chg) > 0) {
+      dir[0] = '+';
+    } else {
+      dir[0] = '';
+    }
+    console.log(perc[0]);
+    getData(0, 'GC=F', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+      let currentPrice = price;
+      let previousPrice = prevClose;
+      chag[1] = String(currentPrice - previousPrice);
+      perc[1] = String(((price - prevClose) / prevClose) * 100);
+      prices[1] = currentPrice;
+      if (Math.sign(chg) > 0) {
+        dir[1] = '+';
+      } else {
+        dir[1] = '';
+      }
+      console.log(chag[0]);
+      getData(0, 'CL=F', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+        let currentPrice = price;
+        let previousPrice = prevClose;
+        chag[2] = String(currentPrice - previousPrice);
+        perc[2] = String(((price - prevClose) / prevClose) * 100);
+        prices[2] = currentPrice;
+        if (Math.sign(chg) > 0) {
+          dir[2] = '+';
+        } else {
+          dir[2] = '';
+        }
+        console.log(chag[0]);
+        let crude = prices[2] + " " + dir[2] + Math.round(10 * chag[2]) / 10 + ' (' + Math.round(10 * perc[2]) / 10 + '%' + ')';
+        let gold = prices[1] + " " + dir[1] + Math.round(10 * chag[1]) / 10 + ' (' + Math.round(10 * perc[1]) / 10 + '%' + ')';
+        let silver = prices[0] + " " + dir[0] + Math.round(10 * chag[0]) / 10 + ' (' + Math.round(10 * perc[0]) / 10 + '%' + ')';
+        var result = [];
+
+         
+        result.push({"crude": crude });
+        result.push({ "Silver": silver });
+        result.push({ "Gold": gold });
+
+    
+        res.contentType('application/json');
+        res.send(JSON.stringify(result));
+      });
+
+    });
+
+    //res.send('Gold ' + dir + Math.round(10*chg)/10 + ' (' + Math.round(10*pct)/10 + '%' + ')');
+  });
+});
+app.get('/rus-stock-index-data-320588309485', (req, res) => {
   getData(0, 'RSXJ', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
     let currentPrice = price;
     let previousPrice = prevClose;
@@ -100,7 +173,27 @@ app.get('/rus-stock-index-data-320588309485', (req, res) =>{
     } else {
       dir = '';
     }
-    res.send('"' + 'RUSSIA STOCK INDEX ' + dir + Math.round(10*chg)/10 + ' (' + Math.round(10*pct)/10 + '%' + ')' + '"');
+    res.send('RUSSIA STOCK INDEX ' + dir + Math.round(10 * chg) / 10 + ' (' + Math.round(10 * pct) / 10 + '%' + ')');
+
+  });
+});
+
+app.get('/us-stock-index-data-320588309485', (req, res) => {
+  getData(0, 'SPY', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+    let currentPrice = price;
+    let previousPrice = prevClose;
+    let chg = currentPrice - previousPrice;
+    let pct = ((price - prevClose) / prevClose) * 100;
+    let dir = '';
+    console.log(chg);
+    console.log(currentPrice);
+    console.log(previousPrice);
+    if (Math.sign(chg) > 0) {
+      dir = '+';
+    } else {
+      dir = '';
+    }
+    res.send('US STOCK INDEX ' + dir + Math.round(10 * chg) / 10 + ' (' + Math.round(10 * pct) / 10 + '%' + ')');
 
   });
 });

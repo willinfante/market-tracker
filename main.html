@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="initPicks.js"></script>
+
 
   <style>
     body,
@@ -105,7 +105,7 @@
       padding: 1%;
       text-align: center;
       border: 1px solid #555555;
-
+      font-size:medium;
     }
 
     .sectors {
@@ -154,7 +154,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4 news">
-        <p>NEWS</p>
+        <p style="font-size:large">NEWS</p>
         <p>JP Morgan announces new stock offering</p>
         <p> &nbsp;</p>
         <p> &nbsp;</p>
@@ -194,7 +194,7 @@
       </div>
       <div class="col-lg-4 forex">
 
-        <p>FOREX RATES</p>
+        <p style="font-size:large">FOREX RATES</p>
 
         <p>Gold 1,053.32</p>
         <p> &nbsp;</p>
@@ -209,7 +209,7 @@
     </div>
     <div class="row">
       <div class="col-lg-4 econ">
-        <p>ECONOMIC RELEASES</p>
+        <p style="font-size:large">ECONOMIC RELEASES</p>
         <p>Existing Home sales Thurs 10:00</p>
         <p> &nbsp;</p>
         <p> &nbsp;</p>
@@ -220,17 +220,15 @@
       </div>
 
       <div class="col-lg-4 com">
-        <p>Commodities</p>
-        <p>Crude Oil</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-
+        <p style="font-size:large">COMMODITIES</p>
+        
+        <p>Crude Oil   &nbsp;&nbsp;&nbsp;<span id='cl'></span></p>
+        <p>Gold &nbsp;&nbsp;&nbsp;  <span id='gc'></span></p>
+        <p>Silver &nbsp;&nbsp;&nbsp;<span id='sl'></span></p>
       </div>
+
       <div class="col-lg-4 sectors">
-        <p>SECTORS</p>
+        <p style="font-size:large">SECTORS</p>
         <p>Financials +.3(4.5%)</p>
         <p> &nbsp;</p>
         <p> &nbsp;</p>
@@ -242,7 +240,7 @@
     </div>
     <div class="row">
       <div class="col-lg-5 port">
-        <p>PORTFOLIO</p>
+        <p style="font-size:large">PORTFOLIO</p>
 
         <a href="https://www.google.com">ROTH
           IRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp $10,000
@@ -261,9 +259,9 @@
         <p> &nbsp;</p>
       </div>
       <div class="col-lg-5 countries">
-        <p>COUNTRIES</p>
-        <p>USA --------------------------- 2.0%</p>
-        <div id="rus"><a href="http://localhost:3000/russia"></a></div>
+        <p style="font-size:large">COUNTRIES</p>
+        <a id="us" href="http://localhost:3000/unitedstates"></a> <br>
+        <a id="rus" href="http://localhost:3000/russia"></a>
 
         <p> &nbsp;</p>
         <p> &nbsp;</p>
@@ -291,24 +289,52 @@
   $(document).ready(function () {
     $('#container').width($(window).width());
   });
-  function getdata(url) {
+  function getdata(url, id) {
     fetch(url).then(function (response) {
       // The API call was successful!
-      then((response) => response.text())
-        .then((text) => {
-          //document.getElementById('rus').innerHTML = text;
-          return text
-        });
+      if (id == 'com') {
+        response.json().then((data) => {
+          let ccol = '';
+          let scol = '';
+          let gcol = '';
+          if(data[0]['crude'].includes('-')){
+            ccol = 'red';
+          } else {
+            ccol = 'green';
+          }
+          if(data[1]['Silver'].includes('-')){
+            scol = 'red';
+          } else {
+            scol = 'green';
+          }
+          if(data[2]['Gold'].includes('-')){
+            gcol = 'red';
+          } else {
+            gcol = 'green';
+          }
 
-    }).then(function (data) {
-      // This is the JSON from our response
-      console.log(data);
+          document.getElementById('cl').innerHTML = '<span style="color:'+ccol+'">'+ data[0]['crude'] + '</span>';
+          document.getElementById('sl').innerHTML = '<span style="color:'+scol+'">'+ data[1]['Silver'] + '</span>';
+          document.getElementById('gc').innerHTML = '<span style="color:'+gcol+'">'+ data[2]['Gold'] + '</span>';
+
+        })
+      }
+      return response.text();
+    }).then(function (html) {
+
+      // Convert the HTML string into a document object
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      document.getElementById(id).innerHTML = new XMLSerializer().serializeToString(doc);
+
     }).catch(function (err) {
       // There was an error
       console.warn('Something went wrong.', err);
     });
   }
-  document.getElementById('rus').innerHTML = getdata('http://localhost:3000/rus-stock-index-data-320588309485');
+  getdata('http://localhost:3000/rus-stock-index-data-320588309485', 'rus');
+  getdata('http://localhost:3000/us-stock-index-data-320588309485', 'us');
+  getdata('http://localhost:3000/commodities', 'com');
 </script>
 
 </html>
