@@ -105,7 +105,7 @@
       padding: 1%;
       text-align: center;
       border: 1px solid #555555;
-      font-size:medium;
+      font-size: medium;
     }
 
     .sectors {
@@ -222,23 +222,50 @@
       <div class="col-lg-4 com">
         <p style="font-size:large">COMMODITIES</p>
 
-        <a href="https://www.tradingview.com/chart/?symbol=TVC%3AUSOIL">Crude Oil &nbsp;&nbsp;&nbsp;&nbsp;<span id='cl'></span></a><br>
-        <a href="https://www.wsj.com/market-data/quotes/futures/US/HEATING%20OIL">Heating Oil &nbsp;&nbsp;&nbsp;&nbsp;<span id='ho'></span></a><br>
-        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=TVC%3AGOLD">Gold &nbsp;&nbsp;&nbsp;&nbsp;<span id='gc'></span></a><br>
-        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=TVC%3ASILVER">Silver &nbsp;&nbsp;&nbsp;&nbsp;<span id='sl'></span></a><br>
-        <a href="https://www.tradingview.com/chart/?symbol=CBOT%3AZW1%21"> Wheat &nbsp;&nbsp;&nbsp;&nbsp;<span id='wt'></span></a><br>
-        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=ICEUS%3AKC1%21">Coffee &nbsp;&nbsp;&nbsp;&nbsp;<span id='cof'></span></a><br>
+        <a href="https://www.tradingview.com/chart/?symbol=TVC%3AUSOIL">Crude Oil &nbsp;&nbsp;&nbsp;&nbsp;<span
+            id='cl'></span></a><br>
+        <a href="https://www.wsj.com/market-data/quotes/futures/US/HEATING%20OIL">Heating Oil
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='ho'></span></a><br>
+        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=TVC%3AGOLD">Gold &nbsp;&nbsp;&nbsp;&nbsp;<span
+            id='gc'></span></a><br>
+        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=TVC%3ASILVER">Silver &nbsp;&nbsp;&nbsp;&nbsp;<span
+            id='sl'></span></a><br>
+        <a href="https://www.tradingview.com/chart/?symbol=CBOT%3AZW1%21"> Wheat &nbsp;&nbsp;&nbsp;&nbsp;<span
+            id='wt'></span></a><br>
+        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=ICEUS%3AKC1%21">Coffee &nbsp;&nbsp;&nbsp;&nbsp;<span
+            id='cof'></span></a><br>
+        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=NYMEX%3ARB1%21">Gasoline
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='ga'></span></a><br>
 
       </div>
 
       <div class="col-lg-4 sectors">
         <p style="font-size:large">SECTORS</p>
-        <p>Financials +.3(4.5%)</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
+        <a href="https://finance.yahoo.com/chart/^SP500-15">Materials
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='mat'></span></a><br>
+        <a href="https://finance.yahoo.com/chart/^SP500-30">Consumer Staples
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='staples'></span></a><br>
+        <a href="https://finance.yahoo.com/chart/^SP500-45">Technology &nbsp;&nbsp;&nbsp;&nbsp;<span
+            id='tech'></span></a><br>
+        <a href="https://finance.yahoo.com/chart/^SPCSEFP">Financials
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='fin'></span></a><br>
+        <a href="https://finance.yahoo.com/chart/^GSPE">Energy &nbsp;&nbsp;&nbsp;&nbsp;<span
+            id='ene'></span></a><br>
+        <a href="https://finance.yahoo.com/chart/^SP500-20">Industrials
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='ind'></span></a><br>
+        <a href="https://finance.yahoo.com/chart/^SP500-60">Real Estate
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='re'></span></a><br>
+        <a href="https://finance.yahoo.com/chart/^SP500-50">Communications &nbsp;&nbsp;&nbsp;&nbsp;<span
+            id='com'></span></a><br>
+        <a href="https://finance.yahoo.com/chart/^SP500-55">Utilities
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='ut'></span></a><br>
+        <a href="https://finance.yahoo.com/chart/^SP500-25">Consumer Discretionary
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='cond'></span></a><br>
+        <a href="https://finance.yahoo.com/chart/^SP500-35">Healthcare
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='health'></span></a><br>
+
+
+
 
       </div>
     </div>
@@ -304,43 +331,132 @@
           let gcol = '';
           let cofcol = '';
           let hcol = '';
-          if(data[0]['crude'].includes('-')){
+          let gascol = '';
+          if (data[0]['crude'].includes('-')) {
             ccol = 'red';
           } else {
             ccol = 'green';
           }
-          if(data[1]['Silver'].includes('-')){
+          if (data[1]['Silver'].includes('-')) {
             scol = 'red';
           } else {
             scol = 'green';
           }
-          if(data[2]['Gold'].includes('-')){
+          if (data[2]['Gold'].includes('-')) {
             gcol = 'red';
           } else {
             gcol = 'green';
           }
-          if(data[3]['Wheat'].includes('-')){
+          if (data[3]['Wheat'].includes('-')) {
             wcol = 'red';
           } else {
             wcol = 'green';
           }
-          if(data[4]['coffee'].includes('-')){
+          if (data[4]['coffee'].includes('-')) {
             cofcol = 'red';
           } else {
             cofcol = 'green';
           }
-          if(data[5]['heat'].includes('-')){
+          if (data[5]['heat'].includes('-')) {
             hcol = 'red';
           } else {
             hcol = 'green';
           }
+          if (data[6]['gas'].includes('-')) {
+            gascol = 'red';
+          } else {
+            gascol = 'green';
+          }
 
-          document.getElementById('cl').innerHTML = '<span style="color:'+ccol+'">'+ data[0]['crude'] + '</span>';
-          document.getElementById('sl').innerHTML = '<span style="color:'+scol+'">'+ data[1]['Silver'] + '</span>';
-          document.getElementById('gc').innerHTML = '<span style="color:'+gcol+'">'+ data[2]['Gold'] + '</span>';
-          document.getElementById('wt').innerHTML = '<span style="color:'+wcol+'">'+ data[3]['Wheat'] + '</span>';
-          document.getElementById('cof').innerHTML = '<span style="color:'+cofcol+'">'+ data[4]['coffee'] + '</span>';
-          document.getElementById('ho').innerHTML = '<span style="color:'+hcol+'">'+ data[5]['heat'] + '</span>';
+          document.getElementById('cl').innerHTML = '<span style="color:' + ccol + '">' + data[0]['crude'] + '</span>';
+          document.getElementById('sl').innerHTML = '<span style="color:' + scol + '">' + data[1]['Silver'] + '</span>';
+          document.getElementById('gc').innerHTML = '<span style="color:' + gcol + '">' + data[2]['Gold'] + '</span>';
+          document.getElementById('wt').innerHTML = '<span style="color:' + wcol + '">' + data[3]['Wheat'] + '</span>';
+          document.getElementById('cof').innerHTML = '<span style="color:' + cofcol + '">' + data[4]['coffee'] + '</span>';
+          document.getElementById('ho').innerHTML = '<span style="color:' + hcol + '">' + data[5]['heat'] + '</span>';
+          document.getElementById('ga').innerHTML = '<span style="color:' + gascol + '">' + data[6]['gas'] + '</span>';
+
+        })
+      } else if (id == "sec") {
+        response.json().then((data) => {
+          let ccol = '';
+          let scol = '';
+          let wcol = '';
+          let gcol = '';
+          let cofcol = '';
+          let hcol = '';
+          let gascol = '';
+          let comcol = '';
+          let utcol = '';
+          let condcol = '';
+          let healthcol = '';
+          if (data[0]['staples'].includes('-')) {
+            ccol = 'red';
+          } else {
+            ccol = 'green';
+          }
+          if (data[1]['mat'].includes('-')) {
+            scol = 'red';
+          } else {
+            scol = 'green';
+          }
+          if (data[2]['tech'].includes('-')) {
+            gcol = 'red';
+          } else {
+            gcol = 'green';
+          }
+          if (data[3]['re'].includes('-')) {
+            wcol = 'red';
+          } else {
+            wcol = 'green';
+          }
+          if (data[4]['ind'].includes('-')) {
+            cofcol = 'red';
+          } else {
+            cofcol = 'green';
+          }
+          if (data[5]['fin'].includes('-')) {
+            hcol = 'red';
+          } else {
+            hcol = 'green';
+          }
+          if (data[6]['ene'].includes('-')) {
+            gascol = 'red';
+          } else {
+            gascol = 'green';
+          }
+          if (data[7]['com'].includes('-')) {
+            comcol = 'red';
+          } else {
+            comcol = 'green';
+          }
+          if (data[8]['ut'].includes('-')) {
+            utcol = 'red';
+          } else {
+            utcol = 'green';
+          }
+          if (data[9]['cond'].includes('-')) {
+            condcol = 'red';
+          } else {
+            condcol = 'green';
+          }
+          if (data[10]['health'].includes('-')) {
+            healthcol = 'red';
+          } else {
+            healthcol = 'green';
+          }
+          document.getElementById('staples').innerHTML = '<span style="color:' + ccol + '">' + data[0]['staples'] + '</span>';
+          document.getElementById('mat').innerHTML = '<span style="color:' + scol + '">' + data[1]['mat'] + '</span>';
+          document.getElementById('tech').innerHTML = '<span style="color:' + gcol + '">' + data[2]['tech'] + '</span>';
+          document.getElementById('re').innerHTML = '<span style="color:' + wcol + '">' + data[3]['re'] + '</span>';
+          document.getElementById('ind').innerHTML = '<span style="color:' + cofcol + '">' + data[4]['ind'] + '</span>';
+          document.getElementById('fin').innerHTML = '<span style="color:' + hcol + '">' + data[5]['fin'] + '</span>';
+          document.getElementById('ene').innerHTML = '<span style="color:' + gascol + '">' + data[6]['ene'] + '</span>';
+          document.getElementById('com').innerHTML = '<span style="color:' + comcol + '">' + data[7]['com'] + '</span>';
+          document.getElementById('ut').innerHTML = '<span style="color:' + utcol + '">' + data[8]['ut'] + '</span>';
+          document.getElementById('cond').innerHTML = '<span style="color:' + condcol + '">' + data[9]['cond'] + '</span>';
+          document.getElementById('health').innerHTML = '<span style="color:' + healthcol + '">' + data[10]['health'] + '</span>';
+
         })
       }
       return response.text();
@@ -359,6 +475,7 @@
   getdata('http://localhost:3000/rus-stock-index-data-320588309485', 'rus');
   getdata('http://localhost:3000/us-stock-index-data-320588309485', 'us');
   getdata('http://localhost:3000/commodities', 'com');
+  getdata('http://localhost:3000/sectors', 'sec');
 </script>
 
 </html>
