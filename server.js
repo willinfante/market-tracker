@@ -9,6 +9,7 @@ var hostname = '127.0.0.1';
 var port = 3000;
 var command = "https:\/\/query1.finance.yahoo.com/v7/finance/quote?fields=symbol,longName,shortName,regularMarketPrice,regularMarketTime,regularMarketChange,regularMarketDayHigh,regularMarketDayLow,regularMarketPrice,regularMarketOpen,regularMarketVolume,averageDailyVolume3Month,marketCap,bid,ask,dividendYield,dividendsPerShare,exDividendDate,trailingPE,priceToSales,tarketPricecMean&formatted=false&symbols="
 
+//
 //Retrieve data from yahoo finance
 function getData(num, symb, callback) {
 
@@ -204,6 +205,83 @@ app.get('/commodities', (req, res) => {
   });
 });
 
+app.get('/forex', (req, res) => {
+  var dir = [];
+  var chag = [];
+  var perc = [];
+  var prices = [];
+  var packet = [];
+  getData(0, 'EURUSD=X', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+    let currentPrice = price;
+    let previousPrice = prevClose;
+    let chg = currentPrice - previousPrice;
+    let pct = ((price - prevClose) / prevClose) * 100;
+    console.log('CHANGE: ' + chg);
+    console.log('PERCENT: ' + pct);
+
+    chag[0] = String(chg);
+    perc[0] = String(pct);
+    prices[0] = currentPrice;
+
+    if (Math.sign(chag[0]) > 0) {
+      dir[0] = '+';
+    } else {
+      dir[0] = '';
+    }
+    getData(0, 'JPY=X', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+      let currentPrice = price;
+      let previousPrice = prevClose;
+      chag[1] = String(currentPrice - previousPrice);
+      perc[1] = String(((price - prevClose) / prevClose) * 100);
+      prices[1] = currentPrice;
+      if (Math.sign(chag[1]) > 0) {
+        dir[1] = '+';
+      } else {
+        dir[1] = '';
+      }
+      console.log(chag[0]);
+      getData(0, 'RUB=X', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+        let currentPrice = price;
+        let previousPrice = prevClose;
+        chag[2] = String(currentPrice - previousPrice);
+        perc[2] = String(((price - prevClose) / prevClose) * 100);
+        prices[2] = currentPrice;
+        if (Math.sign(chag[2]) > 0) {
+          dir[2] = '+';
+        } else {
+          dir[2] = '';
+        }
+        getData(0, 'CNY=X', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+          let currentPrice = price;
+          let previousPrice = prevClose;
+          chag[3] = String(currentPrice - previousPrice);
+          perc[3] = String(((price - prevClose) / prevClose) * 100);
+          prices[3] = currentPrice;
+          if (Math.sign(chag[3]) > 0) {
+            dir[3] = '+';
+          } else {
+            dir[3] = '';
+          }
+
+
+          let euro = prices[3] + " " + dir[3] + Math.round(10 * chag[3]) / 10 + ' (' + Math.round(10 * perc[3]) / 10 + '%' + ')';
+          let japan = prices[2] + " " + dir[2] + Math.round(10 * chag[2]) / 10 + ' (' + Math.round(10 * perc[2]) / 10 + '%' + ')';
+          let russia = prices[1] + " " + dir[1] + Math.round(10 * chag[1]) / 10 + ' (' + Math.round(10 * perc[1]) / 10 + '%' + ')';
+          let canada = prices[0] + " " + dir[0] + Math.round(10 * chag[0]) / 10 + ' (' + Math.round(10 * perc[0]) / 10 + '%' + ')';
+          var result = [];
+
+          result.push({ "EUR/USD": euro });
+          result.push({ "USD/JPY": japan });
+          result.push({ "USD/RUB": russia });
+          result.push({ "RUS/CAD": canada });
+
+          res.contentType('application/json');
+          res.send(JSON.stringify(result));
+        });
+      });
+    });
+  });
+});
 app.get('/sectors', (req, res) => {
   var dir = [];
   var chag = [];
