@@ -127,7 +127,6 @@
       padding: 1%;
       text-align: center;
       border: 1px solid #555555;
-
     }
 
     .port {
@@ -210,9 +209,12 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-4 econ">
-        <p style="font-size:large">ECONOMIC RELEASES</p>
-        <p>Existing Home sales Thurs 10:00</p>
+    <div class="col-lg-4 econ">
+        <p style="font-size:large">COUNTRIES</p>
+        <a id="us" href="http://localhost:3000/unitedstates"></a> <br>
+        <a id="rus" href="http://localhost:3000/russia"></a>
+
+        <p> &nbsp;</p>
         <p> &nbsp;</p>
         <p> &nbsp;</p>
         <p> &nbsp;</p>
@@ -220,7 +222,6 @@
         <p> &nbsp;</p>
 
       </div>
-
       <div class="col-lg-4 com">
         <p style="font-size:large">COMMODITIES</p>
 
@@ -284,22 +285,30 @@
         <p> &nbsp;</p>
         <p> &nbsp;</p>
         <p> &nbsp;</p>
-        <p> &nbsp;</p>
+      
       </div>
-      <div class="col-lg-5 countries">
-        <p style="font-size:large">COUNTRIES</p>
-        <a id="us" href="http://localhost:3000/unitedstates"></a> <br>
-        <a id="rus" href="http://localhost:3000/russia"></a>
+      
+<div class="col-lg-4 countries">
+        <p style="font-size:large">ECONOMIC RELEASES</p>
+     <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/economic-calendar/" rel="noopener" target="_blank"><span class="blue-text">Economic calendar</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+  {
+  "width": "100%",
+  "height": "100%",
+  "colorTheme": "dark",
+  "isTransparent": true,
+  "locale": "en",
+  "importanceFilter": "0,1",
+  "currencyFilter": "USD"
+}
+  </script>
+</div>
+<!-- TradingView Widget END --
 
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-
-      </div>
+      </div>  
 
     </div>
 </body>
