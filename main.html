@@ -144,8 +144,49 @@
 
 <body>
   <div class="ticker-tape">
-    <p>UNP 154.2</p>
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async>
+          {
+            "symbols": [
+              {
+                "description": "NASDAQ 100",
+                "proName": "NASDAQ:NDX"
+              },
+              {
+                "description": "JP Morgan Chase & Co.",
+                "proName": "NYSE:JPM"
+              },
+              {
+                "description": "ProShares Ultra Bloomberg Crude Oil",
+                "proName": "AMEX:UCO"
+              },
+              {
+                "description": "ProShares Short Real Estate",
+                "proName": "AMEX:REK"
+              },
+              {
+                "description": "Apple, Inc.",
+                "proName": "NASDAQ:AAPL"
+              },
+              {
+                "description": "Tesla, Inc.",
+                "proName": "NASDAQ:TSLA"
+              }
+            ],
+              "showSymbolLogo": true,
+                "colorTheme": "light",
+                  "isTransparent": true,
+                    "largeChartUrl": "",
+                      "displayMode": "adaptive",
+                        "locale": "en"
+          }
+        </script>
+    </div>
   </div>
+  <!-- TradingView Widget END -->
 
   <input type="text" class="search" autocomplete="off" id="search" onkeydown="esckeyPressed(event, this);"
     placeholder="Search a stock or commodity..."></input>
@@ -194,22 +235,22 @@
       <div class="col-lg-4 forex">
 
         <p style="font-size:large">FOREX RATES</p>
-
-        <p style="font-size:large">SECTORS</p>
-        <a href="https://finance.yahoo.com/chart/^SP500-15">Euro/USD
+        <p style="font-size:small">One US Dollar is equal to...</p>
+        <a href="https://finance.yahoo.com/chart/EURUSD=X">Euro
           &nbsp;&nbsp;&nbsp;&nbsp;<span id='euro'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/^SP500-30">Japanese Dollar
+        <a href="https://finance.yahoo.com/chart/JPY=X">Japanese Yen
           &nbsp;&nbsp;&nbsp;&nbsp;<span id='jpy'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/^SP500-45">Ruble 
+        <a href="https://finance.yahoo.com/chart/RUB=X">Ruble
           &nbsp;&nbsp;&nbsp;&nbsp;<span id='rub'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/^SPCSEFP">Canadian Dollar
+        <a href="https://finance.yahoo.com/chart/CNY=X">Chinese Yuan
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='cny'></span></a><br>
+        <a href="https://finance.yahoo.com/chart/CAD=X">Canadian Dollar
           &nbsp;&nbsp;&nbsp;&nbsp;<span id='cad'></span></a><br>
-
 
       </div>
     </div>
     <div class="row">
-    <div class="col-lg-4 econ">
+      <div class="col-lg-4 econ">
         <p style="font-size:large">COUNTRIES</p>
         <a id="us" href="http://localhost:3000/unitedstates"></a> <br>
         <a id="rus" href="http://localhost:3000/russia"></a>
@@ -285,28 +326,30 @@
         <p> &nbsp;</p>
         <p> &nbsp;</p>
         <p> &nbsp;</p>
-      
+
       </div>
-      
-<div class="col-lg-4 countries">
+
+      <div class="col-lg-4 countries">
         <p style="font-size:large">ECONOMIC RELEASES</p>
-     <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/economic-calendar/" rel="noopener" target="_blank"><span class="blue-text">Economic calendar</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
-  {
-  "width": "100%",
-  "height": "100%",
-  "colorTheme": "dark",
-  "isTransparent": true,
-  "locale": "en",
-  "importanceFilter": "0,1",
-  "currencyFilter": "USD"
-}
-  </script>
-</div>
-<!-- TradingView Widget END --
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/economic-calendar/"
+              rel="noopener" target="_blank"><span class="blue-text">Economic calendar</span></a> by TradingView</div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js"
+            async>
+              {
+                "width": "100%",
+                  "height": "100%",
+                    "colorTheme": "dark",
+                      "isTransparent": true,
+                        "locale": "en",
+                          "importanceFilter": "0,1",
+                            "currencyFilter": "USD"
+              }
+            </script>
+        </div>
+        <!-- TradingView Widget END --
 
       </div>  
 
@@ -471,32 +514,39 @@
           let j = '';
           let r = '';
           let c = '';
+          let cn = '';
 
           if (data[0]['EUR/USD'].includes('-')) {
-            ccol = 'red';
+            e = 'red';
           } else {
-            ccol = 'green';
+            e = 'green';
           }
-          if (data[1]['USD/JPY'].includes('-')) {
-            scol = 'red';
+          if (data[1]['JPY/USD'].includes('-')) {
+            j = 'red';
           } else {
-            scol = 'green';
+            j = 'green';
           }
-          if (data[2]['USD/RUB'].includes('-')) {
-            gcol = 'red';
+          if (data[2]['RUB/USD'].includes('-')) {
+            r = 'red';
           } else {
-            gcol = 'green';
+            r = 'green';
           }
-          if (data[3]['RUS/CAD'].includes('-')) {
-            wcol = 'red';
+          if (data[3]['CNY/USD'].includes('-')) {
+            c = 'red';
           } else {
-            wcol = 'green';
+            c = 'green';
           }
+          if (data[4]['CAD/USD'].includes('-')) {
+            cn = 'red';
+          } else {
+            cn = 'green';
+          }
+          document.getElementById('euro').innerHTML = '<span style="color:' + e + '">' + data[0]['EUR/USD'] + '</span>';
+          document.getElementById('jpy').innerHTML = '<span style="color:' + j + '">' + data[1]['JPY/USD'] + '</span>';
+          document.getElementById('rub').innerHTML = '<span style="color:' + r + '">' + data[2]['RUB/USD'] + '</span>';
+          document.getElementById('cny').innerHTML = '<span style="color:' + c + '">' + data[3]['CNY/USD'] + '</span>';
+          document.getElementById('cad').innerHTML = '<span style="color:' + cn + '">' + data[4]['CAD/USD'] + '</span>';
 
-          document.getElementById('euro').innerHTML = '<span style="color:' + ccol + '">' + data[0]['EUR/USD'] + '</span>';
-          document.getElementById('jpy').innerHTML = '<span style="color:' + ccol + '">' + data[0]['USD/JPY'] + '</span>';
-          document.getElementById('rub').innerHTML = '<span style="color:' + scol + '">' + data[1]['USD/RUB'] + '</span>';
-          document.getElementById('cad').innerHTML = '<span style="color:' + gcol + '">' + data[2]['RUS/CAD'] + '</span>';
 
         })
       }

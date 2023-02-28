@@ -58,6 +58,31 @@ function getData(num, symb, callback) {
   });
 }
 
+function returnData(symbol, callback) {
+  let currentPrice;
+  let ch;
+  let changeofprice;
+  let percentchange;
+  let dataArray = [];
+
+  getData(0, symbol, function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+    currentPrice = price;
+    ch = '';
+    changeofprice = String(currentPrice - prevClose);
+    percentchange = String(((price - prevClose) / prevClose) * 100);
+    if (Math.sign(changeofprice) > 0) {
+      ch = '+';
+    } else {
+      ch = '';
+    }
+    dataArray[0] = changeofprice;
+    dataArray[1] = percentchange;
+    dataArray[2] = currentPrice;
+    dataArray[3] = ch;
+
+    var result = callback(dataArray[0], dataArray[1], dataArray[2], dataArray[3]);
+  });
+}
 
 app = express();
 
@@ -92,91 +117,55 @@ app.get('/commodities', (req, res) => {
   var chag = [];
   var perc = [];
   var prices = [];
-  var packet = [];
-  getData(0, 'SI=F', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-    let currentPrice = price;
-    let previousPrice = prevClose;
-    let chg = currentPrice - previousPrice;
-    let pct = ((price - prevClose) / prevClose) * 100;
-    console.log('CHANGE: ' + chg);
-    console.log('PERCENT: ' + pct);
 
-    chag[0] = String(chg);
-    perc[0] = String(pct);
-    prices[0] = currentPrice;
+  returnData('SI=F', function (chng, pctt, crt, sym) {
 
-    if (Math.sign(chag[0]) > 0) {
-      dir[0] = '+';
-    } else {
-      dir[0] = '';
-    }
-    getData(0, 'GC=F', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-      let currentPrice = price;
-      let previousPrice = prevClose;
-      chag[1] = String(currentPrice - previousPrice);
-      perc[1] = String(((price - prevClose) / prevClose) * 100);
-      prices[1] = currentPrice;
-      if (Math.sign(chag[1]) > 0) {
-        dir[1] = '+';
-      } else {
-        dir[1] = '';
-      }
-      console.log(chag[0]);
-      getData(0, 'CL=F', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-        let currentPrice = price;
-        let previousPrice = prevClose;
-        chag[2] = String(currentPrice - previousPrice);
-        perc[2] = String(((price - prevClose) / prevClose) * 100);
-        prices[2] = currentPrice;
-        if (Math.sign(chag[2]) > 0) {
-          dir[2] = '+';
-        } else {
-          dir[2] = '';
-        }
-        getData(0, 'ZW=F', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-          let currentPrice = price;
-          let previousPrice = prevClose;
-          chag[3] = String(currentPrice - previousPrice);
-          perc[3] = String(((price - prevClose) / prevClose) * 100);
-          prices[3] = currentPrice;
-          if (Math.sign(chag[3]) > 0) {
-            dir[3] = '+';
-          } else {
-            dir[3] = '';
-          }
-          getData(0, 'KC=F', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-            let currentPrice = price;
-            let previousPrice = prevClose;
-            chag[4] = String(currentPrice - previousPrice);
-            perc[4] = String(((price - prevClose) / prevClose) * 100);
-            prices[4] = currentPrice;
-            if (Math.sign(chag[4]) > 0) {
-              dir[4] = '+';
-            } else {
-              dir[4] = '';
-            }
-            getData(0, 'HO=F', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-              let currentPrice = price;
-              let previousPrice = prevClose;
-              chag[5] = String(currentPrice - previousPrice);
-              perc[5] = String(((price - prevClose) / prevClose) * 100);
-              prices[5] = currentPrice;
-              if (Math.sign(chag[5]) > 0) {
-                dir[5] = '+';
-              } else {
-                dir[5] = '';
-              }
-              getData(0, 'RB=F', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-                let currentPrice = price;
-                let previousPrice = prevClose;
-                chag[6] = String(currentPrice - previousPrice);
-                perc[6] = String(((price - prevClose) / prevClose) * 100);
-                prices[6] = currentPrice;
-                if (Math.sign(chag[6]) > 0) {
-                  dir[6] = '+';
-                } else {
-                  dir[6] = '';
-                }
+    chag[0] = chng;
+    perc[0] = pctt;
+    prices[0] = crt;
+    dir[0] = sym;
+
+    returnData('GC=F', function (chng, pctt, crt, sym) {
+
+      chag[1] = chng;
+      perc[1] = pctt;
+      prices[1] = crt;
+      dir[1] = sym;
+      
+      returnData('CL=F', function (chng, pctt, crt, sym) {
+
+        chag[2] = chng;
+        perc[2] = pctt;
+        prices[2] = crt;
+        dir[2] = sym;
+
+        returnData('ZW=F', function (chng, pctt, crt, sym) {
+
+          chag[3] = chng;
+          perc[3] = pctt;
+          prices[3] = crt;
+          dir[3] = sym;
+
+          returnData('KC=F', function (chng, pctt, crt, sym) {
+
+            chag[4] = chng;
+            perc[4] = pctt;
+            prices[4] = crt;
+            dir[4] = sym;
+
+            returnData('HO=F', function (chng, pctt, crt, sym) {
+
+              chag[5] = chng;
+              perc[5] = pctt;
+              prices[5] = crt;
+              dir[5] = sym;
+
+              returnData('RB=F', function (chng, pctt, crt, sym) {
+
+                chag[6] = chng;
+                perc[6] = pctt;
+                prices[6] = crt;
+                dir[6] = sym;
                 let gasoline = prices[6] + " " + dir[6] + Math.round(10 * chag[6]) / 10 + ' (' + Math.round(10 * perc[6]) / 10 + '%' + ')';
                 let heatingoil = prices[5] + " " + dir[5] + Math.round(10 * chag[5]) / 10 + ' (' + Math.round(10 * perc[5]) / 10 + '%' + ')';
                 let coffee = prices[4] + " " + dir[4] + Math.round(10 * chag[4]) / 10 + ' (' + Math.round(10 * perc[4]) / 10 + '%' + ')';
@@ -211,212 +200,146 @@ app.get('/forex', (req, res) => {
   var perc = [];
   var prices = [];
   var packet = [];
-  getData(0, 'EURUSD=X', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-    let currentPrice = price;
-    let previousPrice = prevClose;
-    let chg = currentPrice - previousPrice;
-    let pct = ((price - prevClose) / prevClose) * 100;
-    console.log('CHANGE: ' + chg);
-    console.log('PERCENT: ' + pct);
 
-    chag[0] = String(chg);
-    perc[0] = String(pct);
-    prices[0] = currentPrice;
+  returnData('EURUSD=X', function (chng, pctt, crt, sym) {
 
-    if (Math.sign(chag[0]) > 0) {
-      dir[0] = '+';
-    } else {
-      dir[0] = '';
-    }
-    getData(0, 'JPY=X', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-      let currentPrice = price;
-      let previousPrice = prevClose;
-      chag[1] = String(currentPrice - previousPrice);
-      perc[1] = String(((price - prevClose) / prevClose) * 100);
-      prices[1] = currentPrice;
-      if (Math.sign(chag[1]) > 0) {
-        dir[1] = '+';
-      } else {
-        dir[1] = '';
-      }
-      console.log(chag[0]);
-      getData(0, 'RUB=X', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-        let currentPrice = price;
-        let previousPrice = prevClose;
-        chag[2] = String(currentPrice - previousPrice);
-        perc[2] = String(((price - prevClose) / prevClose) * 100);
-        prices[2] = currentPrice;
-        if (Math.sign(chag[2]) > 0) {
-          dir[2] = '+';
-        } else {
-          dir[2] = '';
-        }
-        getData(0, 'CNY=X', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-          let currentPrice = price;
-          let previousPrice = prevClose;
-          chag[3] = String(currentPrice - previousPrice);
-          perc[3] = String(((price - prevClose) / prevClose) * 100);
-          prices[3] = currentPrice;
-          if (Math.sign(chag[3]) > 0) {
-            dir[3] = '+';
-          } else {
-            dir[3] = '';
-          }
+    chag[0] = chng;
+    perc[0] = pctt;
+    prices[0] = crt;
+    dir[0] = sym;
+
+    returnData('JPY=X', function (chng, pctt, crt, sym) {
+
+      chag[1] = chng;
+      perc[1] = pctt;
+      prices[1] = crt;
+      dir[1] = sym;
+
+      returnData('RUB=X', function (chng, pctt, crt, sym) {
+
+        chag[2] = chng;
+        perc[2] = pctt;
+        prices[2] = crt;
+        dir[2] = sym;
+        returnData('CNY=X', function (chng, pctt, crt, sym) {
+
+          chag[3] = chng;
+          perc[3] = pctt;
+          prices[3] = crt;
+          dir[3] = sym;
+          returnData('CAD=X', function (chng, pctt, crt, sym) {
+
+            chag[4] = chng;
+            perc[4] = pctt;
+            prices[4] = crt;
+            dir[4] = sym;
 
 
-          let euro = prices[3] + " " + dir[3] + Math.round(10 * chag[3]) / 10 + ' (' + Math.round(10 * perc[3]) / 10 + '%' + ')';
-          let japan = prices[2] + " " + dir[2] + Math.round(10 * chag[2]) / 10 + ' (' + Math.round(10 * perc[2]) / 10 + '%' + ')';
-          let russia = prices[1] + " " + dir[1] + Math.round(10 * chag[1]) / 10 + ' (' + Math.round(10 * perc[1]) / 10 + '%' + ')';
-          let canada = prices[0] + " " + dir[0] + Math.round(10 * chag[0]) / 10 + ' (' + Math.round(10 * perc[0]) / 10 + '%' + ')';
-          var result = [];
+            let euro = prices[0] + " " + dir[0] + Math.round(10 * chag[3]) / 10 + ' (' + Math.round(10 * perc[0]) / 10 + '%' + ')';
+            let japan = prices[1] + " " + dir[1] + Math.round(10 * chag[2]) / 10 + ' (' + Math.round(10 * perc[1]) / 10 + '%' + ')';
+            let russia = prices[2] + " " + dir[2] + Math.round(10 * chag[1]) / 10 + ' (' + Math.round(10 * perc[2]) / 10 + '%' + ')';
+            let china = prices[3] + " " + dir[3] + Math.round(10 * chag[0]) / 10 + ' (' + Math.round(10 * perc[3]) / 10 + '%' + ')';
+            let canada = prices[4] + " " + dir[4] + Math.round(10 * chag[0]) / 10 + ' (' + Math.round(10 * perc[4]) / 10 + '%' + ')';
 
-          result.push({ "EUR/USD": euro });
-          result.push({ "USD/JPY": japan });
-          result.push({ "USD/RUB": russia });
-          result.push({ "RUS/CAD": canada });
+            var result = [];
 
-          res.contentType('application/json');
-          res.send(JSON.stringify(result));
+            result.push({ "EUR/USD": euro });
+            result.push({ "JPY/USD": japan });
+            result.push({ "RUB/USD": russia });
+            result.push({ "CNY/USD": china });
+            result.push({ "CAD/USD": canada });
+
+            res.contentType('application/json');
+            res.send(JSON.stringify(result));
+          });
         });
       });
     });
   });
 });
+
 app.get('/sectors', (req, res) => {
   var dir = [];
   var chag = [];
   var perc = [];
   var prices = [];
   var packet = [];
-  getData(0, '^GSPE', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-    let currentPrice = price;
-    let previousPrice = prevClose;
-    let chg = currentPrice - previousPrice;
-    let pct = ((price - prevClose) / prevClose) * 100;
-    console.log('CHANGE: ' + chg);
-    console.log('PERCENT: ' + pct);
+  returnData('GSPE', function (chng, pctt, crt, sym) {
 
-    chag[0] = String(chg);
-    perc[0] = String(pct);
-    prices[0] = currentPrice;
+    chag[0] = chng;
+    perc[0] = pctt;
+    prices[0] = crt;
+    dir[0] = sym;
 
-    if (Math.sign(chag[0]) > 0) {
-      dir[0] = '+';
-    } else {
-      dir[0] = '';
-    }
-    getData(0, '^SPCSEFP', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-      let currentPrice = price;
-      let previousPrice = prevClose;
-      chag[1] = String(currentPrice - previousPrice);
-      perc[1] = String(((price - prevClose) / prevClose) * 100);
-      prices[1] = currentPrice;
-      if (Math.sign(chag[1]) > 0) {
-        dir[1] = '+';
-      } else {
-        dir[1] = '';
-      }
-      console.log(chag[0]);
-      getData(0, '^SP500-20', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-        let currentPrice = price;
-        let previousPrice = prevClose;
-        chag[2] = String(currentPrice - previousPrice);
-        perc[2] = String(((price - prevClose) / prevClose) * 100);
-        prices[2] = currentPrice;
-        if (Math.sign(chag[2]) > 0) {
-          dir[2] = '+';
-        } else {
-          dir[2] = '';
-        }
-        getData(0, '^SP500-60', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-          let currentPrice = price;
-          let previousPrice = prevClose;
-          chag[3] = String(currentPrice - previousPrice);
-          perc[3] = String(((price - prevClose) / prevClose) * 100);
-          prices[3] = currentPrice;
-          if (Math.sign(chag[3]) > 0) {
-            dir[3] = '+';
-          } else {
-            dir[3] = '';
-          }
-          getData(0, '^SP500-45', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-            let currentPrice = price;
-            let previousPrice = prevClose;
-            chag[4] = String(currentPrice - previousPrice);
-            perc[4] = String(((price - prevClose) / prevClose) * 100);
-            prices[4] = currentPrice;
-            if (Math.sign(chag[4]) > 0) {
-              dir[4] = '+';
-            } else {
-              dir[4] = '';
-            }
-            getData(0, '^SP500-15', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-              let currentPrice = price;
-              let previousPrice = prevClose;
-              chag[5] = String(currentPrice - previousPrice);
-              perc[5] = String(((price - prevClose) / prevClose) * 100);
-              prices[5] = currentPrice;
-              if (Math.sign(chag[5]) > 0) {
-                dir[5] = '+';
-              } else {
-                dir[5] = '';
-              }
-              getData(0, '^SP500-30', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-                let currentPrice = price;
-                let previousPrice = prevClose;
-                chag[6] = String(currentPrice - previousPrice);
-                perc[6] = String(((price - prevClose) / prevClose) * 100);
-                prices[6] = currentPrice;
-                if (Math.sign(chag[6]) > 0) {
-                  dir[6] = '+';
-                } else {
-                  dir[6] = '';
-                }
-                getData(0, '^SP500-35', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-                  let currentPrice = price;
-                  let previousPrice = prevClose;
-                  chag[7] = String(currentPrice - previousPrice);
-                  perc[7] = String(((price - prevClose) / prevClose) * 100);
-                  prices[7] = currentPrice;
-                  if (Math.sign(chag[7]) > 0) {
-                    dir[7] = '+';
-                  } else {
-                    dir[7] = '';
-                  }
-                  getData(0, '^SP500-25', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-                    let currentPrice = price;
-                    let previousPrice = prevClose;
-                    chag[8] = String(currentPrice - previousPrice);
-                    perc[8] = String(((price - prevClose) / prevClose) * 100);
-                    prices[8] = currentPrice;
-                    if (Math.sign(chag[8]) > 0) {
-                      dir[8] = '+';
-                    } else {
-                      dir[8] = '';
-                    }
-                    getData(0, '^SP500-55', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-                      let currentPrice = price;
-                      let previousPrice = prevClose;
-                      chag[9] = String(currentPrice - previousPrice);
-                      perc[9] = String(((price - prevClose) / prevClose) * 100);
-                      prices[9] = currentPrice;
-                      console.log('utility change: ' + Math.sign(chag[9]) + " " + chag[9]);
-                      if (Math.sign(chag[9]) > 0) {
-                        dir[9] = '+';
-                      } else {
-                        dir[9] = '';
-                      }
-                      getData(0, '^SP500-50', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
-                        let currentPrice = price;
-                        let previousPrice = prevClose;
-                        chag[10] = String(currentPrice - previousPrice);
-                        perc[10] = String(((price - prevClose) / prevClose) * 100);
-                        prices[10] = currentPrice;
-                        if (Math.sign(chag[10]) > 0) {
-                          dir[10] = '+';
-                        } else {
-                          dir[10] = '';
-                        }
+    returnData('^SP500-40', function (chng, pctt, crt, sym) {
+
+      chag[1] = chng;
+      perc[1] = pctt;
+      prices[1] = crt;
+      dir[1] = sym;
+      returnData('^SP500-20', function (chng, pctt, crt, sym) {
+
+        chag[2] = chng;
+        perc[2] = pctt;
+        prices[2] = crt;
+        dir[2] = sym;
+
+        returnData('^SP500-60', function (chng, pctt, crt, sym) {
+
+          chag[3] = chng;
+          perc[3] = pctt;
+          prices[3] = crt;
+          dir[3] = sym;
+
+          returnData('^SP500-45', function (chng, pctt, crt, sym) {
+
+            chag[4] = chng;
+            perc[4] = pctt;
+            prices[4] = crt;
+            dir[4] = sym;
+
+            returnData('^SP500-15', function (chng, pctt, crt, sym) {
+
+              chag[5] = chng;
+              perc[5] = pctt;
+              prices[5] = crt;
+              dir[5] = sym;
+
+              returnData('^SP500-30', function (chng, pctt, crt, sym) {
+
+                chag[6] = chng;
+                perc[6] = pctt;
+                prices[6] = crt;
+                dir[6] = sym;
+
+                returnData('^SP500-35', function (chng, pctt, crt, sym) {
+
+                  chag[7] = chng;
+                  perc[7] = pctt;
+                  prices[7] = crt;
+                  dir[7] = sym;
+
+                  returnData('^SP500-25', function (chng, pctt, crt, sym) {
+
+                    chag[8] = chng;
+                    perc[8] = pctt;
+                    prices[8] = crt;
+                    dir[8] = sym;
+
+                    returnData('^SP500-55', function (chng, pctt, crt, sym) {
+
+                      chag[9] = chng;
+                      perc[9] = pctt;
+                      prices[9] = crt;
+                      dir[9] = sym;
+
+                      returnData('^SP500-50', function (chng, pctt, crt, sym) {
+
+                        chag[10] = chng;
+                        perc[10] = pctt;
+                        prices[10] = crt;
+                        dir[10] = sym;
+
                         let communications = prices[10] + " " + dir[10] + Math.round(10 * chag[10]) / 10 + ' (' + Math.round(10 * perc[10]) / 10 + '%' + ')';
                         let utilites = prices[9] + " " + dir[9] + Math.round(10 * chag[9]) / 10 + ' (' + Math.round(10 * perc[9]) / 10 + '%' + ')';
                         let consumerdiscretionary = prices[8] + " " + dir[8] + Math.round(10 * chag[8]) / 10 + ' (' + Math.round(10 * perc[8]) / 10 + '%' + ')';
@@ -496,4 +419,9 @@ app.get('/us-stock-index-data-320588309485', (req, res) => {
 
   });
 });
+/*
 //64756853857=1921
+returnData('SPY', function (a, b, c, d) {
+  console.log(a + b + c + d);
+});
+*/
