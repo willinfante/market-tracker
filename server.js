@@ -3,6 +3,7 @@ var https = require('https');
 var fs = require('fs');
 const path = require('path');
 var express = require('express');
+const bodyParser = require('body-parser');
 
 //Variables
 var hostname = '127.0.0.1';
@@ -85,6 +86,12 @@ function returnData(symbol, callback) {
 }
 
 app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/addholding', (req, res) => {
+  // console.log(`Register new holding:${req.body.ticker}, ${req.body.shares}, ${req.body.price}.`);
+  console.log(req.body.ticker);
+});
 
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', ['*']);
@@ -100,6 +107,10 @@ app.get('/', (req, res) => {
 app.get('/russia', (req, res) => {
   res.sendFile(path.join(__dirname, '/russiamain.html'));
 });
+app.get('/unitedstates', (req, res) => {
+  res.sendFile(path.join(__dirname, '/usmain.html'));
+});
+
 
 app.get('/chart', (req, res) => {
   res.sendFile(path.join(__dirname, '/chart.html'));
@@ -131,7 +142,7 @@ app.get('/commodities', (req, res) => {
       perc[1] = pctt;
       prices[1] = crt;
       dir[1] = sym;
-      
+
       returnData('CL=F', function (chng, pctt, crt, sym) {
 
         chag[2] = chng;
@@ -395,7 +406,7 @@ app.get('/rus-stock-index-data-320588309485', (req, res) => {
     } else {
       dir = '';
     }
-    res.send('RUSSIA STOCK INDEX ' + dir + Math.round(10 * chg) / 10 + ' (' + Math.round(10 * pct) / 10 + '%' + ')');
+    res.send('Russian Federation ' + dir + Math.round(10 * chg) / 10 + ' (' + Math.round(10 * pct) / 10 + '%' + ')');
 
   });
 });
@@ -415,7 +426,7 @@ app.get('/us-stock-index-data-320588309485', (req, res) => {
     } else {
       dir = '';
     }
-    res.send('US STOCK INDEX ' + dir + Math.round(10 * chg) / 10 + ' (' + Math.round(10 * pct) / 10 + '%' + ')');
+    res.send('United States ' + dir + Math.round(10 * chg) / 10 + ' (' + Math.round(10 * pct) / 10 + '%' + ')');
 
   });
 });

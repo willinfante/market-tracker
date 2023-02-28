@@ -35,7 +35,7 @@
       background-color: #000000;
       text-align: center;
       width: 80%;
-      margin: auto;
+     margin: auto;
 
 
     }
@@ -46,8 +46,6 @@
       color: #000000;
       text-align: center;
       border: 3px solid #555555;
-      margin-bottom: 2%;
-      padding-bottom: 2.5%;
     }
 
     .search {
@@ -97,49 +95,11 @@
 
 <body>
   <div class="ticker-tape">
-    <!-- TradingView Widget BEGIN -->
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
-        async>
-          {
-            "symbols": [
-              {
-                "description": "NASDAQ 100",
-                "proName": "NASDAQ:NDX"
-              },
-              {
-                "description": "JP Morgan Chase & Co.",
-                "proName": "NYSE:JPM"
-              },
-              {
-                "description": "ProShares Ultra Bloomberg Crude Oil",
-                "proName": "AMEX:UCO"
-              },
-              {
-                "description": "ProShares Short Real Estate",
-                "proName": "AMEX:REK"
-              },
-              {
-                "description": "Apple, Inc.",
-                "proName": "NASDAQ:AAPL"
-              },
-              {
-                "description": "Tesla, Inc.",
-                "proName": "NASDAQ:TSLA"
-              }
-            ],
-              "showSymbolLogo": true,
-                "colorTheme": "light",
-                  "isTransparent": true,
-                    "largeChartUrl": "",
-                      "displayMode": "adaptive",
-                        "locale": "en"
-          }
-        </script>
-    </div>
+    <p>UNP 154.2</p>
   </div>
-  <!-- TradingView Widget END -->
+
+  <input type="text" class="search" autocomplete="off" id="search" onkeydown="esckeyPressed(event, this);"
+    placeholder="Search a stock or commodity..."></input>
 
   <div class="flex-container">
     <div class="top-box">
@@ -148,7 +108,7 @@
           <div class="chart">
             <p>COMPOSITE HISTORICAL STOCK DATA</p>
             <img src="http://localhost:3000/public/chart.png" class="img" draggable="false"></src>
-            <a href="http://localhost:3000/chart#SPSE">MORE...</a>
+            <a href="http://localhost:3000/chart#NYSE">MORE...</a>
           </div>
           <div class="chart">
             <p>INDUSTRIAL PRODUCTION</p>

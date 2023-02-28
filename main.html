@@ -16,9 +16,54 @@
       overflow: hidden;
     }
 
-    .container {
-      width: 100vw;
-      height: 20vh;
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #2a2b33;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      color: 'black';
+      text-align: center;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
     }
 
     a:link,
@@ -57,17 +102,19 @@
 
     /* First column */
     .news {
-      width: 30vw;
+      width: 30%;
       height: 30vh;
       background-color: #000000;
       color: #FFFFFF;
       padding: 1%;
       text-align: center;
       border: 1px solid #555555;
+      overflow: scroll;
+      overflow-x: hidden;
     }
 
     .chart {
-      width: 40vw;
+      width: 40%;
       height: 30vh;
       background-color: #000000;
       padding: 1%;
@@ -77,7 +124,7 @@
     }
 
     .forex {
-      width: 30vw;
+      width: 30%;
       height: 30vh;
       background-color: #000000;
       color: #FFFFFF;
@@ -88,7 +135,7 @@
 
     .econ {
       width: 33.33%;
-      height: 30%;
+      height: 30vh;
       background-color: #000000;
       color: #FFFFFF;
       padding: 1%;
@@ -99,7 +146,7 @@
 
     .com {
       width: 33.33%;
-      height: 30%;
+      height: 30vh;
       background-color: #000000;
       color: #FFFFFF;
       padding: 1%;
@@ -110,7 +157,8 @@
 
     .sectors {
       width: 33.33%;
-      height: 30%;
+      height: 30vh;
+
       background-color: #000000;
       color: #FFFFFF;
       padding: 1%;
@@ -121,7 +169,7 @@
 
     .countries {
       width: 50%;
-      height: 30%;
+      height: 30vh;
       background-color: #000000;
       color: #FFFFFF;
       padding: 1%;
@@ -131,13 +179,24 @@
 
     .port {
       width: 50%;
-      height: 30%;
+      height: 30vh;
       background-color: #000000;
       color: #FFFFFF;
       padding: 1%;
       text-align: center;
       border: 1px solid #555555;
 
+    }
+
+    .test {
+      width: 100%;
+      flex: 1;
+    }
+
+    .cont {
+      display: block;
+      width: 100vw;
+      height: 20vh;
     }
   </style>
 </head>
@@ -191,17 +250,14 @@
   <input type="text" class="search" autocomplete="off" id="search" onkeydown="esckeyPressed(event, this);"
     placeholder="Search a stock or commodity..."></input>
 
-  <div class="container">
-    <div class="row">
+  <div class="container cont">
+    <div class="row test">
       <div class="col-lg-4 news">
         <p style="font-size:large">NEWS</p>
-        <p>JP Morgan announces new stock offering</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
+        <iframe id='iframeembed' style="height: 80%; width: 90%;"
+          src="https://embeds.rss2html.net/embed?url=https%3A%2F%2Ffeeds.a.dj.com%2Frss%2FWSJcomUSBusiness.xml&amp;embed_title_replacement=&amp;feed_title_fallback=&amp;feed_render_image=0&amp;feed_render_link=0&amp;feed_render_description=0">
+          </script>
+        </iframe>
       </div>
       <div class="col-lg-4 chart">
         <div class="tradingview-widget-container">
@@ -225,7 +281,9 @@
                 "hide_legend": true,
                 "details": true,
                 "save_image": false,
-                "container_id": "tradingview_888b5"
+                "container_id": "tradingview_888b5",
+                width: "100%",
+                height: "100%"
               }
             );
           </script>
@@ -249,18 +307,25 @@
 
       </div>
     </div>
-    <div class="row">
+    <div class="row test">
       <div class="col-lg-4 econ">
         <p style="font-size:large">COUNTRIES</p>
-        <a id="us" href="http://localhost:3000/unitedstates"></a> <br>
-        <a id="rus" href="http://localhost:3000/russia"></a>
+        <div class="container">
 
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
+          <div class="row">
+            <a class="col-sm-4" id="us" href="http://localhost:3000/unitedstates">&nbsp;</a><a class="col-sm-1"
+              href="http://localhost:3000/public/usa/uspowerindex.pdf"><img height="20px"
+                src="http://localhost:3000/public/file.png"> <br> </a>
+
+          </div>
+          <div class="row">
+            <a class="col-sm-4" id="rus" href="http://localhost:3000/russia">&nbsp;</a> <a class="col-sm-1"
+              href="http://localhost:3000/public/russia/russiapowerindex.pdf"><img height="20px"
+                src="http://localhost:3000/public/file.png"> <br> </a>
+          </div>
+        </div>
+        <br>
+        <a href="https://economicprinciples.org/downloads/cwo-power-index.pdf">POWER INDEX</a>
 
       </div>
       <div class="col-lg-4 com">
@@ -308,18 +373,18 @@
           &nbsp;&nbsp;&nbsp;&nbsp;<span id='health'></span></a><br>
       </div>
     </div>
-    <div class="row">
+    <div class="row test">
       <div class="col-lg-5 port">
         <p style="font-size:large">PORTFOLIO</p>
 
-        <a href="https://www.google.com">ROTH
+        <p onclick="onmodal('ROTH IRA')">ROTH
           IRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp $10,000
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
-          +50(1.56%)</a> <br>
-        <a href="https://www.google.com">401K
+          +50(1.56%)</p> <br>
+        <p onclick="onmodal('401K')">401K
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp $1,500,000
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
-          +100(.2%)</a>
+          +100(.2%)</p>
         <p> &nbsp;</p>
         <p> &nbsp;</p>
         <p> &nbsp;</p>
@@ -349,16 +414,81 @@
               }
             </script>
         </div>
-        <!-- TradingView Widget END --
+        <!-- TradingView Widget END -->
 
-      </div>  
+      </div>
+
+    </div>
+    <div id="portmodal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span onclick=offmodal() class="close">&times;</span>
+        <p id="porttitle">title</p>
+        <div class="container">
+          <div style="font-size: 17px" class="row">
+            <b class="col-lg-2">Holding</b>
+            <b class="col-lg-2">Shares</b>
+            <b class="col-lg-2">Cost Basis</b>
+            <b class="col-lg-2">Current Price</b>
+            <b class="col-lg-2">Change</b>
+          </div>
+          <hr />
+
+          <div class="row">
+            <p class="col-lg-2">REK</p>
+            <p class="col-lg-2">300</p>
+            <p class="col-lg-2">44,000 (30p.s.)</p>
+            <p class="col-lg-2">28,500 (19p.s.)</p>
+            <p class="col-lg-2">-16,000(2.56%)</p>
+          </div>
+          <hr />
+
+          <div class="row">
+            <p class="col-lg-2">UNP</p>
+            <p class="col-lg-2">300</p>
+            <p class="col-lg-2">24,000 (80p.s.)</p>
+            <p class="col-lg-2">28,500 (95p.s.)</p>
+            <p class="col-lg-2">+3,000(2.56%)</p>
+          </div>
+          <hr />
+
+          <div class="row">
+            <p class="col-lg-3">Ticker</p>
+            <p class="col-lg-3">Shares Purchased</p>
+            <p class="col-lg-3">Price Paid</p>
+
+          </div>
+          <div class="row">
+            <form action="http://localhost:3000/addholding" method="POST">
+
+              <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF' name="ticker"></input>
+              <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF' name="shares"></input>
+
+              <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF' name="price"></input>
+              <button type="submit" style="color:#000000" class="col-lg-3">Add Holding</button>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 </body>
 
 <script>
-
+  var modal = document.getElementById("portmodal");
   var rus = '';
+
+  function onmodal(txt) {
+    modal.style.display = 'block';
+    document.getElementById('porttitle').innerHTML = txt;
+  }
+  function offmodal() {
+    modal.style.display = 'none';
+  }
   function esckeyPressed(event, input) {
     var code = event.charCode || event.keyCode; //Read key input
     if (code == 27) {                          //If esc key is pressed
@@ -369,6 +499,7 @@
   $(document).ready(function () {
     $('#container').width($(window).width());
   });
+
   function getdata(url, id) {
     fetch(url).then(function (response) {
       // The API call was successful!
@@ -563,6 +694,8 @@
       console.warn('Something went wrong.', err);
     });
   }
+ 
+
   getdata('http://localhost:3000/rus-stock-index-data-320588309485', 'rus');
   getdata('http://localhost:3000/us-stock-index-data-320588309485', 'us');
   getdata('http://localhost:3000/commodities', 'com');
