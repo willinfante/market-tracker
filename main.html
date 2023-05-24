@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-
+  <script src="//s3.tradingview.com/tv.js"></script>
   <style>
     body,
     html {
@@ -209,7 +209,7 @@
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
         async>
           {
-            "symbols"= [
+            "symbols" = [
               {
                 "description": "NASDAQ 100",
                 "proName": "NASDAQ:NDX"
@@ -235,12 +235,12 @@
                 "proName": "NASDAQ:TSLA"
               }
             ],
-              "showSymbolLogo"= true,
-                "colorTheme"= "light",
-                  "isTransparent"= true,
-                    "largeChartUrl"= "",
-                      "displayMode"= "adaptive",
-                        "locale"= "en"
+              "showSymbolLogo" = true,
+              "colorTheme" = "light",
+              "isTransparent" = true,
+              "largeChartUrl" = "",
+              "displayMode" = "adaptive",
+              "locale" = "en"
           }
         </script>
     </div>
@@ -375,43 +375,35 @@
     </div>
     <div class="row test">
       <div class="col-lg-5 port">
-        <p style="font-size:large">PORTFOLIO</p>
+        <p style="font-size:large">Watchlist</p>
+        <a href="https://finance.yahoo.com/chart/^VIX">VIX
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='vixy'></span></a><br>
 
-        <p onclick="onmodal('ROTH IRA')">ROTH
-          IRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp $10,000
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
-          +50(1.56%)</p> <br>
-        <p onclick="onmodal('401K')">401K
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp $1,500,000
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
-          +100(.2%)</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
+        <a href="https://finance.yahoo.com/chart/^SKEW">SKEW
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='skewy'></span></a><br>
 
+        <a href="https://www.global-rates.com/en/interest-rates/libor/libor.aspx">10 Year Treasury Rate
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id='libory'></span></a><br>
       </div>
 
       <div class="col-lg-4 countries">
-        <p style="font-size:large">ECONOMIC RELEASES</p>
+        <!-- <p style="font-size:large">ECONOMIC RELEASES</p> -->
         <!-- TradingView Widget BEGIN -->
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
-          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/economic-calendar/"
-              rel="noopener" target="_blank"><span class="blue-text">Economic calendar</span></a> by TradingView</div>
+          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow"
+              target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js"
             async>
-              {
-                "width"="100%",
-                  "height"= "100%",
-                    "colorTheme"= "dark",
-                      "isTransparent"= true,
-                        "locale"= "en",
-                          "importanceFilter"= "0,1",
-                            "currencyFilter"= "USD"
-              }
+                {
+                  "width": "100%",
+                  "height": "100%",
+                  "colorTheme": "light",
+                  "isTransparent": false,
+                  "locale": "en",
+                  "importanceFilter": "0,1",
+                  "currencyFilter": "USD"
+                }
             </script>
         </div>
         <!-- TradingView Widget END -->
@@ -421,7 +413,7 @@
     </div>
     <div id="portmodal" class="modal">
 
-      <!-- Modal content -->
+      <!-- Modal content-->
       <div class="modal-content">
         <span onclick=offmodal() class="close">&times;</span>
         <p id="porttitle">title</p>
@@ -462,10 +454,13 @@
           <div class="row">
             <form action="http://localhost:3000/addholding" method="POST">
 
-              <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF' name="ticker"></input>
-              <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF' name="shares"></input>
+              <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF'
+                name="ticker"></input>
+              <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF'
+                name="shares"></input>
 
-              <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF' name="price"></input>
+              <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF'
+                name="price"></input>
               <button type="submit" style="color:#000000" class="col-lg-3">Add Holding</button>
 
             </form>
@@ -474,7 +469,7 @@
         </div>
 
       </div>
-
+      -->
     </div>
 </body>
 
@@ -493,9 +488,11 @@
     var code = event.charCode || event.keyCode; //Read key input
     if (code == 27) {                          //If esc key is pressed
       input.value = '';  //clear the search box
+    } else if (code == 13) {
+      window.location.href = 'https://finance.yahoo.com/quote/' + input.value;
     }
-
   }
+
   $(document).ready(function () {
     $('#container').width($(window).width());
   });
@@ -680,6 +677,31 @@
 
 
         })
+      } else if (id=='other'){
+        response.json().then((data) => {
+          let e = '';
+          let j = '';
+          let r = '';
+          if (data[0]['vix'].includes('-')) {
+            e = 'red';
+          } else {
+            e = 'green';
+          }
+          if (data[1]['libor'].includes('-')) {
+            j = 'red';
+          } else {
+            j = 'green';
+          }
+          if (data[2]['skew'].includes('-')) {
+            r = 'red';
+          } else {
+            r = 'green';
+          }
+
+          document.getElementById('vixy').innerHTML = '<span style="color:' + e + '">' + data[0]['vix'] + '</span>';
+          document.getElementById('libory').innerHTML = '<span style="color:' + j + '">' + data[1]['libor'] + '</span>';
+          document.getElementById('skewy').innerHTML = '<span style="color:' + r + '">' + data[2]['skew'] + '</span>';
+        })
       }
       return response.text();
     }).then(function (html) {
@@ -694,13 +716,14 @@
       console.warn('Something went wrong.', err);
     });
   }
- 
+
 
   getdata('http://localhost:3000/rus-stock-index-data-320588309485', 'rus');
   getdata('http://localhost:3000/us-stock-index-data-320588309485', 'us');
   getdata('http://localhost:3000/commodities', 'com');
   getdata('http://localhost:3000/sectors', 'sec');
   getdata('http://localhost:3000/forex', 'curr');
+  getdata('http://localhost:3000/watchlist', 'other');
 </script>
 
 </html>

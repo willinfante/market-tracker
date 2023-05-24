@@ -8,11 +8,13 @@ const bodyParser = require('body-parser');
 //Variables
 var hostname = '127.0.0.1';
 var port = 3000;
-var command = "https:\/\/query1.finance.yahoo.com/v7/finance/quote?fields=symbol,longName,shortName,regularMarketPrice,regularMarketTime,regularMarketChange,regularMarketDayHigh,regularMarketDayLow,regularMarketPrice,regularMarketOpen,regularMarketVolume,averageDailyVolume3Month,marketCap,bid,ask,dividendYield,dividendsPerShare,exDividendDate,trailingPE,priceToSales,tarketPricecMean&formatted=false&symbols="
+var command = "https:\/\/query1.finance.yahoo.com/v6/finance/quote?fields=symbol,longName,shortName,regularMarketPrice,regularMarketTime,regularMarketChange,regularMarketDayHigh,regularMarketDayLow,regularMarketPrice,regularMarketOpen,regularMarketVolume,averageDailyVolume3Month,marketCap,bid,ask,dividendYield,dividendsPerShare,exDividendDate,trailingPE,priceToSales,tarketPricecMean&formatted=false&symbols="
 
 //
 //Retrieve data from yahoo finance
 function getData(num, symb, callback) {
+  console.log(num);
+  console.log(symb);
 
   //Make Request to query1.finance.yahoo.com
   https.get(command + symb, (resp) => {
@@ -26,6 +28,7 @@ function getData(num, symb, callback) {
 
     //When The Host Stops Sending Chunks ....
     resp.on('end', () => {
+      console.log(dat);
 
       //Seperate 'dat' into variables
       var symbol = JSON.parse(dat).quoteResponse.result[num].symbol;
@@ -91,6 +94,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/addholding', (req, res) => {
   // console.log(`Register new holding:${req.body.ticker}, ${req.body.shares}, ${req.body.price}.`);
   console.log(req.body.ticker);
+  console.log(req.body.shares);
+  console.log(req.body.prices);
+  fs.writeFile()
 });
 
 app.use((req, res, next) => {
@@ -246,11 +252,11 @@ app.get('/forex', (req, res) => {
             dir[4] = sym;
 
 
-            let euro = prices[0] + " " + dir[0] + Math.round(10 * chag[3]) / 10 + ' (' + Math.round(10 * perc[0]) / 10 + '%' + ')';
-            let japan = prices[1] + " " + dir[1] + Math.round(10 * chag[2]) / 10 + ' (' + Math.round(10 * perc[1]) / 10 + '%' + ')';
-            let russia = prices[2] + " " + dir[2] + Math.round(10 * chag[1]) / 10 + ' (' + Math.round(10 * perc[2]) / 10 + '%' + ')';
-            let china = prices[3] + " " + dir[3] + Math.round(10 * chag[0]) / 10 + ' (' + Math.round(10 * perc[3]) / 10 + '%' + ')';
-            let canada = prices[4] + " " + dir[4] + Math.round(10 * chag[0]) / 10 + ' (' + Math.round(10 * perc[4]) / 10 + '%' + ')';
+            let euro = prices[0] + " " + dir[0] + Math.round(10 * chag[0]) / 10 + ' (' + Math.round(10 * perc[0]) / 10 + '%' + ')';
+            let japan = prices[1] + " " + dir[1] + Math.round(10 * chag[1]) / 10 + ' (' + Math.round(10 * perc[1]) / 10 + '%' + ')';
+            let russia = prices[2] + " " + dir[2] + Math.round(10 * chag[2]) / 10 + ' (' + Math.round(10 * perc[2]) / 10 + '%' + ')';
+            let china = prices[3] + " " + dir[3] + Math.round(10 * chag[3]) / 10 + ' (' + Math.round(10 * perc[3]) / 10 + '%' + ')';
+            let canada = prices[4] + " " + dir[4] + Math.round(10 * chag[4]) / 10 + ' (' + Math.round(10 * perc[4]) / 10 + '%' + ')';
 
             var result = [];
 
@@ -269,6 +275,52 @@ app.get('/forex', (req, res) => {
   });
 });
 
+app.get('/watchlist', (req, res) => {
+  var dir = [];
+  var chag = [];
+  var perc = [];
+  var prices = [];
+  var packet = [];
+
+  returnData('^VIX', function (chng, pctt, crt, sym) {
+
+    chag[0] = chng;
+    perc[0] = pctt;
+    prices[0] = crt;
+    dir[0] = sym;
+
+    returnData('^SKEW', function (chng, pctt, crt, sym) {
+
+      chag[1] = chng;
+      perc[1] = pctt;
+      prices[1] = crt;
+      dir[1] = sym;
+
+      returnData('^TNX', function (chng, pctt, crt, sym) {
+
+        chag[2] = chng;
+        perc[2] = pctt;
+        prices[2] = crt;
+        dir[2] = sym;
+
+
+        let a = prices[0] + " " + dir[0] + Math.round(10 * chag[0]) / 10 + ' (' + Math.round(10 * perc[0]) / 10 + '%' + ')';
+        let b = prices[1] + " " + dir[1] + Math.round(10 * chag[1]) / 10 + ' (' + Math.round(10 * perc[1]) / 10 + '%' + ')';
+        let c = prices[2] + " " + dir[2] + Math.round(10 * chag[2]) / 10 + ' (' + Math.round(10 * perc[2]) / 10 + '%' + ')';
+
+        var result = [];
+
+        result.push({ "vix": a });
+        result.push({ "libor": c });
+        result.push({ "skew": b });
+
+        res.contentType('application/json');
+        res.send(JSON.stringify(result));
+
+      });
+    });
+  });
+});
 app.get('/sectors', (req, res) => {
   var dir = [];
   var chag = [];
