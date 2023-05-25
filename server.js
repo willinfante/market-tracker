@@ -10,9 +10,11 @@ var hostname = '127.0.0.1';
 var port = 3000;
 var command = "https:\/\/query1.finance.yahoo.com/v6/finance/quote?fields=symbol,longName,shortName,regularMarketPrice,regularMarketTime,regularMarketChange,regularMarketDayHigh,regularMarketDayLow,regularMarketPrice,regularMarketOpen,regularMarketVolume,averageDailyVolume3Month,marketCap,bid,ask,dividendYield,dividendsPerShare,exDividendDate,trailingPE,priceToSales,tarketPricecMean&formatted=false&symbols="
 
+var commandr = "https://query2.finance.yahoo.com/v10/finance/quoteSummary/"; 
+var commandrr = "?modules=price";
 //
 //Retrieve data from yahoo finance
-function getData(num, symb, callback) {
+function getDataX(num, symb, callback) {
   console.log(num);
   console.log(symb);
 
@@ -62,7 +64,36 @@ function getData(num, symb, callback) {
   });
 }
 
-function returnData(symbol, callback) {
+function getData(num, symb, callback) {
+  console.log(num);
+  console.log(symb);
+
+  //Make Request to query1.finance.yahoo.com
+  https.get(commandr + symb + commandrr, (resp) => {
+
+    let dat = '';  //Variable to store Data
+
+    // When a chunk is recieved ...
+    resp.on('data', (chunk) => {
+      dat += chunk;  //Add the chunk to the 'dat' variable to store
+    });
+
+    //When The Host Stops Sending Chunks ....
+    resp.on('end', () => {
+      console.log(JSON.parse(dat).quoteSummary.result[0].price.regularMarketPrice.raw);
+
+      var price = JSON.parse(dat).quoteSummary.result[0].price.regularMarketPrice.raw;
+
+      var prevClose = JSON.parse(dat).quoteSummary.result[0].price.regularMarketPreviousClose.raw;
+
+
+      //Return the data to the callback function
+      var result = callback(price, prevClose);
+    });
+  });
+}
+
+function returnDataX(symbol, callback) {
   let currentPrice;
   let ch;
   let changeofprice;
@@ -70,6 +101,32 @@ function returnData(symbol, callback) {
   let dataArray = [];
 
   getData(0, symbol, function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+    currentPrice = price;
+    ch = '';
+    changeofprice = String(currentPrice - prevClose);
+    percentchange = String(((price - prevClose) / prevClose) * 100);
+    if (Math.sign(changeofprice) > 0) {
+      ch = '+';
+    } else {
+      ch = '';
+    }
+    dataArray[0] = changeofprice;
+    dataArray[1] = percentchange;
+    dataArray[2] = currentPrice;
+    dataArray[3] = ch;
+
+    var result = callback(dataArray[0], dataArray[1], dataArray[2], dataArray[3]);
+  });
+}
+
+function returnData(symbol, callback) {
+  let currentPrice;
+  let ch;
+  let changeofprice;
+  let percentchange;
+  let dataArray = [];
+
+  getData(0, symbol, function ( price,  prevClose,) {
     currentPrice = price;
     ch = '';
     changeofprice = String(currentPrice - prevClose);
@@ -444,7 +501,7 @@ app.get('/sectors', (req, res) => {
 });
 
 app.get('/rus-stock-index-data-320588309485', (req, res) => {
-  getData(0, 'RSXJ', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+  getData(0, 'RSXJ', function (price, prevClose) {
     let currentPrice = price;
     let previousPrice = prevClose;
     let chg = currentPrice - previousPrice;
@@ -464,7 +521,7 @@ app.get('/rus-stock-index-data-320588309485', (req, res) => {
 });
 
 app.get('/us-stock-index-data-320588309485', (req, res) => {
-  getData(0, 'SPY', function (symbol, short, price, open, high, low, prevClose, pe, mktcp, regmktch, mktvol, state, bid, ask, divps, rev, sO, tradable, ftwhcp, ftwl, ftwh, ftwhc, ftwlc, ftwlcp) {
+  getData(0, 'SPY', function (price, prevClose) {
     let currentPrice = price;
     let previousPrice = prevClose;
     let chg = currentPrice - previousPrice;

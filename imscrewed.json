@@ -1,0 +1,80 @@
+{
+    "quoteSummary": {
+        "result": [
+            {
+                "price": {
+                    "maxAge": 1,
+                    "preMarketChange": {},
+                    "preMarketPrice": {},
+                    "preMarketSource": "DELAYED",
+                    "postMarketChange": {},
+                    "postMarketPrice": {},
+                    "regularMarketChangePercent": {
+                        "raw": 0.0,
+                        "fmt": "0.00%"
+                    },
+                    "regularMarketChange": {
+                        "raw": 0.0,
+                        "fmt": "0.00"
+                    },
+                    "regularMarketTime": 1673016232,
+                    "priceHint": {
+                        "raw": 2,
+                        "fmt": "2",
+                        "longFmt": "2"
+                    },
+                    "regularMarketPrice": {
+                        "raw": 11.24,
+                        "fmt": "11.24"
+                    },
+                    "regularMarketDayHigh": {
+                        "raw": 11.24,
+                        "fmt": "11.24"
+                    },
+                    "regularMarketDayLow": {
+                        "raw": 11.24,
+                        "fmt": "11.24"
+                    },
+                    "regularMarketVolume": {
+                        "raw": 0,
+                        "fmt": null,
+                        "longFmt": "0.00"
+                    },
+                    "averageDailyVolume10Day": {},
+                    "averageDailyVolume3Month": {},
+                    "regularMarketPreviousClose": {
+                        "raw": 14.2501,
+                        "fmt": "14.25"
+                    },
+                    "regularMarketSource": "FREE_REALTIME",
+                    "regularMarketOpen": {
+                        "raw": 13.93,
+                        "fmt": "13.93"
+                    },
+                    "strikePrice": {},
+                    "openInterest": {},
+                    "exchange": "BTS",
+                    "exchangeName": "Cboe US",
+                    "exchangeDataDelayedBy": 0,
+                    "marketState": "POSTPOST",
+                    "quoteType": "ETF",
+                    "symbol": "RSXJ",
+                    "underlyingSymbol": null,
+                    "shortName": "VanEck Russia Small-Cap ETF",
+                    "longName": "VanEck Russia Small-Cap ETF",
+                    "currency": "USD",
+                    "quoteSourceName": "Delayed Quote",
+                    "currencySymbol": "$",
+                    "fromCurrency": null,
+                    "toCurrency": null,
+                    "lastMarket": null,
+                    "volume24Hr": {},
+                    "volumeAllCurrencies": {},
+                    "circulatingSupply": {},
+                    "marketCap": {}
+                }
+            }
+        ],
+        "error": null
+    }
+}
