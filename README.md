@@ -47,7 +47,7 @@ Sections:
      - The charts will include a grid-like arrow with x and y axis to show any point on the graph. An option on the side will give the option to glue the center of         it to the line
      - A screenshot option will also be available for the entire chart
      - Companies will include key metrics (P/E, moving average, etc.) but will also include a link to their investor relations page to view a 10k.
-     - Will also include historical stock exchange indicies from historical countries (i.e. Soviet Union, UK, Germany, France, etc.)
-          - These will include all past and current data available combined (1880-1917 dataset combined with 1991-present for Russia, all 300 years of markets for UK)
+     - Will also include historical stock exchange indicies from historical countries (i.e. Soviet Union, US, etc.)
+          - These will include all past and current data available combined (1880-1917 dataset combined with 1991-present for Russia)
           - Historical econ data will also be accessible
 
