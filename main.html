@@ -206,271 +206,272 @@
     <!-- TradingView Widget BEGIN -->
     <div class="tradingview-widget-container">
       <div class="tradingview-widget-container__widget"></div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
-        async>
-          {
-            "symbols" = [
-              {
-                "description": "NASDAQ 100",
-                "proName": "NASDAQ:NDX"
-              },
-              {
-                "description": "JP Morgan Chase & Co.",
-                "proName": "NYSE:JPM"
-              },
-              {
-                "description": "ProShares Ultra Bloomberg Crude Oil",
-                "proName": "AMEX:UCO"
-              },
-              {
-                "description": "ProShares Short Real Estate",
-                "proName": "AMEX:REK"
-              },
-              {
-                "description": "Apple, Inc.",
-                "proName": "NASDAQ:AAPL"
-              },
-              {
-                "description": "Tesla, Inc.",
-                "proName": "NASDAQ:TSLA"
-              }
-            ],
-              "showSymbolLogo" = true,
-              "colorTheme" = "dark",
-              "isTransparent" = true,
-              "largeChartUrl" = "",
-              "displayMode" = "adaptive",
-              "locale" = "en"
-          }
-        </script>
-    </div>
-  </div>
-  <!-- TradingView Widget END -->
-
-  <input type="text" class="search" autocomplete="off" id="search" onkeydown="esckeyPressed(event, this);"
-    placeholder="Search a stock or commodity..."></input>
-
-  <div class="container cont">
-    <div class="row test">
-      <div class="col-lg-4 news">
-        <p style="font-size:large">NEWS</p>
-        <iframe id='iframeembed' style="height: 80%; width: 90%;"
-          src="https://embeds.rss2html.net/embed?url=https%3A%2F%2Ffeeds.a.dj.com%2Frss%2FWSJcomUSBusiness.xml&amp;embed_title_replacement=&amp;feed_title_fallback=&amp;feed_render_image=0&amp;feed_render_link=0&amp;feed_render_description=0">
-          </script>
-        </iframe>
-      </div>
-      <div class="col-lg-4 chart">
-        <div class="tradingview-widget-container">
-          <div id="tradingview_888b5"></div>
-          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/AMEX-SPY/"
-              rel="noopener" target="_blank"><span class="blue-text">SPY chart</span></a> by TradingView</div>
-          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-          <script type="text/javascript">
-            new TradingView.widget(
-              {
-                "autosize": true,
-                "symbol": "AMEX:SPY",
-                "interval": "1",
-                "timezone": "exchange",
-                "theme": "dark",
-                "style": "1",
-                "locale": "en",
-                "toolbar_bg": "#f1f3f6",
-                "enable_publishing": false,
-                "hide_top_toolbar": true,
-                "hide_legend": true,
-                "details": true,
-                "save_image": false,
-                "container_id": "tradingview_888b5",
-                width: "100%",
-                height: "100%"
-              }
-            );
-          </script>
-
-        </div>
-      </div>
-      <div class="col-lg-4 forex">
-
-        <p style="font-size:large">FOREX RATES</p>
-        <p style="font-size:small">One US Dollar is equal to...</p>
-        <a href="https://finance.yahoo.com/chart/EURUSD=X">Euro
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='euro'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/JPY=X">Japanese Yen
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='jpy'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/RUB=X">Ruble
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='rub'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/CNY=X">Chinese Yuan
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='cny'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/CAD=X">Canadian Dollar
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='cad'></span></a><br>
-
-      </div>
-    </div>
-    <div class="row test">
-      <div class="col-lg-4 econ">
-        <p style="font-size:large">COUNTRIES</p>
-        <div class="container">
-
-          <div class="row">
-            <a class="col-sm-4" id="us" href="http://localhost:3000/unitedstates">&nbsp;</a><a class="col-sm-1"
-              href="http://localhost:3000/public/usa/uspowerindex.pdf"><img height="20px"
-                src="http://localhost:3000/public/file.png"> <br> </a>
-
-          </div>
-          <div class="row">
-            <a class="col-sm-4" id="rus" href="http://localhost:3000/russia">&nbsp;</a> <a class="col-sm-1"
-              href="http://localhost:3000/public/russia/russiapowerindex.pdf"><img height="20px"
-                src="http://localhost:3000/public/file.png"> <br> </a>
-          </div>
-        </div>
-        <br>
-        <a href="https://economicprinciples.org/downloads/cwo-power-index.pdf">POWER INDEX</a>
-
-      </div>
-      <div class="col-lg-4 com">
-        <p style="font-size:large">COMMODITIES</p>
-
-        <a href="https://www.tradingview.com/chart/?symbol=TVC%3AUSOIL">Crude Oil &nbsp;&nbsp;&nbsp;&nbsp;<span
-            id='cl'></span></a><br>
-        <a href="https://www.wsj.com/market-data/quotes/futures/US/HEATING%20OIL">Heating Oil
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='ho'></span></a><br>
-        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=TVC%3AGOLD">Gold &nbsp;&nbsp;&nbsp;&nbsp;<span
-            id='gc'></span></a><br>
-        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=TVC%3ASILVER">Silver &nbsp;&nbsp;&nbsp;&nbsp;<span
-            id='sl'></span></a><br>
-        <a href="https://www.tradingview.com/chart/?symbol=CBOT%3AZW1%21"> Wheat &nbsp;&nbsp;&nbsp;&nbsp;<span
-            id='wt'></span></a><br>
-        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=ICEUS%3AKC1%21">Coffee &nbsp;&nbsp;&nbsp;&nbsp;<span
-            id='cof'></span></a><br>
-        <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=NYMEX%3ARB1%21">Gasoline
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='ga'></span></a><br>
-
-      </div>
-
-      <div class="col-lg-4 sectors">
-        <p style="font-size:large">SECTORS</p>
-        <a href="https://finance.yahoo.com/chart/^SP500-15">Materials
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='mat'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/^SP500-30">Consumer Staples
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='staples'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/^SP500-45">Technology &nbsp;&nbsp;&nbsp;&nbsp;<span
-            id='tech'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/^SPCSEFP">Financials
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='fin'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/^GSPE">Energy &nbsp;&nbsp;&nbsp;&nbsp;<span id='ene'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/^SP500-20">Industrials
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='ind'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/^SP500-60">Real Estate
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='re'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/^SP500-50">Communications &nbsp;&nbsp;&nbsp;&nbsp;<span
-            id='com'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/^SP500-55">Utilities
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='ut'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/^SP500-25">Consumer Discretionary
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='cond'></span></a><br>
-        <a href="https://finance.yahoo.com/chart/^SP500-35">Healthcare
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='health'></span></a><br>
-      </div>
-    </div>
-    <div class="row test">
-      <div class="col-lg-5 port">
-        <p style="font-size:large">Watchlist</p>
-        <a href="https://finance.yahoo.com/chart/^VIX">VIX
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='vixy'></span></a><br>
-
-        <a href="https://finance.yahoo.com/chart/^SKEW">SKEW
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='skewy'></span></a><br>
-
-        <a href="https://finance.yahoo.com/chart/%5ETNX/">10 Year Treasury Rate
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id='libory'></span></a><br>
-      </div>
-
-      <div class="col-lg-4 countries">
-        <!-- <p style="font-size:large">ECONOMIC RELEASES</p> -->
-        <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow"
-              target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js"
+      <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow"
+          target="_blank">
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
             async>
+              {
+                "symbols": [
+                  {
+                    "title": "NASDAQ 100",
+                    "proName": "NASDAQ:NDX"
+                  },
+                  {
+                    "title": "JP Morgan Chase & Co.",
+                    "proName": "NYSE:JPM"
+                  },
+                  {
+                    "title": "ProShares Ultra Bloomberg Crude Oil",
+                    "proName": "AMEX:UCO"
+                  },
+                  {
+                    "title": "ProShares Short Real Estate",
+                    "proName": "AMEX:REK"
+                  },
+                  {
+                    "title": "Apple, Inc.",
+                    "proName": "NASDAQ:AAPL"
+                  },
+                  {
+                    "title": "Tesla, Inc.",
+                    "proName": "NASDAQ:TSLA"
+                  }
+                ],
+                  "showSymbolLogo": true,
+                  "colorTheme": "dark",
+                  "isTransparent": true,
+                  "displayMode": "adaptive",
+                  "locale": "en"
+              }
+            </script>
+      </div>
+    </div>
+    <!-- TradingView Widget END -->
+
+    <input type="text" class="search" autocomplete="off" id="search" onkeydown="esckeyPressed(event, this);"
+      placeholder="Search a stock or commodity..."></input>
+
+    <div class="container cont">
+      <div class="row test">
+        <div class="col-lg-4 news">
+          <p style="font-size:large">NEWS</p>
+          <iframe id='iframeembed' style="height: 80%; width: 90%;"
+            src="https://embeds.rss2html.net/embed?url=https%3A%2F%2Ffeeds.a.dj.com%2Frss%2FWSJcomUSBusiness.xml&amp;embed_title_replacement=&amp;feed_title_fallback=&amp;feed_render_image=0&amp;feed_render_link=0&amp;feed_render_description=0">
+            </script>
+          </iframe>
+        </div>
+        <div class="col-lg-4 chart">
+          <div class="tradingview-widget-container">
+            <div id="tradingview_888b5"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/AMEX-SPY/"
+                rel="noopener" target="_blank"><span class="blue-text">SPY chart</span></a> by TradingView</div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+              new TradingView.widget(
+                {
+                  "autosize": true,
+                  "symbol": "AMEX:SPY",
+                  "interval": "1",
+                  "timezone": "exchange",
+                  "theme": "dark",
+                  "style": "1",
+                  "locale": "en",
+                  "toolbar_bg": "#f1f3f6",
+                  "enable_publishing": false,
+                  "hide_top_toolbar": true,
+                  "hide_legend": true,
+                  "details": true,
+                  "save_image": false,
+                  "container_id": "tradingview_888b5",
+                  width: "100%",
+                  height: "100%"
+                }
+              );
+            </script>
+
+          </div>
+        </div>
+        <div class="col-lg-4 forex">
+
+          <p style="font-size:large">FOREX RATES</p>
+          <p style="font-size:small">One US Dollar is equal to...</p>
+          <a href="https://finance.yahoo.com/chart/EURUSD=X">Euro
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='euro'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/JPY=X">Japanese Yen
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='jpy'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/RUB=X">Ruble
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='rub'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/CNY=X">Chinese Yuan
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='cny'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/CAD=X">Canadian Dollar
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='cad'></span></a><br>
+
+        </div>
+      </div>
+      <div class="row test">
+        <div class="col-lg-4 econ">
+          <p style="font-size:large">COUNTRIES</p>
+          <div class="container">
+
+            <div class="row">
+              <a class="col-sm-4" id="us" href="http://localhost:3000/unitedstates">&nbsp;</a><a class="col-sm-1"
+                href="http://localhost:3000/public/usa/uspowerindex.pdf"><img height="20px"
+                  src="http://localhost:3000/public/file.png"> <br> </a>
+
+            </div>
+            <div class="row">
+              <a class="col-sm-4" id="rus" href="http://localhost:3000/russia">&nbsp;</a> <a class="col-sm-1"
+                href="http://localhost:3000/public/russia/russiapowerindex.pdf"><img height="20px"
+                  src="http://localhost:3000/public/file.png"> <br> </a>
+            </div>
+          </div>
+          <br>
+          <a href="https://economicprinciples.org/downloads/cwo-power-index.pdf">POWER INDEX</a>
+
+        </div>
+        <div class="col-lg-4 com">
+          <p style="font-size:large">COMMODITIES</p>
+
+          <a href="https://www.tradingview.com/chart/?symbol=TVC%3AUSOIL">Crude Oil &nbsp;&nbsp;&nbsp;&nbsp;<span
+              id='cl'></span></a><br>
+          <a href="https://www.wsj.com/market-data/quotes/futures/US/HEATING%20OIL">Heating Oil
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='ho'></span></a><br>
+          <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=TVC%3AGOLD">Gold &nbsp;&nbsp;&nbsp;&nbsp;<span
+              id='gc'></span></a><br>
+          <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=TVC%3ASILVER">Silver &nbsp;&nbsp;&nbsp;&nbsp;<span
+              id='sl'></span></a><br>
+          <a href="https://www.tradingview.com/chart/?symbol=CBOT%3AZW1%21"> Wheat &nbsp;&nbsp;&nbsp;&nbsp;<span
+              id='wt'></span></a><br>
+          <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=ICEUS%3AKC1%21">Coffee
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='cof'></span></a><br>
+          <a href="https://www.tradingview.com/chart/j7eLyx6J/?symbol=NYMEX%3ARB1%21">Gasoline
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='ga'></span></a><br>
+
+        </div>
+
+        <div class="col-lg-4 sectors">
+          <p style="font-size:large">SECTORS</p>
+          <a href="https://finance.yahoo.com/chart/^SP500-15">Materials
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='mat'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/^SP500-30">Consumer Staples
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='staples'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/^SP500-45">Technology &nbsp;&nbsp;&nbsp;&nbsp;<span
+              id='tech'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/^SPCSEFP">Financials
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='fin'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/^GSPE">Energy &nbsp;&nbsp;&nbsp;&nbsp;<span id='ene'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/^SP500-20">Industrials
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='ind'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/^SP500-60">Real Estate
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='re'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/^SP500-50">Communications &nbsp;&nbsp;&nbsp;&nbsp;<span
+              id='com'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/^SP500-55">Utilities
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='ut'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/^SP500-25">Consumer Discretionary
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='cond'></span></a><br>
+          <a href="https://finance.yahoo.com/chart/^SP500-35">Healthcare
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='health'></span></a><br>
+        </div>
+      </div>
+      <div class="row test">
+        <div class="col-lg-5 port">
+          <p style="font-size:large">Watchlist</p>
+          <a href="https://finance.yahoo.com/chart/^VIX">VIX
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='vixy'></span></a><br>
+
+          <a href="https://finance.yahoo.com/chart/^SKEW">SKEW
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='skewy'></span></a><br>
+
+          <a href="https://finance.yahoo.com/chart/%5ETNX/">10 Year Treasury Rate
+            &nbsp;&nbsp;&nbsp;&nbsp;<span id='libory'></span></a><br>
+        </div>
+
+        <div class="col-lg-4 countries">
+          <!-- <p style="font-size:large">ECONOMIC RELEASES</p> -->
+          <!-- TradingView Widget BEGIN -->
+          <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow"
+                target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js"
+              async>
                 {
                   "width": "100%",
-                  "height": "100%",
-                  "colorTheme": "light",
-                  "isTransparent": false,
-                  "locale": "en",
-                  "importanceFilter": "0,1",
-                  "currencyFilter": "USD"
+                    "height": "100%",
+                      "colorTheme": "light",
+                        "isTransparent": false,
+                          "locale": "en",
+                            "importanceFilter": "0,1",
+                              "currencyFilter": "USD"
                 }
-            </script>
-        </div>
-        <!-- TradingView Widget END -->
-
-      </div>
-
-    </div>
-    <div id="portmodal" class="modal">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <span onclick=offmodal() class="close">&times;</span>
-        <p id="porttitle">title</p>
-        <div class="container">
-          <div style="font-size: 17px" class="row">
-            <b class="col-lg-2">Holding</b>
-            <b class="col-lg-2">Shares</b>
-            <b class="col-lg-2">Cost Basis</b>
-            <b class="col-lg-2">Current Price</b>
-            <b class="col-lg-2">Change</b>
+              </script>
           </div>
-          <hr />
-
-          <div class="row">
-            <p class="col-lg-2">REK</p>
-            <p class="col-lg-2">300</p>
-            <p class="col-lg-2">44,000 (30p.s.)</p>
-            <p class="col-lg-2">28,500 (19p.s.)</p>
-            <p class="col-lg-2">-16,000(2.56%)</p>
-          </div>
-          <hr />
-
-          <div class="row">
-            <p class="col-lg-2">UNP</p>
-            <p class="col-lg-2">300</p>
-            <p class="col-lg-2">24,000 (80p.s.)</p>
-            <p class="col-lg-2">28,500 (95p.s.)</p>
-            <p class="col-lg-2">+3,000(2.56%)</p>
-          </div>
-          <hr />
-
-          <div class="row">
-            <p class="col-lg-3">Ticker</p>
-            <p class="col-lg-3">Shares Purchased</p>
-            <p class="col-lg-3">Price Paid</p>
-
-          </div>
-          <div class="row">
-            <form action="http://localhost:3000/addholding" method="POST">
-
-              <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF'
-                name="ticker"></input>
-              <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF'
-                name="shares"></input>
-
-              <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF'
-                name="price"></input>
-              <button type="submit" style="color:#000000" class="col-lg-3">Add Holding</button>
-
-            </form>
-          </div>
+          <!-- TradingView Widget END -->
 
         </div>
 
       </div>
-      -->
-    </div>
+      <div id="portmodal" class="modal">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <span onclick=offmodal() class="close">&times;</span>
+          <p id="porttitle">title</p>
+          <div class="container">
+            <div style="font-size: 17px" class="row">
+              <b class="col-lg-2">Holding</b>
+              <b class="col-lg-2">Shares</b>
+              <b class="col-lg-2">Cost Basis</b>
+              <b class="col-lg-2">Current Price</b>
+              <b class="col-lg-2">Change</b>
+            </div>
+            <hr />
+
+            <div class="row">
+              <p class="col-lg-2">REK</p>
+              <p class="col-lg-2">300</p>
+              <p class="col-lg-2">44,000 (30p.s.)</p>
+              <p class="col-lg-2">28,500 (19p.s.)</p>
+              <p class="col-lg-2">-16,000(2.56%)</p>
+            </div>
+            <hr />
+
+            <div class="row">
+              <p class="col-lg-2">UNP</p>
+              <p class="col-lg-2">300</p>
+              <p class="col-lg-2">24,000 (80p.s.)</p>
+              <p class="col-lg-2">28,500 (95p.s.)</p>
+              <p class="col-lg-2">+3,000(2.56%)</p>
+            </div>
+            <hr />
+
+            <div class="row">
+              <p class="col-lg-3">Ticker</p>
+              <p class="col-lg-3">Shares Purchased</p>
+              <p class="col-lg-3">Price Paid</p>
+
+            </div>
+            <div class="row">
+              <form action="http://localhost:3000/addholding" method="POST">
+
+                <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF'
+                  name="ticker"></input>
+                <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF'
+                  name="shares"></input>
+
+                <input type="text" class="col-lg-3" style='background-color: #000000; color: #FFFFFF'
+                  name="price"></input>
+                <button type="submit" style="color:#000000" class="col-lg-3">Add Holding</button>
+
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+        -->
+      </div>
 </body>
 
 <script>
@@ -677,7 +678,7 @@
 
 
         })
-      } else if (id=='other'){
+      } else if (id == 'other') {
         response.json().then((data) => {
           let e = '';
           let j = '';
